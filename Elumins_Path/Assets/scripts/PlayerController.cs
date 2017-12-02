@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class player_script : MonoBehaviour {
+public class PlayerController : MonoBehaviour {
 
     public float speed;             //Floating point variable to store the player's movement speed.
 
