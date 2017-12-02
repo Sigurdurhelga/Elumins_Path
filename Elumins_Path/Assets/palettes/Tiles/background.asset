@@ -9,9 +9,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: spritesheet_tiles_17
+  m_Name: background
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: 21300034, guid: a71f2635e9a613f49b4e81b941346f1a, type: 3}
+  m_Sprite: {fileID: 21300002, guid: f0d8b59ba4fa76c4d834db8bc6cc45c9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1
