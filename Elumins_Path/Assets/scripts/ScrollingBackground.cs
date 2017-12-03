@@ -10,7 +10,6 @@ public class ScrollingBackground : MonoBehaviour {
 
     private Transform camera_transform;
     private Transform[] layers;
-    private int camera_view = 3;
     private int tl_index;
     private int tm_index;
     private int tr_index;
