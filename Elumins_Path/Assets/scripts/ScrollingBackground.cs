@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class cameraController : MonoBehaviour {
+public class ScrollingBackground : MonoBehaviour {
 
     public float background_width;
     public float background_height;
