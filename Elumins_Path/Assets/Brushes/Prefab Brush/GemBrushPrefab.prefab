@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 135840506108406402}
   - component: {fileID: 23443026964905162}
   m_Layer: 0
-  m_Name: ExamplePrefab2
+  m_Name: GemBrushPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -67,7 +67,7 @@ MeshRenderer:
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_StitchSeams: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
