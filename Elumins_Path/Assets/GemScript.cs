@@ -18,7 +18,7 @@ public class GemScript : MonoBehaviour {
     public GameObject dynamicLight;
 
     private Color[] Color_Codes = new Color[5]{ new Color(0,0.4f,0.8f,0.85f), Color.red, Color.green, Color.magenta, Color.white };
-    private Color[] Light_Color_Codes = new Color[5]{ new Color(0,0.5f,1f,0.13f), new Color(1, 0,0,0.13f) , new Color(0,1,0,0.13f), Color.magenta, Color.white };
+    private Color[] Light_Color_Codes = new Color[5]{ new Color(0,0.5f,1f,0.13f), new Color(1, 0,0,0.13f) , new Color(0,1,0,0.13f) , Color.magenta, Color.white };
     private Color selected_color;
     private Color selected_light;
     private Color powered_light = new Color(1, 1, 1, 1);
@@ -65,7 +65,7 @@ public class GemScript : MonoBehaviour {
             if(Time.time > poweringRecharge)
             {
                 poweringRecharge = Time.time + 0.01f;
-                gem_power += 1;
+                gem_power -= 1;
                 GemLight.range -= 0.05f;
                 GemLight.intensity -= 0.05f;
 
