@@ -9,25 +9,29 @@ public enum DropDownColors
 
 public class GemScript : MonoBehaviour {
 
-    private Color[] Color_Codes = new Color[5]{ Color.blue, Color.red, Color.green, Color.magenta, Color.white };
 
     public DropDownColors GemColor;
+    public Light GemLight;
+    public SpriteRenderer GemSprite;
+    public int requiredPower;
 
-    private Light gem_light;
-    private SpriteRenderer gem_sprite;
+    private Color[] Color_Codes = new Color[5]{ new Color(0,104,204,200), Color.red, Color.green, Color.magenta, Color.white };
     private Color selected_color;
 
-	// Use this for initialization
-	void Start () {
+    private int gem_power = 0;
+    private bool gem_isPowered = false;
+    private bool playerIn = false;
+    private float poweringRecharge;
 
+    private void Start()
+    {
         selected_color = Color_Codes[(int)GemColor];
-        selected_color.a = 255f;
+        GemSprite.color = selected_color;
+    }
 
-        gem_sprite = GetComponentInChildren<SpriteRenderer>();
-        gem_sprite.color = selected_color;
-
-        gem_light = GetComponentInChildren<Light>();
-		
+    // Use this for initialization
+    private void Awake ()
+    {
 	}
 	
 	// Update is called once per frame
@@ -35,14 +39,39 @@ public class GemScript : MonoBehaviour {
 		
 	}
 
-    void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("Something Entered");
+        if(other.tag == "Player")
+        {
+            if (!gem_isPowered)
+            {
+                poweringRecharge = Time.time;
+                GemLight.enabled = true;
+                playerIn = true;
+            }
+        }
     }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
+        if(Time.time > poweringRecharge)
+        {
+            poweringRecharge = Time.time + 2;
+            gem_power += 1;
+        }
+    }
 
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if(other.tag == "Player")
+        {
+            if (!gem_isPowered)
+            {
+                poweringRecharge = 0;
+                GemLight.enabled = false;
+                playerIn = false;
+            }
+        }
         
     }
 }

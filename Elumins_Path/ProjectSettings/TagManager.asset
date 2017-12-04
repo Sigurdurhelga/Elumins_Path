@@ -17,12 +17,12 @@ TagManager:
   - UI
   - 
   - 
+  - PlayerShadowLayer
+  - ShadowLayer
+  - PlayerLayer
   - Light
   - Physical
   - Impassable
-  - 
-  - 
-  - 
   - 
   - 
   - 
