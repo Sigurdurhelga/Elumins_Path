@@ -84,6 +84,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4165844010520394}
+  - component: {fileID: 82076100628288758}
+  - component: {fileID: 114618670941695794}
   m_Layer: 9
   m_Name: Gem
   m_TagString: Untagged
@@ -98,7 +100,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1869774367997826}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.326726, y: 2.8600388, z: 0}
+  m_LocalPosition: {x: 30.59, y: -11.38, z: 0}
   m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_Children:
   - {fileID: 4178331438307274}
@@ -188,6 +190,86 @@ PolygonCollider2D:
       - {x: -1.9334803, y: -0.030365484}
       - {x: 0.3589137, y: -3.5240774}
       - {x: 2.3978982, y: -0.0482277}
+--- !u!82 &82076100628288758
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1869774367997826}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: d4fa71eec5d047e4cb9d3e833b76f720, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!108 &108222068550757170
 Light:
   m_ObjectHideFlags: 1
@@ -236,13 +318,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1.0.5
-  lightMaterial: {fileID: 2100000, guid: 2adb7bc3c046b6a44bf75abd4f9c8553, type: 2}
+  lightMaterial: {fileID: 2100000, guid: a50030a02e5efe242a4fb5e8d0adc5b6, type: 2}
   allMeshes: []
   lightRadius: 10.56
   lightSegments: 8
   layer:
     serializedVersion: 2
     m_Bits: 8192
+--- !u!114 &114618670941695794
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1869774367997826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a21744f3f2b29645a3606b6494af901, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  audio: {fileID: 82076100628288758}
 --- !u!114 &114856060067979356
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -254,7 +349,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d4ba42820942224c8b3238f800fd859, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GemColor: 0
+  GemColor: 2
   GemLight: {fileID: 108222068550757170}
   GemSprite: {fileID: 212884323444813472}
   timeToCharge: 2
