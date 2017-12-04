@@ -20,9 +20,9 @@ TagManager:
   - PlayerShadowLayer
   - PlayerLayer
   - ShadowLayer
-  - 
-  - 
-  - 
+  - Light
+  - Physical
+  - Impassable
   - 
   - 
   - 
