@@ -19,6 +19,7 @@ public class ZESpheres_LightParticles : MonoBehaviour
     private void Awake()
     {
         lightSource = gameObject.AddComponent<Light>();
+        Debug.Log(lightSource.range);
         lightSource.range = Radius;
         lightSource.intensity = LightCurve.Evaluate(0);
         var ps = gameObject.GetComponent<ParticleSystem>();
