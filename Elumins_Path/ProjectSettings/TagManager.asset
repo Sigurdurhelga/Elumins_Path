@@ -4,10 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - LightReflect
-  - LightThrough
+  - Undefined
   - LightBlock
   - LightTrigger
+  - LightReflect
   layers:
   - Default
   - TransparentFX
@@ -19,7 +19,7 @@ TagManager:
   - 
   - Light
   - Physical
-  - Light&Physical
+  - Impassable
   - 
   - 
   - 
