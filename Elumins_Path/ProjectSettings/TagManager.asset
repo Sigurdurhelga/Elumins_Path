@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - LightReflect
+  - LightThrough
   layers:
   - Default
   - TransparentFX
@@ -13,9 +15,9 @@ TagManager:
   - UI
   - 
   - 
-  - ShadowLayer
-  - PlayerLayer
   - PlayerShadowLayer
+  - PlayerLayer
+  - ShadowLayer
   - 
   - 
   - 
