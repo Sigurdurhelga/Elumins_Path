@@ -128,70 +128,8 @@ Transform:
   - {fileID: 387921164}
   - {fileID: 1571393389}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &162013938
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 491144, guid: 61ffac7a1e5108d47b52e0427470b27a, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -6.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 491144, guid: 61ffac7a1e5108d47b52e0427470b27a, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 4.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 491144, guid: 61ffac7a1e5108d47b52e0427470b27a, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 491144, guid: 61ffac7a1e5108d47b52e0427470b27a, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 491144, guid: 61ffac7a1e5108d47b52e0427470b27a, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 491144, guid: 61ffac7a1e5108d47b52e0427470b27a, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 491144, guid: 61ffac7a1e5108d47b52e0427470b27a, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 491144, guid: 61ffac7a1e5108d47b52e0427470b27a, type: 2}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 482378, guid: 61ffac7a1e5108d47b52e0427470b27a, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 6.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 482378, guid: 61ffac7a1e5108d47b52e0427470b27a, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -4.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 482378, guid: 61ffac7a1e5108d47b52e0427470b27a, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 482378, guid: 61ffac7a1e5108d47b52e0427470b27a, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 482378, guid: 61ffac7a1e5108d47b52e0427470b27a, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 61ffac7a1e5108d47b52e0427470b27a, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &387921163
 GameObject:
   m_ObjectHideFlags: 0
@@ -239,7 +177,7 @@ TrailRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 8371c910b6db2463391a051e571e2558, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -259,22 +197,40 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 0.3
+  m_Time: 0.4
   m_Parameters:
     serializedVersion: 2
-    widthMultiplier: 0.5
+    widthMultiplier: 1
     widthCurve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 2
         time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.13379717
+        value: 0.36033607
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.13461858
         value: 1
         inSlope: 0
         outSlope: 0
         tangentMode: 0
       - serializedVersion: 2
+        time: 0.5957795
+        value: 0.68835855
+        inSlope: -0.24955909
+        outSlope: -0.24955909
+        tangentMode: 0
+      - serializedVersion: 2
         time: 1
-        value: 0
+        value: 0.46551514
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -283,16 +239,16 @@ TrailRenderer:
       m_RotationOrder: 0
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 0.35686275, b: 0.11764706, a: 0.78431374}
-      key1: {r: 0.14901961, g: 0.5058824, b: 1, a: 0.5019608}
+      key0: {r: 0.043137256, g: 0.28627452, b: 0.8352941, a: 0.78431374}
+      key1: {r: 0.1764706, g: 0.6745098, b: 0.99607843, a: 0.5019608}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
       key5: {r: 0, g: 0, b: 0, a: 0}
       key6: {r: 0, g: 0, b: 0, a: 0}
       key7: {r: 0, g: 0, b: 0, a: 0}
-      ctime0: 26600
-      ctime1: 51850
+      ctime0: 10601
+      ctime1: 44911
       ctime2: 0
       ctime3: 0
       ctime4: 0
@@ -312,7 +268,7 @@ TrailRenderer:
       m_NumAlphaKeys: 2
     numCornerVertices: 0
     numCapVertices: 0
-    alignment: 0
+    alignment: 1
     textureMode: 0
     generateLightingData: 0
   m_MinVertexDistance: 0.1
@@ -354,7 +310,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4808999480014080, guid: 11c765ccaf77c9b4c853aca7968ea76c, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 11c765ccaf77c9b4c853aca7968ea76c, type: 2}
@@ -375,7 +331,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1268321197
 Transform:
   m_ObjectHideFlags: 0
@@ -592,7 +548,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1309791739
+  randomSeed: -33209432
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -3847,7 +3803,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1571393389
 Transform:
   m_ObjectHideFlags: 0
@@ -4003,12 +3959,7 @@ MonoBehaviour:
   focusObject: {fileID: 2009690101}
   focusPosition: {x: 0, y: 0, z: 0}
   currentArea: 0
-  listAreaNodes:
-  - {fileID: 1813052951}
---- !u!1 &1813052951 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 166548, guid: 61ffac7a1e5108d47b52e0427470b27a, type: 2}
-  m_PrefabInternal: {fileID: 162013938}
+  listAreaNodes: []
 --- !u!1 &1997759612
 GameObject:
   m_ObjectHideFlags: 0
@@ -4146,7 +4097,7 @@ MeshRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2009690101}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
