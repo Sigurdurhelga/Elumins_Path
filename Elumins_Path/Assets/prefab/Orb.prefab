@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4922609651959736}
   - component: {fileID: 212086825889836040}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: _Gizmo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36,7 +36,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4995905474341476}
   - component: {fileID: 108453565974386174}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52,7 +52,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4546545853320266}
   - component: {fileID: 96130143978186904}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: Trail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69,7 +69,7 @@ GameObject:
   - component: {fileID: 4361160119024140}
   - component: {fileID: 198378580227453234}
   - component: {fileID: 199072794299366740}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: Floating Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87,7 +87,7 @@ GameObject:
   - component: {fileID: 20011304713963494}
   - component: {fileID: 124237578690440516}
   - component: {fileID: 81269848699124402}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -107,7 +107,7 @@ GameObject:
   - component: {fileID: 50629660634463632}
   - component: {fileID: 114970063518767100}
   - component: {fileID: 58390406671172994}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: Orb
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -123,7 +123,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4202906982460674}
   - component: {fileID: 114187632105792000}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: 2DPointLightWithGradient
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -141,7 +141,7 @@ GameObject:
   - component: {fileID: 198531668765253104}
   - component: {fileID: 199656410178606012}
   - component: {fileID: 114392879174119470}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: 7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -543,7 +543,7 @@ MonoBehaviour:
   lightSegments: 10
   layer:
     serializedVersion: 2
-    m_Bits: 1280
+    m_Bits: 8704
 --- !u!114 &114392879174119470
 MonoBehaviour:
   m_ObjectHideFlags: 1
