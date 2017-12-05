@@ -18,7 +18,6 @@ public class Audio_Proximity : MonoBehaviour {
 		while(true) {
 
 				float distanceToTarget = Vector3.Distance(transform.position, target.position); // Assuming that the target is the player or the audio listener
-				Debug.Log (distanceToTarget);
 				if(distanceToTarget < 1) { distanceToTarget = 1; }
 				
 				if (distanceToTarget > 10) {
