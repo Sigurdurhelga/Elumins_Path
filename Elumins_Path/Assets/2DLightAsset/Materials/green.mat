@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: LightMaterialGradient
+  m_Name: green
   m_Shader: {fileID: 4800000, guid: d6921e235d4fe1a4ebafa5cd517fb411, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
@@ -24,11 +24,11 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _InvFade: 1
-    - _Offset: 0.36
+    - _Offset: 0.8
     - _UVXOffset: 0
-    - _UVXScale: 0.1
+    - _UVXScale: 0.03
     - _UVYOffset: 0
-    - _UVYScale: 0.1
+    - _UVYScale: 0.03
     m_Colors:
-    - _Color: {r: 0.85308063, g: 0.875, b: 0.7527574, a: 0.272}
+    - _Color: {r: 0.034482718, g: 1, b: 0, a: 0.769}
     - _TintColor: {r: 0.8050233, g: 0.9852941, b: 0.39121974, a: 1}
