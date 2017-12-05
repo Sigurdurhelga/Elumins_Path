@@ -128,7 +128,7 @@ public class GemScript : MonoBehaviour {
     {
         success_sound.Play();
         dynamicLight.SetActive(true);
-        dynamicLightScript.lightRadius = 15;
+        //dynamicLightScript.lightRadius = 15;
         GemLight.color = powered_light;
         gem_area_sound.Stop();
         roomLightScript.GemActivated();
