@@ -16,11 +16,8 @@ public class GemScript : MonoBehaviour {
     public SpriteRenderer GemSprite;
     public float timeToCharge;
     public GameObject dynamicLight;
-<<<<<<< HEAD:Elumins_Path/Assets/GemScript.cs
     public AudioSource success_sound;
-=======
     public Light SunLight;
->>>>>>> master:Elumins_Path/Assets/scripts/GemScript.cs
 
     private Color[] Color_Codes = new Color[5]{ new Color(0,0.4f,0.8f,0.85f), Color.red, Color.green, Color.magenta, Color.white };
     private Color[] Light_Color_Codes = new Color[5]{ new Color(0,0.5f,1f,0.13f), new Color(1, 0,0,0.13f) , new Color(0,1,0,0.13f) , Color.magenta, Color.white };
@@ -28,13 +25,9 @@ public class GemScript : MonoBehaviour {
     private Color selected_light;
     private Color powered_light = new Color(1, 1, 1, 1);
     private DynamicLight dynamicLightScript;
-<<<<<<< HEAD:Elumins_Path/Assets/GemScript.cs
     private AudioSource gem_area_sound;
-
-=======
     private RoomLight roomLightScript;
     
->>>>>>> master:Elumins_Path/Assets/scripts/GemScript.cs
     private int gem_power = 0;
     private bool gem_isPowered = false;
     private bool playerIn = false;
@@ -48,11 +41,8 @@ public class GemScript : MonoBehaviour {
         GemLight.color = selected_light;
         dynamicLightScript = dynamicLight.GetComponent<DynamicLight>();
         dynamicLight.SetActive(false);
-<<<<<<< HEAD:Elumins_Path/Assets/GemScript.cs
         gem_area_sound = transform.parent.gameObject.GetComponent<AudioSource>();
-=======
         roomLightScript = SunLight.GetComponent<RoomLight>();
->>>>>>> master:Elumins_Path/Assets/scripts/GemScript.cs
     }
 
 	
@@ -99,11 +89,8 @@ public class GemScript : MonoBehaviour {
         dynamicLight.SetActive(true);
         dynamicLightScript.lightRadius = 15;
         GemLight.color = powered_light;
-<<<<<<< HEAD:Elumins_Path/Assets/GemScript.cs
         gem_area_sound.Stop();
-=======
         roomLightScript.GemActivated();
->>>>>>> master:Elumins_Path/Assets/scripts/GemScript.cs
     }
 
     private void OnTriggerEnter2D(Collider2D other)
