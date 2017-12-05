@@ -16,6 +16,7 @@ public class GemScript : MonoBehaviour {
     public SpriteRenderer GemSprite;
     public float timeToCharge;
     public GameObject dynamicLight;
+    public AudioSource success_sound;
     public Light SunLight;
 
     private Color[] Color_Codes = new Color[5]{ new Color(0,0.4f,0.8f,0.85f), Color.red, Color.green, Color.magenta, Color.white };
@@ -24,6 +25,7 @@ public class GemScript : MonoBehaviour {
     private Color selected_light;
     private Color powered_light = new Color(1, 1, 1, 1);
     private DynamicLight dynamicLightScript;
+    private AudioSource gem_area_sound;
     private RoomLight roomLightScript;
     
     private int gem_power = 0;
@@ -39,6 +41,7 @@ public class GemScript : MonoBehaviour {
         GemLight.color = selected_light;
         dynamicLightScript = dynamicLight.GetComponent<DynamicLight>();
         dynamicLight.SetActive(false);
+        gem_area_sound = transform.parent.gameObject.GetComponent<AudioSource>();
         roomLightScript = SunLight.GetComponent<RoomLight>();
     }
 
@@ -82,9 +85,11 @@ public class GemScript : MonoBehaviour {
     
     private void PowerUp()
     {
+        success_sound.Play();
         dynamicLight.SetActive(true);
         dynamicLightScript.lightRadius = 15;
         GemLight.color = powered_light;
+        gem_area_sound.Stop();
         roomLightScript.GemActivated();
     }
 

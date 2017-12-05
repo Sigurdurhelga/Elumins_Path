@@ -99,7 +99,7 @@ public class CameraManager : MonoBehaviour
 
             // Adjust the camera's position to that of the newly determined position
             //transform.position = Vector3.SmoothDamp(transform.position, newPosition, ref velocity, smoothTime);
-            transform.position = Vector3.MoveTowards(transform.position, newPosition, smoothTime);
+            transform.position = Vector3.Lerp(transform.position, newPosition, smoothTime * Time.deltaTime);
 
             CameraControls();
         }
