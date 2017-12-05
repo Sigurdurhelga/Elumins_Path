@@ -32,6 +32,7 @@ public class GemScript : MonoBehaviour {
     private bool gem_isPowered = false;
     private bool playerIn = false;
     private float poweringRecharge;
+    private bool hitByRay = false;
 
     private void Start()
     {
@@ -47,7 +48,7 @@ public class GemScript : MonoBehaviour {
 
 	
 	// Update is called once per frame
-	void Update ()
+	/*void Update ()
     {
         if(playerIn && !gem_isPowered)
         {
@@ -63,7 +64,6 @@ public class GemScript : MonoBehaviour {
                     PowerUp();
 
                 }
-
             }
         }
         if(!playerIn && !gem_isPowered && GemLight.range > 0)
@@ -71,18 +71,59 @@ public class GemScript : MonoBehaviour {
             if(Time.time > poweringRecharge)
             {
                 poweringRecharge = Time.time + 0.01f;
-                gem_power -= 1;
-                GemLight.range -= 0.05f;
-                GemLight.intensity -= 0.05f;
-
+                gem_power -= 2;
+                GemLight.range -= 0.06f;
+                GemLight.intensity -= 0.06f;
             }
         }
         if(gem_power == 0 && !playerIn)
         {
             GemLight.enabled = false;
         }
-	}
-    
+    }*/
+
+    void Update()
+    {
+        if (!gem_isPowered && Time.time > poweringRecharge)
+        {
+            poweringRecharge = Time.time + 0.01f;
+            if (playerIn)
+            {
+                gem_power += 1;
+                GemLight.range += 0.03f;
+                GemLight.intensity += 0.03f;
+                if (gem_power >= timeToCharge / 0.01f)
+                {
+                    gem_isPowered = true;
+                    PowerUp();
+
+                }   
+            }
+            if (!playerIn && !hitByRay &&  GemLight.range > 0)
+            {
+                gem_power -= 2;
+                GemLight.range -= 0.06f;
+                GemLight.intensity -= 0.06f;
+            }
+            if (hitByRay)
+            {
+                gem_power += 1;
+                GemLight.range += 0.03f;
+                GemLight.intensity += 0.03f;
+                if (gem_power >= timeToCharge / 0.01f)
+                {
+                    gem_isPowered = true;
+                    PowerUp();
+                }
+                hitByRay = false;
+            }
+        }
+        if (gem_power == 0 && !playerIn)
+        {
+            GemLight.enabled = false;
+        }
+    }
+
     private void PowerUp()
     {
         success_sound.Play();
@@ -115,6 +156,17 @@ public class GemScript : MonoBehaviour {
                 poweringRecharge = 0;
                 playerIn = false;
             }
+        }
+    }
+
+    public void OnHitRay()
+    {
+       //Debug.Log("Beam hitting gem");
+        if (!gem_isPowered)
+        {
+            poweringRecharge = Time.time;
+            GemLight.enabled = true;
+            hitByRay = true;
         }
     }
 }
