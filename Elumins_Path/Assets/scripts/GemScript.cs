@@ -99,7 +99,7 @@ public class GemScript : MonoBehaviour {
 
                 }   
             }
-            if (!playerIn && !hitByRay &&  GemLight.range > 0)
+            if (!playerIn && !hitByRay &&  gem_power > 0)
             {
                 gem_power -= 2;
                 GemLight.range -= 0.06f;
