@@ -99,7 +99,7 @@ public class GemScript : MonoBehaviour {
 
                 }   
             }
-            if (!playerIn && !hitByRay &&  GemLight.range > 0)
+            if (!playerIn && !hitByRay &&  gem_power > 0)
             {
                 gem_power -= 2;
                 GemLight.range -= 0.06f;
@@ -128,7 +128,7 @@ public class GemScript : MonoBehaviour {
     {
         success_sound.Play();
         dynamicLight.SetActive(true);
-        dynamicLightScript.lightRadius = 15;
+        //dynamicLightScript.lightRadius = 15;
         GemLight.color = powered_light;
         gem_area_sound.Stop();
         roomLightScript.GemActivated();
