@@ -415,9 +415,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91305d029dbf08d478d3ecd19c5cfc75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  smoothTime: 0.05
+  smoothTime: 0.8
   zoomspeed: 0.1
-  followSpeed: 50
+  followSpeed: 0
   DeadZoneRadius: 3
   focusObject: {fileID: 798369052}
   focusPosition: {x: 0, y: 0, z: 0}
@@ -539,6 +539,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 50
+  RedGem: {fileID: 0}
 --- !u!50 &798369055
 Rigidbody2D:
   serializedVersion: 4
