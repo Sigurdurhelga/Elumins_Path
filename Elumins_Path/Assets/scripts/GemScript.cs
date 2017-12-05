@@ -16,6 +16,7 @@ public class GemScript : MonoBehaviour {
     public SpriteRenderer GemSprite;
     public float timeToCharge;
     public GameObject dynamicLight;
+    public Light SunLight;
 
     private Color[] Color_Codes = new Color[5]{ new Color(0,0.4f,0.8f,0.85f), Color.red, Color.green, Color.magenta, Color.white };
     private Color[] Light_Color_Codes = new Color[5]{ new Color(0,0.5f,1f,0.13f), new Color(1, 0,0,0.13f) , new Color(0,1,0,0.13f) , Color.magenta, Color.white };
@@ -23,7 +24,8 @@ public class GemScript : MonoBehaviour {
     private Color selected_light;
     private Color powered_light = new Color(1, 1, 1, 1);
     private DynamicLight dynamicLightScript;
-
+    private RoomLight roomLightScript;
+    
     private int gem_power = 0;
     private bool gem_isPowered = false;
     private bool playerIn = false;
@@ -37,6 +39,7 @@ public class GemScript : MonoBehaviour {
         GemLight.color = selected_light;
         dynamicLightScript = dynamicLight.GetComponent<DynamicLight>();
         dynamicLight.SetActive(false);
+        roomLightScript = SunLight.GetComponent<RoomLight>();
     }
 
 	
@@ -82,6 +85,7 @@ public class GemScript : MonoBehaviour {
         dynamicLight.SetActive(true);
         dynamicLightScript.lightRadius = 15;
         GemLight.color = powered_light;
+        roomLightScript.GemActivated();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
