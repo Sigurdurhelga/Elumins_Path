@@ -21,7 +21,7 @@ public class CameraManager : MonoBehaviour
 
     [Header("Target Elements")]
     private Vector3 followtarget;
-    [SerializeField] private GameObject focusObject;
+    [SerializeField] public GameObject focusObject;
     [SerializeField] private Vector3 focusPosition;
 
     // Area boundary elements
@@ -41,6 +41,10 @@ public class CameraManager : MonoBehaviour
             Debug.LogWarning(gameObject.name.ToString() + " (CameraManager): No Area boundaries are assigned. The camera will move freely to the set targets");
     }
 
+    public void SetFocus(GameObject obj)
+    {
+        focusObject = obj;
+    }
     void FixedUpdate()
     {
         // Declare Vector3 for the new position
