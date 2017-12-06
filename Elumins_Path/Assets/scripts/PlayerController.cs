@@ -32,19 +32,15 @@ public class PlayerController : MonoBehaviour
     }
     void Update()
     {
-        /*
         if (Input.GetKeyDown("space"))
         {
-            Collider2D temp = GameObject.FindGameObjectWithTag("Reflective_Gem").GetComponent<Collider2D>();
-            OnTriggerStay2D(temp);
+            SpacePressed = true;
         }
-        */
     }
     void FixedUpdate()
     {
-        if (Input.GetKeyDown("space") && IsCrystal && SpacePressed == false)
+        if (IsCrystal && SpacePressed == true)
         {
-            SpacePressed = true;
             reflect_collider.gameObject.transform.parent = null;
             IsCrystal = false;
             reflect_collider.isTrigger = true;
@@ -87,31 +83,27 @@ public class PlayerController : MonoBehaviour
     {
         if (col.gameObject.tag == "Reflective_Gem")
         {
-            if (Input.GetKeyDown("space"))
+            if (col.transform.parent == null && SpacePressed == true)
             {
-                if (col.transform.parent == null && SpacePressed == false)
+                gameObject.GetComponentInChildren<ParticleSystem>().Stop();
+                col.gameObject.transform.parent = transform;
+                IsCrystal = true;
+                col.isTrigger = false;
+                Reflected_body = col.GetComponent<Rigidbody2D>();
+                Reflected_body.mass = gameObject.GetComponent<Rigidbody2D>().mass;
+                gameObject.GetComponent<Collider2D>().enabled = false;
+                gameObject.GetComponent<Collider2D>().isTrigger = false;
+                gameObject.GetComponent<Rigidbody2D>().isKinematic = true;
+
+                Transform[] children = transform.GetComponentsInChildren<Transform>();
+                foreach (Transform child in children)
                 {
-                    SpacePressed = true;
-                    gameObject.GetComponentInChildren<ParticleSystem>().Stop();
-                    col.gameObject.transform.parent = transform;
-                    IsCrystal = true;
-                    col.isTrigger = false;
-                    Reflected_body = col.GetComponent<Rigidbody2D>();
-                    Reflected_body.mass = gameObject.GetComponent<Rigidbody2D>().mass;
-                    gameObject.GetComponent<Collider2D>().enabled = false;
-                    gameObject.GetComponent<Collider2D>().isTrigger = false;
-                    gameObject.GetComponent<Rigidbody2D>().isKinematic = true;
-
-                    Transform[] children = transform.GetComponentsInChildren<Transform>();
-                    foreach (Transform child in children)
-                    {
-                        if (child.parent == transform) child.parent = col.gameObject.transform;
-                    }
-                    GameObject camera = GameObject.FindGameObjectWithTag("MainCamera");
-                    camera.GetComponent<CameraManager>().focusObject = col.gameObject;
-                    SpacePressed = false;
-
+                    if (child.parent == transform) child.parent = col.gameObject.transform;
                 }
+                GameObject camera = GameObject.FindGameObjectWithTag("MainCamera");
+                camera.GetComponent<CameraManager>().focusObject = col.gameObject;
+                SpacePressed = false;
+
             }
         }
     }
