@@ -28,7 +28,6 @@ public class PlayerController : MonoBehaviour
         PortalPosition.y = 2.0f;
         PortalPosition.z = 0f;
         IsCrystal = false;
-        reflect_collider = GameObject.FindGameObjectWithTag("Reflective_Gem").GetComponent<PolygonCollider2D>();
         EnterableCrystal = false;
         CurrentCollidedGem = Gem_Types.NONE;
     }
@@ -77,6 +76,7 @@ public class PlayerController : MonoBehaviour
         {
             case ("Reflective_Gem"):
                 CurrentCollidedGem = Gem_Types.ROTATE;
+                reflect_collider = GameObject.FindGameObjectWithTag("Reflective_Gem").GetComponent<PolygonCollider2D>();
                 break;
             default:
                 CurrentCollidedGem = Gem_Types.NONE;
