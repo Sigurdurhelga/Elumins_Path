@@ -66,7 +66,7 @@ public class GemScript : MonoBehaviour {
 
                 }   
             }
-            Debug.Log("Should Decrease: " + !playerIn + ", " + !hitByRay + ", " + gem_power.ToString());
+            //Debug.Log("Should Decrease: " + !playerIn + ", " + !hitByRay + ", " + gem_power.ToString());
             if (!playerIn && !hitByRay &&  gem_power > 0)
             {
                 gem_power -= 2;
@@ -96,7 +96,7 @@ public class GemScript : MonoBehaviour {
         {
             GemLight.enabled = false;
         }
-        Debug.Log("Gemlight is enabled: " + GemLight.enabled.ToString());
+        //Debug.Log("Gemlight is enabled: " + GemLight.enabled.ToString());
     }
 
 
