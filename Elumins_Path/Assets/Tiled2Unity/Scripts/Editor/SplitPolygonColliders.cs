@@ -45,7 +45,8 @@ public class SplitPolygonColliders : Tiled2Unity.ICustomTiledImporter
         {
             if (prefab.transform.GetChild(i).tag == "CastShadow")
                 prefab.transform.GetChild(i).GetComponentInChildren<PolygonCollider2D>().enabled = false;
-                //Debug.Log(prefab.transform.GetChild(i).name);
+            if (prefab.transform.GetChild(i).tag == "LightThrough")
+                prefab.transform.GetChild(i).GetComponentInChildren<PolygonCollider2D>().tag = "LightThrough";
         }
     }
 }
