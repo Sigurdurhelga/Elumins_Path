@@ -20,16 +20,24 @@ public class RoomLight : MonoBehaviour {
     void Start()
     {
         SunLight = GetComponent<Light>();
-        orb = Portal.GetComponent<ParticleSystem>();
-        if (orb != null)
+        if (Portal != null)
         {
-            var es = orb.emission;
-            es.enabled = false;
-        }   
-        circleCollider = Portal.GetComponent<CircleCollider2D>();
-        if (circleCollider != null)
+            orb = Portal.GetComponent<ParticleSystem>();
+            if (orb != null)
+            {
+                var es = orb.emission;
+                es.enabled = false;
+            }
+            circleCollider = Portal.GetComponent<CircleCollider2D>();
+            if (circleCollider != null)
+            {
+                circleCollider.enabled = false;
+            }
+        }
+        else
         {
-            circleCollider.enabled = false;
+            orb = null;
+            circleCollider = null;
         }
     }
 
@@ -41,9 +49,15 @@ public class RoomLight : MonoBehaviour {
         if(GemAmount == 0)
         {
             SunLight.enabled = true;
-            circleCollider.enabled = true;
-            var es = orb.emission;
-            es.enabled = true;
+            if (circleCollider != null)
+            {
+                circleCollider.enabled = true;
+            }
+            if (orb != null)
+            {
+                var es = orb.emission;
+                es.enabled = true;
+            }
         }
 
     }
