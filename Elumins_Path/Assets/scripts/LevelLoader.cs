@@ -9,17 +9,18 @@ public class LevelLoader : MonoBehaviour {
     private bool player_in_zone;
 
     public string level_to_load;
+    public GameObject space_bar;
 
 	// Use this for initialization
 	void Start () {
         player_in_zone = false;
-	}
+        space_bar.SetActive(false);
+    }
 	
 	// Update is called once per frame
 	void Update () {
 		if(Input.GetKeyDown(KeyCode.Space) && player_in_zone)
         {
-            Debug.Log("Pressed!");
             SceneManager.LoadScene(level_to_load);
         }
 	}
@@ -29,9 +30,8 @@ public class LevelLoader : MonoBehaviour {
         if(other.name == "Orb")
         {
             player_in_zone = true;
-            Debug.Log("Pressed!");
+            space_bar.SetActive(true);
         }
-        Debug.Log("Pressed!");
     }
 
     private void OnTriggerExit2D(Collider2D other)
@@ -39,6 +39,7 @@ public class LevelLoader : MonoBehaviour {
         if (other.name == "Orb")
         {
             player_in_zone = false;
+            space_bar.SetActive(false);
         }
     }
 }
