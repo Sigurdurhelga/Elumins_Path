@@ -46,46 +46,11 @@ public class GemScript : MonoBehaviour {
         roomLightScript = SunLight.GetComponent<RoomLight>();
     }
 
-	
-	// Update is called once per frame
-	/*void Update ()
-    {
-        if(playerIn && !gem_isPowered)
-        {
-            if(Time.time > poweringRecharge)
-            {
-                poweringRecharge = Time.time + 0.01f;
-                gem_power += 1;
-                GemLight.range += 0.03f;
-                GemLight.intensity += 0.03f;
-                if (gem_power >= timeToCharge / 0.01f)
-                {
-                    gem_isPowered = true;
-                    PowerUp();
-
-                }
-            }
-        }
-        if(!playerIn && !gem_isPowered && GemLight.range > 0)
-        {
-            if(Time.time > poweringRecharge)
-            {
-                poweringRecharge = Time.time + 0.01f;
-                gem_power -= 2;
-                GemLight.range -= 0.06f;
-                GemLight.intensity -= 0.06f;
-            }
-        }
-        if(gem_power == 0 && !playerIn)
-        {
-            GemLight.enabled = false;
-        }
-    }*/
-
     void Update()
     {
         if (!gem_isPowered && Time.time > poweringRecharge)
         {
+            
             poweringRecharge = Time.time + 0.01f;
             if (playerIn)
             {
@@ -99,11 +64,18 @@ public class GemScript : MonoBehaviour {
 
                 }   
             }
+            Debug.Log("Should Decrease: " + !playerIn + ", " + !hitByRay + ", " + gem_power.ToString());
             if (!playerIn && !hitByRay &&  gem_power > 0)
             {
                 gem_power -= 2;
                 GemLight.range -= 0.06f;
                 GemLight.intensity -= 0.06f;
+                if(gem_power < 0)
+                {
+                    GemLight.range -= 0.03f * gem_power;
+                    GemLight.intensity -= 0.03f * gem_power;
+                    gem_power = 0;
+                }
             }
             if (hitByRay)
             {
@@ -122,6 +94,7 @@ public class GemScript : MonoBehaviour {
         {
             GemLight.enabled = false;
         }
+        Debug.Log("Gemlight is enabled: " + GemLight.enabled.ToString());
     }
 
 
