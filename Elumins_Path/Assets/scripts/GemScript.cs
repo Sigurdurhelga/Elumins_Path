@@ -18,6 +18,7 @@ public class GemScript : MonoBehaviour {
     public GameObject dynamicLight;
     public AudioSource success_sound;
     public Light SunLight;
+    public GameObject portal;
 
     private Color[] Color_Codes = new Color[5]{ new Color(0,0.4f,0.8f,0.85f), Color.red, Color.green, Color.magenta, Color.white };
     private Color[] Light_Color_Codes = new Color[5]{ new Color(0,0.5f,1f,0.13f), new Color(1, 0,0,0.13f) , new Color(0,1,0,0.13f) , Color.magenta, Color.white };
@@ -44,6 +45,7 @@ public class GemScript : MonoBehaviour {
         dynamicLight.SetActive(false);
         gem_area_sound = transform.parent.gameObject.GetComponent<AudioSource>();
         roomLightScript = SunLight.GetComponent<RoomLight>();
+        portal.SetActive(false);
     }
 
     void Update()
@@ -116,6 +118,7 @@ public class GemScript : MonoBehaviour {
         StartCoroutine(Fade(GemLight, (GemLight.intensity * 0.75f)));
         gem_area_sound.Stop();
         roomLightScript.GemActivated();
+        portal.SetActive(true);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
