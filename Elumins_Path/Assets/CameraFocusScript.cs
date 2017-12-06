@@ -14,20 +14,22 @@ public class CameraFocusScript : MonoBehaviour {
 	void Start () {
         camera_transform = Camera.main.transform;
         camera_script = camera_transform.GetComponent<CameraManager>();
+
 	}
 
     IEnumerator smoothMoveCamera()
     {
         Vector3 source = camera_transform.position;
-        Vector3 target = Vector3.zero;
-        while (playerIn)
+        float pos = 0;
+        while (pos < 1)
         {
-            camera_transform.position = Vector3.Lerp(source, target, 0.1f);
-            yield return new WaitForSeconds(0.1f);
+            pos += 0.01f;
+            camera_transform.position = Vector3.Lerp(source, transform.position, pos);
+            yield return new WaitForSeconds(0.01f);
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log("hey");
         if(collision.transform.tag == "Player")
@@ -39,7 +41,7 @@ public class CameraFocusScript : MonoBehaviour {
         }
     }
 
-    private void OnCollisionExit2D(Collision2D collision)
+    private void OnTriggerExit2D(Collider2D collision)
     {
         if(collision.transform.tag == "Player")
         {
