@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 114377553639467246}
   - component: {fileID: 58553763102531762}
   m_Layer: 12
-  m_Name: 4
+  m_Name: PortalPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
