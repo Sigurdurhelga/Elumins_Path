@@ -23,7 +23,7 @@ public class GemScript : MonoBehaviour {
     private Color[] Light_Color_Codes = new Color[5]{ new Color(0,0.5f,1f,0.13f), new Color(1, 0,0,0.13f) , new Color(0,1,0,0.13f) , Color.magenta, Color.white };
     private Color selected_color;
     private Color selected_light;
-    private Color powered_light = new Color(1, 1, 1, 1);
+    //private Color powered_light = new Color(1, 1, 1, 1);
     private DynamicLight dynamicLightScript;
     private AudioSource gem_area_sound;
     private RoomLight roomLightScript;
@@ -124,12 +124,23 @@ public class GemScript : MonoBehaviour {
         }
     }
 
+
+    IEnumerator Fade(Light light, float endIntensity)
+    {
+        while (light.intensity > endIntensity)
+        {
+            light.intensity -= 0.1f;
+            yield return new WaitForSeconds(0.01f);
+        }
+        dynamicLight.SetActive(true);
+    }
+
     private void PowerUp()
     {
         success_sound.Play();
-        dynamicLight.SetActive(true);
         //dynamicLightScript.lightRadius = 15;
-        GemLight.color = powered_light;
+        GemLight.color = selected_light;
+        StartCoroutine(Fade(GemLight, (GemLight.intensity * 0.75f)));
         gem_area_sound.Stop();
         roomLightScript.GemActivated();
     }
