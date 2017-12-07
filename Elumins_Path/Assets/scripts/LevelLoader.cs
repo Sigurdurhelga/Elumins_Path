@@ -26,7 +26,7 @@ public class LevelLoader : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) && player_in_zone)
         {
-            if (SceneManager.GetActiveScene().name == "Level_Transitioner")
+            if (SceneManager.GetActiveScene().name == "Level_Transitioner" || (SceneManager.GetActiveScene().name == "level 2"))
             {
                 controller.LoadNextLevel();
             }
