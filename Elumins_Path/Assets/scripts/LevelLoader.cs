@@ -64,7 +64,7 @@ public class LevelLoader : MonoBehaviour
         switch (gameObject.name)
         {
             case ("Portal1"):
-                return 1;
+                return 0;
             case ("Portal2"):
                 return 2;
             default:

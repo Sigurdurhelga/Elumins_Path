@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 114487418144816896}
   - component: {fileID: 82136531675706782}
   m_Layer: 9
-  m_Name: Collider
+  m_Name: collibeamer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -385,7 +385,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distance: 100
-  numberOfReflections: 20
+  numberOfReflections: 10
 --- !u!120 &120331344068649764
 LineRenderer:
   m_ObjectHideFlags: 1
@@ -508,7 +508,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: 5605c8649a70a264abaa30cbc94dd4bb, type: 3}
   m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0

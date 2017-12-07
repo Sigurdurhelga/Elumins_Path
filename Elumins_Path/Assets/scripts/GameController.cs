@@ -12,7 +12,7 @@ public class GameController : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        CurrentLevel = 1;
+        CurrentLevel = 0;
     }
     void Update()
     {
@@ -26,6 +26,7 @@ public class GameController : MonoBehaviour
                 Player.transform.position = newPos;
             }
             isWorldTree = false;
+            CurrentLevel = 1;
         }
     }
     /// <summary>Awake is called when the script instance is being loaded.</summary>
@@ -49,7 +50,7 @@ public class GameController : MonoBehaviour
     }
     public void LoadWorldTree()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
         isWorldTree = true;
     }
     public void LoadNextLevel(int portal = -1)
