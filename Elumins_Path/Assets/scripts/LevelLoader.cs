@@ -30,10 +30,14 @@ public class LevelLoader : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+
         if (other.name == "Orb")
         {
-            player_in_zone = true;
-            space_bar.SetActive(true);
+            if (!GameObject.FindGameObjectWithTag("Disabled_Portal"))
+            {
+                player_in_zone = true;
+                space_bar.SetActive(true);
+            }
         }
     }
 
