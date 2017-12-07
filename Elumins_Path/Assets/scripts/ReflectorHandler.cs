@@ -87,13 +87,13 @@ public class ReflectorHandler : MonoBehaviour {
 			if(Input.GetKey(KeyCode.Q) || Input.GetKey(KeyCode.E)){
 				GameObject Instructions = GameObject.FindGameObjectWithTag("Instructions");
 				Instructions.transform.parent = null;
-				if (Input.GetKey(KeyCode.Q))
-				{
-					transform.Rotate( new Vector3(0,0,-1) * 5);
-				}
 				if (Input.GetKey(KeyCode.E))
 				{
-					transform.Rotate( new Vector3(0,0,1) * 5);
+					transform.Rotate( new Vector3(0,0,-1) * 1);
+				}
+				if (Input.GetKey(KeyCode.Q))
+				{
+					transform.Rotate( new Vector3(0,0,1) * 1);
 				}
         		Instructions.transform.parent = transform;
 			}
