@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class ButtonManager : MonoBehaviour {
+public class MainMenuScript : MonoBehaviour {
 
     public void ContinueButton(string NewGameLevel)
     {
@@ -12,17 +12,7 @@ public class ButtonManager : MonoBehaviour {
 
     public void NewGameButton(string NewGameLevel)
     {
-
-    }
-
-    public void CreditButton(string NewGameLevel)
-    {
-
-    }
-
-    public void SettingButton(string NewGameLevel)
-    {
-
+        SceneManager.LoadScene(NewGameLevel);
     }
 
     public void ExitButton()
