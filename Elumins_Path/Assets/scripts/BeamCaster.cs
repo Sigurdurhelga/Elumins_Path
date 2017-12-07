@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class BeamCaster : MonoBehaviour {
 
@@ -41,8 +42,8 @@ public class BeamCaster : MonoBehaviour {
     private Vector3[] GetBeamPositions(Vector2 origin, Vector2 direction)
     {
         // Since C# copies by reference create copy of input parameters
-        Vector2 rayDirection = new Vector2(direction.x, direction.y);
-        Vector2 raySource = new Vector2(origin.x, origin.y);
+        Vector3 rayDirection = new Vector3(direction.x, direction.y, 0);
+        Vector3 raySource = new Vector3(origin.x, origin.y, 0 );
 
         // Create a list to hold all points in of the beam, initialize with origin point already
         List<Vector3> pointList = new List<Vector3>() { new Vector3(raySource.x, raySource.y) };
@@ -50,8 +51,10 @@ public class BeamCaster : MonoBehaviour {
         // Get array of RaycastHit
         RaycastHit2D[] hit = Physics2D.RaycastAll(raySource, rayDirection, distance, layer);
 
+        bool found = false;
         for (int i = 0; i < numberOfReflections; i++)
         {
+            found = false;
             if (hit.Length <= 0)
             {
                 if (DEBUG) Debug.Log("No collision");
@@ -59,23 +62,23 @@ public class BeamCaster : MonoBehaviour {
                 pointList.Add(new Vector3(raySource.x + rayDirection.x * distance, raySource.y + rayDirection.y * distance));
                 break;
             }
-
             for (int j = 0; j < hit.Length; j++)
             {
                 // If raycast hit no collider then draw a beam of set length and break
-                if (hit[j].collider == null)// && hit[j].fraction != 0) // Is no longer useful
+                if (hit[j].collider == null && hit[j].fraction != 0) // Is no longer useful
                 {
                     if (DEBUG) Debug.Log("No collision");
                     DrawNonCollidingRay(raySource, rayDirection);
                     pointList.Add(new Vector3(raySource.x + rayDirection.x * distance, raySource.y + rayDirection.y * distance));
 
                     // To break outer loop, set i = numberOfReflections
-                    i = numberOfReflections;
+                    found = true;
                     // To break inner loop call break
                     break;
                 }
                 else if (hit[j].fraction == 0) // Skip this hit as ray started inside collider
                 {
+                    ActivateRayCastHit(hit[j].collider);
                     if (DEBUG) Debug.Log("Inside collider, index: " + j.ToString());
                     if (j + 1 == hit.Length)
                     {
@@ -111,19 +114,20 @@ public class BeamCaster : MonoBehaviour {
                     rayDirection = Vector2.Reflect(rayDirection, hit[j].normal);
 
                     hit = Physics2D.RaycastAll(raySource, rayDirection, distance, layer);
+                    break;
                 }
                 else if (hit[j].collider.CompareTag("LightBlock"))
                 {
                     ActivateRayCastHit(hit[j].collider);
 
                     if (DEBUG) Debug.Log("Beam blocked");
-                    Debug.DrawLine(raySource, hit[j].point, Color.red);
+                    Debug.DrawLine(raySource, hit[j].point, Color.blue);
 
                     raySource = hit[j].point;
                     pointList.Add(new Vector3(raySource.x, raySource.y));
 
                     // To break outer loop, set i = numberOfReflections
-                    i = numberOfReflections;
+                    found = true;
                     // To break inner loop call break
                     break;
                 }
@@ -132,17 +136,20 @@ public class BeamCaster : MonoBehaviour {
                     ActivateRayCastHit(hit[j].collider);
 
                     if (DEBUG) Debug.Log("Catch all");
-                    Debug.DrawLine(raySource, hit[j].point, Color.red);
+                    Debug.DrawLine(raySource, hit[j].point, Color.magenta);
 
                     raySource = hit[j].point; // Need to move raySource to avoid colliding with source. 
                     pointList.Add(new Vector3(raySource.x, raySource.y));
 
                     // To break outer loop, set i = numberOfReflections
-                    i = numberOfReflections;
+                    found = true;
                     // To break inner loop call break
                     break;
                 }
             }
+            if(found)
+                break;
+                
         }
 
         Vector3[] points = new Vector3[pointList.Count];

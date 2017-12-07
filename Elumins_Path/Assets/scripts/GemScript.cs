@@ -21,7 +21,7 @@ public class GemScript : MonoBehaviour
     //public Light SunLight;
     //public GameObject portal;
 
-    private Color[] Color_Codes = new Color[5] { new Color(0, 0.4f, 0.8f, 0.85f), Color.red, Color.green, Color.magenta, Color.white };
+    private Color[] Color_Codes = new Color[5] { new Color(0, 0.4f, 0.8f, 1f), Color.red, Color.green, Color.magenta, Color.white };
     private Color[] Light_Color_Codes = new Color[5] { new Color(0, 0.5f, 1f, 0.13f), new Color(1, 0, 0, 0.13f), new Color(0, 1, 0, 0.13f), Color.magenta, Color.white };
     private Color selected_color;
     private Color selected_light;
@@ -113,9 +113,11 @@ public class GemScript : MonoBehaviour
 
     private void PowerUp()
     {
-        levelman.gemActivated();
+        Debug.Log(this.tag);
+        if(tag == "levelGem"){
+            levelman.gemActivated();
+        }
         if (success_sound) success_sound.Play();
-        //dynamicLightScript.lightRadius = 15;
         GemLight.color = selected_light;
         StartCoroutine(Fade(GemLight, (GemLight.intensity * 0.75f)));
         ActAccordingToColor();
