@@ -9,13 +9,15 @@ public class LevelLoader : MonoBehaviour
 
     private bool player_in_zone;
 
-    public string level_to_load;
-    public GameObject space_bar;
+    private GameObject space_bar;
+    GameController controller;
 
     // Use this for initialization
     void Start()
     {
+        controller = GameController.instance;
         player_in_zone = false;
+        space_bar = transform.GetChild(0).gameObject;
         space_bar.SetActive(false);
     }
 
@@ -24,16 +26,27 @@ public class LevelLoader : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) && player_in_zone)
         {
-            SceneManager.LoadScene(level_to_load);
+            if (SceneManager.GetActiveScene().name == "Level_Transitioner")
+            {
+                controller.LoadNextLevel();
+            }
+            else
+            {
+                controller.LoadWorldTree();
+            }
         }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+
         if (other.name == "Orb")
         {
-            player_in_zone = true;
-            space_bar.SetActive(true);
+            if (!GameObject.FindGameObjectWithTag("Disabled_Portal"))
+            {
+                player_in_zone = true;
+                space_bar.SetActive(true);
+            }
         }
     }
 

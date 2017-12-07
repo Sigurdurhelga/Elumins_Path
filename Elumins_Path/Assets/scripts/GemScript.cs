@@ -46,7 +46,6 @@ public class GemScript : MonoBehaviour
         dynamicLightScript = dynamicLight.GetComponent<DynamicLight>();
         dynamicLight.SetActive(false);
         gem_area_sound = transform.parent.gameObject.GetComponent<AudioSource>();
-        //if (portal != null) portal.SetActive(false);
     }
 
     void Update()
