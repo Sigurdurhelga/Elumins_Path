@@ -31,10 +31,8 @@ public class CameraFocusOnPosScript : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("hey");
-        if(collision.transform.tag == "Player")
+        if(collision.tag == "Player" || collision.tag == "LightReflect")
         {
-            Debug.Log("Player entered");
             playerIn = true;
             camera_script.enabled = false;
             StartCoroutine(smoothMoveCamera());
@@ -43,9 +41,8 @@ public class CameraFocusOnPosScript : MonoBehaviour {
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if(collision.transform.tag == "Player")
+        if(collision.tag == "Player" || collision.tag == "LightReflect")
         {
-            Debug.Log("Player exited");
             playerIn = false;
             camera_script.enabled = true;
         }

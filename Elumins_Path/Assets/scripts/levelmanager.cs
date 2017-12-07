@@ -23,11 +23,13 @@ public class levelmanager : MonoBehaviour
         {
             gems.Add(gem);
         }
+        Debug.Log("gems found" + gems.Count);
         requiredGems = gems.Count;
     }
 
     public void gemActivated()
     {
+        Debug.Log("ACTIVATED!");
         requiredGems -= 1;
         if (requiredGems <= 0)
         {

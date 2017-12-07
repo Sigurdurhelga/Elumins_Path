@@ -16,7 +16,7 @@ public class ReflectorHandler : MonoBehaviour {
     {
 		gem_rigidBody = GetComponent<Rigidbody2D>();
 		gem_collider = GetComponent<PolygonCollider2D>();
-        player_in_zone = false;
+        player_in_zone = false; 
         if (SpaceInstruction) SpaceInstruction.SetActive(false);
         if (QInstruction) QInstruction.SetActive(false);
         if (EInstruction) EInstruction.SetActive(false);
@@ -28,7 +28,6 @@ public class ReflectorHandler : MonoBehaviour {
 		if(player_in_zone){
 			if(Input.GetKeyDown(KeyCode.Space)){
 				player_entered = true;
-				//PlayerRef.SetActive(false);
 				PlayerRef.GetComponentInChildren<ParticleSystem>().Stop(false, ParticleSystemStopBehavior.StopEmittingAndClear);
 				PlayerRef.GetComponent<Rigidbody2D>().simulated = false;
 				PlayerRef.GetComponent<CircleCollider2D>().enabled = false;
@@ -85,16 +84,16 @@ public class ReflectorHandler : MonoBehaviour {
 	private void FixedUpdate()
 	{
 		if(player_entered){
-        	GameObject Instructions = GameObject.FindGameObjectWithTag("Instructions");
 			if(Input.GetKey(KeyCode.Q) || Input.GetKey(KeyCode.E)){
+				GameObject Instructions = GameObject.FindGameObjectWithTag("Instructions");
 				Instructions.transform.parent = null;
-				if (Input.GetKey(KeyCode.Q))
-				{
-					transform.Rotate( new Vector3(0,0,-1) * 5);
-				}
 				if (Input.GetKey(KeyCode.E))
 				{
-					transform.Rotate( new Vector3(0,0,1) * 5);
+					transform.Rotate( new Vector3(0,0,-1) * 1);
+				}
+				if (Input.GetKey(KeyCode.Q))
+				{
+					transform.Rotate( new Vector3(0,0,1) * 1);
 				}
         		Instructions.transform.parent = transform;
 			}
