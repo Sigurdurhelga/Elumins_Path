@@ -15037,11 +15037,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 198797647230577432, guid: 5a1d226ab91f75b4c855798b6909a7b0,
-        type: 2}
-      propertyPath: randomSeed
-      value: 1535042892
-      objectReference: {fileID: 0}
     - target: {fileID: 1757485771513522, guid: 5a1d226ab91f75b4c855798b6909a7b0, type: 2}
       propertyPath: m_Name
       value: Portal1
@@ -16425,7 +16420,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 1c12a7b58b061bf47811f7939fe090eb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

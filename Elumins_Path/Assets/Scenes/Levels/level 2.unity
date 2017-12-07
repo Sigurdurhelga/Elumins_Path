@@ -6824,7 +6824,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: 3083824dec3e465469e76cf67d2447f1, type: 3}
   m_Color: {r: 0, g: 1, b: 0, a: 1}
   m_FlipX: 0
@@ -7033,33 +7033,6 @@ Prefab:
     - target: {fileID: 4030269814842552, guid: 5199984eb75fa05488d8f64f5eb3d239, type: 2}
       propertyPath: m_RootOrder
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1427828467404768, guid: 5199984eb75fa05488d8f64f5eb3d239, type: 2}
-      propertyPath: m_TagString
-      value: RedGem
-      objectReference: {fileID: 0}
-    - target: {fileID: 1435661942324254, guid: 5199984eb75fa05488d8f64f5eb3d239, type: 2}
-      propertyPath: m_TagString
-      value: RedBeamSource
-      objectReference: {fileID: 0}
-    - target: {fileID: 120331344068649764, guid: 5199984eb75fa05488d8f64f5eb3d239,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114823529111979584, guid: 5199984eb75fa05488d8f64f5eb3d239,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114823529111979584, guid: 5199984eb75fa05488d8f64f5eb3d239,
-        type: 2}
-      propertyPath: numberOfReflections
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 1125689784636306, guid: 5199984eb75fa05488d8f64f5eb3d239, type: 2}
-      propertyPath: m_Name
-      value: collibeamer
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5199984eb75fa05488d8f64f5eb3d239, type: 2}
@@ -13522,7 +13495,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1631500952
+  randomSeed: 1931467325
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -20470,7 +20443,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 36eefe3878d8a9a458f9828b417394ff, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
