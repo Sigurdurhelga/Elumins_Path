@@ -8546,7 +8546,7 @@ AudioSource:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 456065086}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: e9798aa050f277b498d7380dd24caa65, type: 3}
@@ -8637,7 +8637,7 @@ MonoBehaviour:
   GemSprite: {fileID: 1955411450}
   timeToCharge: 2
   dynamicLight: {fileID: 1291346373}
-  success_sound: {fileID: 456065088}
+  success_sound: {fileID: 928088309}
 --- !u!60 &456065090
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -14221,6 +14221,60 @@ Transform:
   m_PrefabParentObject: {fileID: 4388285052800610, guid: 1113f5342c559844a90eb9465191e561,
     type: 2}
   m_PrefabInternal: {fileID: 2059920611}
+--- !u!1001 &760336274
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4059781504850750, guid: af55d023054539a47896b69d4a8bfd97, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 167.97
+      objectReference: {fileID: 0}
+    - target: {fileID: 4059781504850750, guid: af55d023054539a47896b69d4a8bfd97, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 349.76
+      objectReference: {fileID: 0}
+    - target: {fileID: 4059781504850750, guid: af55d023054539a47896b69d4a8bfd97, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 10.871947
+      objectReference: {fileID: 0}
+    - target: {fileID: 4059781504850750, guid: af55d023054539a47896b69d4a8bfd97, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4059781504850750, guid: af55d023054539a47896b69d4a8bfd97, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4059781504850750, guid: af55d023054539a47896b69d4a8bfd97, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4059781504850750, guid: af55d023054539a47896b69d4a8bfd97, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4059781504850750, guid: af55d023054539a47896b69d4a8bfd97, type: 2}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1931327821715782, guid: af55d023054539a47896b69d4a8bfd97, type: 2}
+      propertyPath: m_Name
+      value: GemProximity
+      objectReference: {fileID: 0}
+    - target: {fileID: 1981329864870950, guid: af55d023054539a47896b69d4a8bfd97, type: 2}
+      propertyPath: m_Name
+      value: Ambient
+      objectReference: {fileID: 0}
+    - target: {fileID: 1288563263409136, guid: af55d023054539a47896b69d4a8bfd97, type: 2}
+      propertyPath: m_Name
+      value: GemLightOn
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: af55d023054539a47896b69d4a8bfd97, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &761089496
 GameObject:
   m_ObjectHideFlags: 0
@@ -17275,6 +17329,11 @@ Prefab:
       propertyPath: InitialModule.size3D
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 82390778208689740, guid: f83b3f0535cd761499856c008e63aeeb,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 33503616189044030, guid: f83b3f0535cd761499856c008e63aeeb, type: 2}
     - {fileID: 23883962518013024, guid: f83b3f0535cd761499856c008e63aeeb, type: 2}
@@ -17427,6 +17486,11 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!82 &928088309 stripped
+AudioSource:
+  m_PrefabParentObject: {fileID: 82268438650824622, guid: af55d023054539a47896b69d4a8bfd97,
+    type: 2}
+  m_PrefabInternal: {fileID: 760336274}
 --- !u!4 &930661034 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4388285052800610, guid: 1113f5342c559844a90eb9465191e561,
@@ -27367,7 +27431,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 524517212}
-  audio: {fileID: 1249438517}
+  audio: {fileID: 1581396046}
 --- !u!82 &1249438517
 AudioSource:
   m_ObjectHideFlags: 0
@@ -27375,7 +27439,7 @@ AudioSource:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1249438514}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: d4fa71eec5d047e4cb9d3e833b76f720, type: 3}
@@ -33292,6 +33356,11 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!82 &1581396046 stripped
+AudioSource:
+  m_PrefabParentObject: {fileID: 82096564121104376, guid: af55d023054539a47896b69d4a8bfd97,
+    type: 2}
+  m_PrefabInternal: {fileID: 760336274}
 --- !u!1001 &1581897760
 Prefab:
   m_ObjectHideFlags: 0
