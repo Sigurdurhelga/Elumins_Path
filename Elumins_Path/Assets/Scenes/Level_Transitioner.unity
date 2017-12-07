@@ -15042,6 +15042,10 @@ Prefab:
       propertyPath: randomSeed
       value: 1535042892
       objectReference: {fileID: 0}
+    - target: {fileID: 1757485771513522, guid: 5a1d226ab91f75b4c855798b6909a7b0, type: 2}
+      propertyPath: m_Name
+      value: Portal1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5a1d226ab91f75b4c855798b6909a7b0, type: 2}
   m_IsPrefabParent: 0
@@ -16473,7 +16477,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1757485771513522, guid: 5a1d226ab91f75b4c855798b6909a7b0, type: 2}
       propertyPath: m_Name
-      value: PortalPrefab (1)
+      value: Portal2
       objectReference: {fileID: 0}
     - target: {fileID: 4840350480102488, guid: 5a1d226ab91f75b4c855798b6909a7b0, type: 2}
       propertyPath: m_LocalScale.x

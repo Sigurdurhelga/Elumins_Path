@@ -52,8 +52,13 @@ public class GameController : MonoBehaviour
         SceneManager.LoadScene(0);
         isWorldTree = true;
     }
-    public void LoadNextLevel()
+    public void LoadNextLevel(int portal = -1)
     {
-        SceneManager.LoadScene(++CurrentLevel);
+        if (portal == -1) SceneManager.LoadScene(++CurrentLevel);
+        else
+        {
+            CurrentLevel = portal;
+            SceneManager.LoadScene(CurrentLevel);
+        }
     }
 }
