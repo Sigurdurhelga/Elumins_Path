@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using CameraSmooth2D;
 
-public class CameraFocusScript : MonoBehaviour {
+public class CameraFocusOnPosScript : MonoBehaviour {
 
     private Transform camera_transform;
     private CameraManager camera_script;
@@ -50,6 +50,4 @@ public class CameraFocusScript : MonoBehaviour {
             camera_script.enabled = true;
         }
     }
-
-
 }
