@@ -18,8 +18,8 @@ public class GemScript : MonoBehaviour
     public float timeToCharge;
     public GameObject dynamicLight;
     public AudioSource success_sound;
-    public Light SunLight;
-    public GameObject portal;
+    //public Light SunLight;
+    //public GameObject portal;
 
     private Color[] Color_Codes = new Color[5] { new Color(0, 0.4f, 0.8f, 0.85f), Color.red, Color.green, Color.magenta, Color.white };
     private Color[] Light_Color_Codes = new Color[5] { new Color(0, 0.5f, 1f, 0.13f), new Color(1, 0, 0, 0.13f), new Color(0, 1, 0, 0.13f), Color.magenta, Color.white };
@@ -46,7 +46,7 @@ public class GemScript : MonoBehaviour
         dynamicLightScript = dynamicLight.GetComponent<DynamicLight>();
         dynamicLight.SetActive(false);
         gem_area_sound = transform.parent.gameObject.GetComponent<AudioSource>();
-        if (portal != null) portal.SetActive(false);
+        //if (portal != null) portal.SetActive(false);
     }
 
     void Update()
@@ -125,9 +125,6 @@ public class GemScript : MonoBehaviour
     {
         switch (GemColor)
         {
-            case (DropDownColors.blue):
-                portal.SetActive(true);
-                break;
             case (DropDownColors.red):
                 GameObject beam = GameObject.FindGameObjectWithTag("RedBeamSource");
                 beam.GetComponent<LineRenderer>().enabled = true;

@@ -64,7 +64,7 @@ public class PlayerController : MonoBehaviour
     {
         if (col.transform.parent == null && SpacePressed == true)
         {
-            gameObject.GetComponentInChildren<ParticleSystem>().Stop();
+            gameObject.GetComponentInChildren<ParticleSystem>().Stop(false, ParticleSystemStopBehavior.StopEmittingAndClear);
             col.gameObject.transform.parent = transform;
             IsCrystal = true;
             col.isTrigger = false;
