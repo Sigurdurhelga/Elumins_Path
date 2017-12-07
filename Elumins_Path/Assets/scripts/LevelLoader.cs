@@ -28,7 +28,8 @@ public class LevelLoader : MonoBehaviour
         {
             if (SceneManager.GetActiveScene().name == "Level_Transitioner" || (SceneManager.GetActiveScene().name == "level 2"))
             {
-                controller.LoadNextLevel();
+                int temp = PortalToLevel();
+                controller.LoadNextLevel(temp);
             }
             else
             {
@@ -58,4 +59,17 @@ public class LevelLoader : MonoBehaviour
             space_bar.SetActive(false);
         }
     }
+    private int PortalToLevel()
+    {
+        switch (gameObject.name)
+        {
+            case ("Portal1"):
+                return 1;
+            case ("Portal2"):
+                return 2;
+            default:
+                return -1;
+        }
+    }
+
 }
