@@ -134,6 +134,7 @@ public class GemScript : MonoBehaviour
                 GameObject beam = GameObject.FindGameObjectWithTag("RedBeamSource");
                 beam.GetComponent<LineRenderer>().enabled = true;
                 beam.GetComponent<BeamCaster>().enabled = true;
+
                 break;
         }
 

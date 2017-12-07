@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
 
     private bool SpacePressed = false;
 
+    private float TimeSinceInstructionsShown;
     private Gem_Types CurrentCollidedGem;
     // Use this for initialization
     void Start()
@@ -34,7 +35,7 @@ public class PlayerController : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetKeyDown("space"))
+        if (Input.GetKeyDown("space") && (EnterableCrystal || IsCrystal))
         {
             SpacePressed = true;
         }
@@ -42,14 +43,25 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         CrystalIteractionExit();
+        CheckInstructions();
         MovePlayer();
+    }
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        SetCurrentGemType(col);
+        EnterableCrystal = true;
+        TimeSinceInstructionsShown = 7.0f;
+    }
+    void OnTriggerExit2D(Collider2D col)
+    {
+        EnterableCrystal = false;
+        SpacePressGem temp = col.GetComponent<SpacePressGem>();
+        temp.CollisionExit(gameObject.GetComponent<Collider2D>());
     }
     void OnTriggerStay2D(Collider2D col)
     {
-        SetCurrentGemType(col.gameObject.tag);
         if (col.transform.parent == null && SpacePressed == true)
         {
-
             gameObject.GetComponentInChildren<ParticleSystem>().Stop();
             col.gameObject.transform.parent = transform;
             IsCrystal = true;
@@ -59,7 +71,6 @@ public class PlayerController : MonoBehaviour
             gameObject.GetComponent<Collider2D>().enabled = false;
             gameObject.GetComponent<Collider2D>().isTrigger = false;
             gameObject.GetComponent<Rigidbody2D>().isKinematic = true;
-
             Transform[] children = transform.GetComponentsInChildren<Transform>();
             foreach (Transform child in children)
             {
@@ -67,22 +78,35 @@ public class PlayerController : MonoBehaviour
             }
             GameObject camera = GameObject.FindGameObjectWithTag("MainCamera");
             camera.GetComponent<CameraManager>().focusObject = col.gameObject;
+            SpacePressGem temp = col.GetComponent<SpacePressGem>();
+            temp.CollisionStay(gameObject.GetComponent<Collider2D>());
             SpacePressed = false;
 
         }
     }
-    void SetCurrentGemType(string tag)
+    void SetCurrentGemType(Collider2D col)
     {
-        switch (tag)
+        switch (col.gameObject.tag)
         {
             case ("Reflective_Gem"):
-                CurrentCollidedGem = Gem_Types.ROTATE;
+                CurrentCollidedGem = Gem_Types.BOTH;
                 reflect_collider = GameObject.FindGameObjectWithTag("Reflective_Gem").GetComponent<PolygonCollider2D>();
+                SpacePressGem temp = col.GetComponent<SpacePressGem>();
+                temp.CollisionEnter(gameObject.GetComponent<Collider2D>());
                 break;
             default:
                 CurrentCollidedGem = Gem_Types.NONE;
                 break;
 
+        }
+    }
+    void CheckInstructions()
+    {
+        if (TimeSinceInstructionsShown > 0) TimeSinceInstructionsShown -= Time.deltaTime;
+        if ((TimeSinceInstructionsShown < 0))
+        {
+            SpacePressGem temp = reflect_collider.GetComponent<SpacePressGem>();
+            temp.CollisionExit(gameObject.GetComponent<Collider2D>());
         }
     }
     void CrystalIteractionExit()
@@ -95,8 +119,10 @@ public class PlayerController : MonoBehaviour
             Reflected_body.mass = 10000;
             gameObject.transform.position = reflect_collider.gameObject.transform.position;
             Transform[] children = reflect_collider.transform.GetComponentsInChildren<Transform>();
+            GameObject Instructions = GameObject.FindGameObjectWithTag("Instructions");
             foreach (Transform child in children)
             {
+                if (child.transform == Instructions.transform) continue;
                 if (child.parent == reflect_collider.transform) child.parent = transform;
             }
             Collider2D temp_col = gameObject.GetComponent<Collider2D>();
@@ -109,6 +135,7 @@ public class PlayerController : MonoBehaviour
             SpacePressed = false;
         }
     }
+
     Vector2 GetMovement()
     {
         float moveHorizontal = Input.GetAxis("Horizontal");
@@ -121,6 +148,8 @@ public class PlayerController : MonoBehaviour
     {
         Vector2 movement = GetMovement();
         rb2d.AddForce(movement * speed);
+        AudioSource temp = gameObject.GetComponent<AudioSource>();
+        temp.transform.position = transform.position;
         if (IsCrystal)
         {
             switch (CurrentCollidedGem)
@@ -140,6 +169,8 @@ public class PlayerController : MonoBehaviour
     }
     void RotateCrystal()
     {
+        GameObject Instructions = GameObject.FindGameObjectWithTag("Instructions");
+        Instructions.transform.parent = null;
         if (Input.GetKey(KeyCode.Q))
         {
             reflect_collider.gameObject.transform.Rotate(new Vector3(0, 0, 90) * Time.deltaTime);
@@ -148,6 +179,7 @@ public class PlayerController : MonoBehaviour
         {
             reflect_collider.gameObject.transform.Rotate(new Vector3(0, 0, -90) * Time.deltaTime);
         }
+        Instructions.transform.parent = reflect_collider.transform;
     }
 }
 

@@ -10,6 +10,8 @@ TagManager:
   - CastShadow
   - Reflective_Gem
   - LightThrough
+  - RedBeamSource
+  - Instructions
   layers:
   - Default
   - TransparentFX
