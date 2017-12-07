@@ -11,7 +11,7 @@ public enum DropDownColors
 public class GemScript : MonoBehaviour
 {
 
-
+    //public levelmanager levelman;
     public DropDownColors GemColor;
     public Light GemLight;
     public SpriteRenderer GemSprite;
@@ -28,7 +28,7 @@ public class GemScript : MonoBehaviour
     //private Color powered_light = new Color(1, 1, 1, 1);
     private DynamicLight dynamicLightScript;
     private AudioSource gem_area_sound;
-    private RoomLight roomLightScript;
+    private levelmanager levelman;
 
     private int gem_power = 0;
     private bool gem_isPowered = false;
@@ -38,6 +38,7 @@ public class GemScript : MonoBehaviour
 
     private void Start()
     {
+        levelman = GameObject.FindGameObjectWithTag("levelManager").GetComponent<levelmanager>();
         selected_color = Color_Codes[(int)GemColor];
         selected_light = Light_Color_Codes[(int)GemColor];
         GemSprite.color = selected_color;
@@ -45,7 +46,6 @@ public class GemScript : MonoBehaviour
         dynamicLightScript = dynamicLight.GetComponent<DynamicLight>();
         dynamicLight.SetActive(false);
         gem_area_sound = transform.parent.gameObject.GetComponent<AudioSource>();
-        roomLightScript = SunLight.GetComponent<RoomLight>();
         if (portal != null) portal.SetActive(false);
     }
 
@@ -113,15 +113,13 @@ public class GemScript : MonoBehaviour
 
     private void PowerUp()
     {
+        levelman.gemActivated();
         if (success_sound) success_sound.Play();
         //dynamicLightScript.lightRadius = 15;
         GemLight.color = selected_light;
         StartCoroutine(Fade(GemLight, (GemLight.intensity * 0.75f)));
         ActAccordingToColor();
         if (gem_area_sound) gem_area_sound.Stop();
-        roomLightScript.GemActivated();
-
-
     }
     private void ActAccordingToColor()
     {
