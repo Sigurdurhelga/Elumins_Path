@@ -112,7 +112,6 @@ public class PlayerController : MonoBehaviour
                 SpacePressGem temp = reflect_collider.GetComponent<SpacePressGem>();
                 temp.CollisionExit(gameObject.GetComponent<Collider2D>());
             }
-
         }
     }
     void CrystalIteractionExit()
