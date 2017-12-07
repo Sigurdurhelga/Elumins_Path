@@ -12,6 +12,10 @@ TagManager:
   - LightThrough
   - RedBeamSource
   - Instructions
+  - RedGem
+  - levelGem
+  - levelPortal
+  - levelManager
   layers:
   - Default
   - TransparentFX
