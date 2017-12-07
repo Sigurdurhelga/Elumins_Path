@@ -107,7 +107,7 @@ GameObject:
   - component: {fileID: 114096458410850824}
   m_Layer: 9
   m_Name: Gem
-  m_TagString: Untagged
+  m_TagString: levelGem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -133,7 +133,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1869774367997826}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 16.05, y: 10.25, z: 0}
+  m_LocalPosition: {x: -10.42, y: -0.18, z: 0}
   m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_Children:
   - {fileID: 4178331438307274}
@@ -476,10 +476,11 @@ MonoBehaviour:
   GemColor: 0
   GemLight: {fileID: 108222068550757170}
   GemSprite: {fileID: 212884323444813472}
-  timeToCharge: 2
+  timeToCharge: 0.5
   dynamicLight: {fileID: 1830187399566888}
   success_sound: {fileID: 82823760623164114}
   SunLight: {fileID: 0}
+  portal: {fileID: 0}
 --- !u!114 &114943815531790602
 MonoBehaviour:
   m_ObjectHideFlags: 1
