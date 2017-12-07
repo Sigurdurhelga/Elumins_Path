@@ -15041,6 +15041,11 @@ Prefab:
       propertyPath: m_Name
       value: Portal1
       objectReference: {fileID: 0}
+    - target: {fileID: 199188797267959528, guid: 5a1d226ab91f75b4c855798b6909a7b0,
+        type: 2}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5a1d226ab91f75b4c855798b6909a7b0, type: 2}
   m_IsPrefabParent: 0
@@ -16485,6 +16490,11 @@ Prefab:
     - target: {fileID: 4840350480102488, guid: 5a1d226ab91f75b4c855798b6909a7b0, type: 2}
       propertyPath: m_LocalScale.z
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 199188797267959528, guid: 5a1d226ab91f75b4c855798b6909a7b0,
+        type: 2}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}

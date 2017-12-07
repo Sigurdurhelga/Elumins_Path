@@ -16152,7 +16152,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 25b51ebbca7e88d44a5c592e03809fd3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -21954,7 +21954,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_RenderMode: 0
   m_SortMode: 0
   m_MinParticleSize: 0
@@ -22034,7 +22034,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 38394677
+  randomSeed: -2063689918
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -25276,7 +25276,7 @@ ParticleSystem:
 --- !u!114 &1011166289
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114508748061893844, guid: c900eec705a9b034fa62dc50f4a4c1ed,
+  m_PrefabParentObject: {fileID: 114612940484091144, guid: c900eec705a9b034fa62dc50f4a4c1ed,
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1011166283}
@@ -30344,7 +30344,7 @@ SpriteRenderer:
 --- !u!1 &1315181564
 GameObject:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 1556320407256346, guid: c900eec705a9b034fa62dc50f4a4c1ed,
+  m_PrefabParentObject: {fileID: 1592410061510800, guid: c900eec705a9b034fa62dc50f4a4c1ed,
     type: 2}
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 5
@@ -30361,7 +30361,7 @@ GameObject:
 --- !u!4 &1315181565
 Transform:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 4670154462220624, guid: c900eec705a9b034fa62dc50f4a4c1ed,
+  m_PrefabParentObject: {fileID: 4501601718181256, guid: c900eec705a9b034fa62dc50f4a4c1ed,
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1315181564}
@@ -30375,7 +30375,7 @@ Transform:
 --- !u!212 &1315181566
 SpriteRenderer:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 212082617219880000, guid: c900eec705a9b034fa62dc50f4a4c1ed,
+  m_PrefabParentObject: {fileID: 212683583252179494, guid: c900eec705a9b034fa62dc50f4a4c1ed,
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1315181564}
