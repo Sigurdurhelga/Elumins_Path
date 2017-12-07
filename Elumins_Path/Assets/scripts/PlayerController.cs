@@ -58,7 +58,10 @@ public class PlayerController : MonoBehaviour
     {
         EnterableCrystal = false;
         SpacePressGem temp = col.GetComponent<SpacePressGem>();
-        temp.CollisionExit(gameObject.GetComponent<Collider2D>());
+        if (temp)
+        {
+            temp.CollisionExit(gameObject.GetComponent<Collider2D>());
+        }
     }
     void OnTriggerStay2D(Collider2D col)
     {
@@ -107,8 +110,11 @@ public class PlayerController : MonoBehaviour
         if (TimeSinceInstructionsShown > 0) TimeSinceInstructionsShown -= Time.deltaTime;
         if ((TimeSinceInstructionsShown < 0))
         {
-            SpacePressGem temp = reflect_collider.GetComponent<SpacePressGem>();
-            temp.CollisionExit(gameObject.GetComponent<Collider2D>());
+            if(reflect_collider)
+            {
+                SpacePressGem temp = reflect_collider.GetComponent<SpacePressGem>();
+                temp.CollisionExit(gameObject.GetComponent<Collider2D>());
+            }
         }
     }
     void CrystalIteractionExit()

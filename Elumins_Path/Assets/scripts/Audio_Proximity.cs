@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class Audio_Proximity : MonoBehaviour {
 
-	public Transform target;
+    private Transform target;
 
 	public AudioSource audio;
 
 	
 	void Start () {
-
-		StartCoroutine(AdjustVolume());
+        target = GameObject.FindGameObjectWithTag("Player").transform;
+        StartCoroutine(AdjustVolume());
     }
     
 	IEnumerator AdjustVolume () {
