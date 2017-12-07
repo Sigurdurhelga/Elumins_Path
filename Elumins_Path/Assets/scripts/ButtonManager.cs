@@ -5,24 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class ButtonManager : MonoBehaviour {
 
-    public void ContinueButton(string NewGameLevel)
+    public void ContinueButton(string level_to_load)
     {
-        SceneManager.LoadScene(NewGameLevel);
+        SceneManager.LoadScene(level_to_load);
     }
 
-    public void NewGameButton(string NewGameLevel)
+    public void NewGameButton(string level_to_load)
     {
-
-    }
-
-    public void CreditButton(string NewGameLevel)
-    {
-
-    }
-
-    public void SettingButton(string NewGameLevel)
-    {
-
+        // Clear saved values and start at level 1
+        SceneManager.LoadScene(level_to_load);
     }
 
     public void ExitButton()
