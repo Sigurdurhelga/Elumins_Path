@@ -8,7 +8,8 @@ public enum DropDownColors
     blue, red, green, purple, white
 }
 
-public class GemScript : MonoBehaviour {
+public class GemScript : MonoBehaviour
+{
 
 
     public DropDownColors GemColor;
@@ -18,16 +19,17 @@ public class GemScript : MonoBehaviour {
     public GameObject dynamicLight;
     public AudioSource success_sound;
     public Light SunLight;
+    public GameObject portal;
 
-    private Color[] Color_Codes = new Color[5]{ new Color(0,0.4f,0.8f,0.85f), Color.red, Color.green, Color.magenta, Color.white };
-    private Color[] Light_Color_Codes = new Color[5]{ new Color(0,0.5f,1f,0.13f), new Color(1, 0,0,0.13f) , new Color(0,1,0,0.13f) , Color.magenta, Color.white };
+    private Color[] Color_Codes = new Color[5] { new Color(0, 0.4f, 0.8f, 0.85f), Color.red, Color.green, Color.magenta, Color.white };
+    private Color[] Light_Color_Codes = new Color[5] { new Color(0, 0.5f, 1f, 0.13f), new Color(1, 0, 0, 0.13f), new Color(0, 1, 0, 0.13f), Color.magenta, Color.white };
     private Color selected_color;
     private Color selected_light;
     //private Color powered_light = new Color(1, 1, 1, 1);
     private DynamicLight dynamicLightScript;
     private AudioSource gem_area_sound;
     private RoomLight roomLightScript;
-    
+
     private int gem_power = 0;
     private bool gem_isPowered = false;
     private bool playerIn = false;
@@ -44,13 +46,14 @@ public class GemScript : MonoBehaviour {
         dynamicLight.SetActive(false);
         gem_area_sound = transform.parent.gameObject.GetComponent<AudioSource>();
         roomLightScript = SunLight.GetComponent<RoomLight>();
+        if (portal != null) portal.SetActive(false);
     }
 
     void Update()
     {
         if (!gem_isPowered && Time.time > poweringRecharge)
         {
-            
+
             poweringRecharge = Time.time + 0.01f;
             if (playerIn)
             {
@@ -62,15 +65,15 @@ public class GemScript : MonoBehaviour {
                     gem_isPowered = true;
                     PowerUp();
 
-                }   
+                }
             }
-            Debug.Log("Should Decrease: " + !playerIn + ", " + !hitByRay + ", " + gem_power.ToString());
-            if (!playerIn && !hitByRay &&  gem_power > 0)
+            //Debug.Log("Should Decrease: " + !playerIn + ", " + !hitByRay + ", " + gem_power.ToString());
+            if (!playerIn && !hitByRay && gem_power > 0)
             {
                 gem_power -= 2;
                 GemLight.range -= 0.06f;
                 GemLight.intensity -= 0.06f;
-                if(gem_power < 0)
+                if (gem_power < 0)
                 {
                     GemLight.range -= 0.03f * gem_power;
                     GemLight.intensity -= 0.03f * gem_power;
@@ -94,7 +97,7 @@ public class GemScript : MonoBehaviour {
         {
             GemLight.enabled = false;
         }
-        Debug.Log("Gemlight is enabled: " + GemLight.enabled.ToString());
+        //Debug.Log("Gemlight is enabled: " + GemLight.enabled.ToString());
     }
 
 
@@ -110,17 +113,34 @@ public class GemScript : MonoBehaviour {
 
     private void PowerUp()
     {
-        success_sound.Play();
+        if (success_sound) success_sound.Play();
         //dynamicLightScript.lightRadius = 15;
         GemLight.color = selected_light;
         StartCoroutine(Fade(GemLight, (GemLight.intensity * 0.75f)));
-        gem_area_sound.Stop();
+        ActAccordingToColor();
+        if (gem_area_sound) gem_area_sound.Stop();
         roomLightScript.GemActivated();
-    }
 
+
+    }
+    private void ActAccordingToColor()
+    {
+        switch (GemColor)
+        {
+            case (DropDownColors.blue):
+                portal.SetActive(true);
+                break;
+            case (DropDownColors.red):
+                GameObject beam = GameObject.FindGameObjectWithTag("RedBeamSource");
+                beam.GetComponent<LineRenderer>().enabled = true;
+                beam.GetComponent<BeamCaster>().enabled = true;
+                break;
+        }
+
+    }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.tag == "Player")
+        if (other.tag == "Player")
         {
             if (!gem_isPowered)
             {
@@ -133,7 +153,7 @@ public class GemScript : MonoBehaviour {
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if(other.tag == "Player")
+        if (other.tag == "Player")
         {
             if (!gem_isPowered)
             {
@@ -145,7 +165,6 @@ public class GemScript : MonoBehaviour {
 
     public void OnHitRay()
     {
-       //Debug.Log("Beam hitting gem");
         if (!gem_isPowered)
         {
             poweringRecharge = Time.time;
