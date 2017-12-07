@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class GameController : MonoBehaviour
 {
     public static GameController instance;
@@ -29,5 +29,14 @@ public class GameController : MonoBehaviour
 
         // Do not destroy this object, when we load a new scene.
         DontDestroyOnLoad(gameObject);
+    }
+    public void LoadWorldTree()
+    {
+        SceneManager.LoadScene(0);
+
+    }
+    public void LoadNextLevel()
+    {
+        SceneManager.LoadScene(++CurrentLevel);
     }
 }
