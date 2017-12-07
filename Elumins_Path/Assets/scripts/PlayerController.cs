@@ -20,6 +20,8 @@ public class PlayerController : MonoBehaviour
 
     private bool SpacePressed = false;
 
+    private bool IsFirstMove = true;
+
     private float TimeSinceInstructionsShown;
     private Gem_Types CurrentCollidedGem;
     // Use this for initialization
@@ -133,6 +135,7 @@ public class PlayerController : MonoBehaviour
             camera.GetComponent<CameraManager>().focusObject = gameObject;
             gameObject.GetComponentInChildren<ParticleSystem>().Play();
             SpacePressed = false;
+            IsFirstMove = true;
         }
     }
 
@@ -146,26 +149,39 @@ public class PlayerController : MonoBehaviour
     }
     void MovePlayer()
     {
-        Vector2 movement = GetMovement();
-        rb2d.AddForce(movement * speed);
-        AudioSource temp = gameObject.GetComponent<AudioSource>();
-        temp.transform.position = transform.position;
-        if (IsCrystal)
+        if (IsFirstMove && IsCrystal)
         {
-            switch (CurrentCollidedGem)
+            Input.ResetInputAxes();
+            GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+            GetComponent<Rigidbody2D>().rotation = 0f;
+            Reflected_body.velocity = Vector2.zero;
+            Reflected_body.rotation = 0f;
+            transform.position = reflect_collider.transform.position;
+            IsFirstMove = false;
+        }
+        else
+        {
+            Vector2 movement = GetMovement();
+            rb2d.AddForce(movement * speed);
+            if (IsCrystal)
             {
-                case (Gem_Types.MOVE):
-                    Reflected_body.AddForce(movement * speed);
-                    break;
-                case (Gem_Types.ROTATE):
-                    RotateCrystal();
-                    break;
-                case (Gem_Types.BOTH):
-                    Reflected_body.AddForce(movement * speed);
-                    RotateCrystal();
-                    break;
+                switch (CurrentCollidedGem)
+                {
+                    case (Gem_Types.MOVE):
+                        Reflected_body.AddForce(movement * speed);
+                        break;
+                    case (Gem_Types.ROTATE):
+                        RotateCrystal();
+                        break;
+                    case (Gem_Types.BOTH):
+                        Reflected_body.AddForce(movement * speed);
+                        RotateCrystal();
+                        break;
+                }
             }
         }
+
+
     }
     void RotateCrystal()
     {
