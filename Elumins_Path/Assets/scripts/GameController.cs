@@ -21,7 +21,9 @@ public class GameController : MonoBehaviour
             Player = GameObject.FindGameObjectWithTag("Player");
             if (Player)
             {
-                float temp = (Player.transform.position.y + 7f * CurrentLevel);
+                int multiplyer = CurrentLevel;
+                if (CurrentLevel == 0) multiplyer = 1;
+                float temp = (Player.transform.position.y + 7f * multiplyer);
                 Vector3 newPos = new Vector3(Player.transform.position.x, temp, 0);
                 Player.transform.position = newPos;
             }
