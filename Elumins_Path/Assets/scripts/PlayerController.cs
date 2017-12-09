@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour
     void MovePlayer()
     {
         Vector2 movement = GetMovement();
-        rb2d.AddForce(movement * speed);
+        rb2d.AddForce(movement.normalized * speed);
     }
 }
 
