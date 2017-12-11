@@ -111,6 +111,8 @@ public class BeamCaster : MonoBehaviour
 
                     raySource = hit[j].point;// + hit[j].normal * 0.01f; // Deprecated to fix non reflection 
                     pointList.Add(new Vector3(raySource.x, raySource.y));
+                    pointList.Add(new Vector3(raySource.x, raySource.y)); // Fixes weird beam on acute angles
+                    pointList.Add(new Vector3(raySource.x, raySource.y));
 
                     rayDirection = Vector2.Reflect(rayDirection, hit[j].normal);
 
