@@ -25,9 +25,9 @@ public class GameController : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
     }
 
-    void Update()
+    void LateUpdate()
     {
-        if (isWorldTree)
+        if (isWorldTree && SceneManager.GetActiveScene().name == "Level_Transitioner")
         {
             Player = GameObject.FindGameObjectWithTag("Player");
             camera = GameObject.FindGameObjectWithTag("MainCamera");
