@@ -1,37 +1,70 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Prime31.TransitionKit;
+
 public class GameController : MonoBehaviour
 {
     public static GameController instance;
 
     private GameObject Player;
+    private GameObject camera;
     private static int CurrentLevel;
-    private static bool isWorldTree = false;
+    private static bool isWorldTree;
+    private List<string> finished_levels;
+
     // Use this for initialization
     void Start()
     {
         CurrentLevel = 0;
+        isWorldTree = false;
+        finished_levels = new List<string>();
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
     }
-    void Update()
+
+    void LateUpdate()
     {
-        if (isWorldTree)
+        if (isWorldTree && SceneManager.GetActiveScene().name == "Level_Transitioner")
         {
             Player = GameObject.FindGameObjectWithTag("Player");
+            camera = GameObject.FindGameObjectWithTag("MainCamera");
             if (Player)
             {
-                int multiplyer = CurrentLevel;
-                if (CurrentLevel == 0) multiplyer = 1;
-                float temp = (Player.transform.position.y + 7f * multiplyer);
-                Vector3 newPos = new Vector3(Player.transform.position.x, temp, 0);
-                Player.transform.position = newPos;
+
+                int current_level = CurrentLevel;
+                int next_level = current_level + 1;
+
+                GameObject[] levels = GameObject.FindGameObjectsWithTag("levelPortal");
+                foreach (GameObject level in levels)
+                {
+                    if (Int32.Parse(level.name) <= current_level)
+                    {
+                        level.GetComponent<SpriteRenderer>().sprite = Resources.Load("Window_Open_Light", typeof(Sprite)) as Sprite;
+                        level.GetComponentInChildren<Light>().enabled = true;
+                    }
+                    else if (level.name == next_level.ToString())
+                    {
+                        level.GetComponent<SpriteRenderer>().sprite = Resources.Load("Window_Open_Dark", typeof(Sprite)) as Sprite;
+                    }
+                    else
+                    {
+                        level.GetComponent<LevelLoader>().enabled = false;
+                    }
+
+                    if (Int32.Parse(level.name) == CurrentLevel)
+                    {
+                        Player.transform.position = level.transform.position;
+                        if (CurrentLevel > 1)
+                        {
+                            camera.transform.position = new Vector3(level.transform.position.x, level.transform.position.y, -10);
+                        }
+                    }
+                }
             }
             isWorldTree = false;
-            CurrentLevel = 1;
         }
     }
     /// <summary>Awake is called when the script instance is being loaded.</summary>
@@ -53,20 +86,23 @@ public class GameController : MonoBehaviour
         // Do not destroy this object, when we load a new scene.
         DontDestroyOnLoad(gameObject);
     }
-    public void LoadWorldTree()
+
+    public void LoadWorldTree(string level_finished)
     {
+        isWorldTree = true;
+        if (!finished_levels.Contains(level_finished))
+        {
+            finished_levels.Add(level_finished);
+            CurrentLevel++;
+        }
         SceneTransition(1);
 
     }
-    public void LoadNextLevel(int portal = -1)
+    public void LoadNextLevel(string level)
     {
-        int currlvl = 1;
-        if (portal == -1) CurrentLevel++;
-        else CurrentLevel = portal;
-
-        currlvl = CurrentLevel;
-        SceneTransition(currlvl);
+        SceneTransition(Int32.Parse(level));
     }
+
     private void SceneTransition(int level)
     {
         var fader = new FadeTransition()
@@ -76,6 +112,5 @@ public class GameController : MonoBehaviour
             fadeToColor = Color.black
         };
         TransitionKit.instance.transitionWithDelegate(fader);
-
     }
 }
