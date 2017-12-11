@@ -26,18 +26,6 @@ public class LevelLoader : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) && player_in_zone)
         {
-
-            if (SceneManager.GetActiveScene().name == "Level_Transitioner")
-            {
-                SceneManager.LoadScene(next_level);
-            }
-            else
-            {
-                controller.LoadWorldTree();
-            }
-
-
-            /*
             if (SceneManager.GetActiveScene().name == "Level_Transitioner" || (SceneManager.GetActiveScene().name == "level 2"))
             {
                 int temp = PortalToLevel();
@@ -46,10 +34,9 @@ public class LevelLoader : MonoBehaviour
             else
             {
                 controller.LoadWorldTree();
-            }*/
+            }
         }
     }
-
     private void OnTriggerEnter2D(Collider2D other)
     {
 
@@ -77,7 +64,7 @@ public class LevelLoader : MonoBehaviour
         {
             case ("Portal1"):
                 return 0;
-            case ("Portal2"):
+            case ("Portal1 (1)"):
                 return 2;
             default:
                 return -1;
