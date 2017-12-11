@@ -6,12 +6,12 @@ using UnityEngine.SceneManagement;
 public class LevelLoader : MonoBehaviour
 {
 
-    public string next_level;
-
     private bool player_in_zone;
 
     private GameObject space_bar;
+    private string level;
     GameController controller;
+
     // Use this for initialization
     void Start()
     {
@@ -19,6 +19,11 @@ public class LevelLoader : MonoBehaviour
         player_in_zone = false;
         space_bar = transform.GetChild(0).gameObject;
         space_bar.SetActive(false);
+        level = this.name;
+        if(level == "1")
+        {
+            level = "0";
+        }
     }
 
     // Update is called once per frame
@@ -26,39 +31,28 @@ public class LevelLoader : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) && player_in_zone)
         {
-
             if (SceneManager.GetActiveScene().name == "Level_Transitioner")
             {
-                SceneManager.LoadScene(next_level);
+                controller.LoadNextLevel(level);
             }
             else
             {
-                controller.LoadWorldTree();
+                controller.LoadWorldTree(SceneManager.GetActiveScene().name);
             }
-
-
-            /*
-            if (SceneManager.GetActiveScene().name == "Level_Transitioner" || (SceneManager.GetActiveScene().name == "level 2"))
-            {
-                int temp = PortalToLevel();
-                controller.LoadNextLevel(temp);
-            }
-            else
-            {
-                controller.LoadWorldTree();
-            }*/
         }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-
         if (other.name == "Orb")
         {
             if (!GameObject.FindGameObjectWithTag("Disabled_Portal"))
             {
                 player_in_zone = true;
-                space_bar.SetActive(true);
+                if(this.enabled == true)
+                {
+                    space_bar.SetActive(true);
+                }
             }
         }
     }
@@ -71,17 +65,4 @@ public class LevelLoader : MonoBehaviour
             space_bar.SetActive(false);
         }
     }
-    private int PortalToLevel()
-    {
-        switch (gameObject.name)
-        {
-            case ("Portal1"):
-                return 0;
-            case ("Portal2"):
-                return 2;
-            default:
-                return -1;
-        }
-    }
-
 }

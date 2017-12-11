@@ -16,6 +16,9 @@ TagManager:
   - levelGem
   - levelPortal
   - levelManager
+  - Disabled_Portal
+  - LevelLight
+  - SpaceBar
   layers:
   - Default
   - TransparentFX
