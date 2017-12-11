@@ -9,7 +9,7 @@ public class RayCastHitReceiver : MonoBehaviour
     //public GameObject objectHit;
     public void OnHitRay(string tag)
     {
-        GemParent gem = new GemParent();
+        GemParent gem = null;
         switch (tag)
         {
             case ("levelGem"):
