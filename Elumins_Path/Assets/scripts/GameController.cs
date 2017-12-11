@@ -13,6 +13,8 @@ public class GameController : MonoBehaviour
     void Start()
     {
         CurrentLevel = 0;
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
     void Update()
     {
