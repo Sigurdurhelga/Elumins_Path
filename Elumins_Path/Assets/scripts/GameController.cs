@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Prime31.TransitionKit;
 public class GameController : MonoBehaviour
 {
     public static GameController instance;
@@ -19,6 +20,8 @@ public class GameController : MonoBehaviour
         CurrentLevel = 0;
         isWorldTree = false;
         finished_levels = new List<string>();
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     void Update()
@@ -88,10 +91,31 @@ public class GameController : MonoBehaviour
         SceneManager.LoadScene(1);
         isWorldTree = true;
         if(!finished_levels.Contains(level_finished))
+        SceneTransition(1);
+
+    }
+    public void LoadNextLevel(int portal = -1)
+    {
+        int currlvl = 1;
+        if (portal == -1) CurrentLevel++;
+        else CurrentLevel = portal;
+
+        currlvl = CurrentLevel;
+        SceneTransition(currlvl);
+    }
+    private void SceneTransition(int level)
+    {
+        var fader = new FadeTransition()
         {
             finished_levels.Add(level_finished);
             CurrentLevel++;
         }
+            nextScene = level,
+            fadedDelay = 0.4f,
+            fadeToColor = Color.black
+        };
+        TransitionKit.instance.transitionWithDelegate(fader);
+
     }
 
     public void LoadNextLevel(string level)
