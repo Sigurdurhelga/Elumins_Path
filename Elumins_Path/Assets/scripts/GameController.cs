@@ -36,16 +36,16 @@ public class GameController : MonoBehaviour
 
                 int current_level = CurrentLevel;
                 int next_level = current_level + 1;
-                
+
                 GameObject[] levels = GameObject.FindGameObjectsWithTag("levelPortal");
-                foreach(GameObject level in levels)
-                { 
-                    if(Int32.Parse(level.name) <= current_level)
+                foreach (GameObject level in levels)
+                {
+                    if (Int32.Parse(level.name) <= current_level)
                     {
                         level.GetComponent<SpriteRenderer>().sprite = Resources.Load("Window_Open_Light", typeof(Sprite)) as Sprite;
                         level.GetComponentInChildren<Light>().enabled = true;
                     }
-                    else if(level.name == next_level.ToString())
+                    else if (level.name == next_level.ToString())
                     {
                         level.GetComponent<SpriteRenderer>().sprite = Resources.Load("Window_Open_Dark", typeof(Sprite)) as Sprite;
                     }
@@ -54,10 +54,10 @@ public class GameController : MonoBehaviour
                         level.GetComponent<LevelLoader>().enabled = false;
                     }
 
-                    if(Int32.Parse(level.name) == CurrentLevel)
+                    if (Int32.Parse(level.name) == CurrentLevel)
                     {
                         Player.transform.position = level.transform.position;
-                        if(CurrentLevel > 1)
+                        if (CurrentLevel > 1)
                         {
                             camera.transform.position = new Vector3(level.transform.position.x, level.transform.position.y, -10);
                         }
@@ -90,7 +90,7 @@ public class GameController : MonoBehaviour
     public void LoadWorldTree(string level_finished)
     {
         isWorldTree = true;
-        if(!finished_levels.Contains(level_finished))
+        if (!finished_levels.Contains(level_finished))
         {
             finished_levels.Add(level_finished);
             CurrentLevel++;
