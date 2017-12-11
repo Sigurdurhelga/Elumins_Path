@@ -6,12 +6,12 @@ using UnityEngine.SceneManagement;
 public class LevelLoader : MonoBehaviour
 {
 
+    public string next_level;
 
     private bool player_in_zone;
 
     private GameObject space_bar;
     GameController controller;
-
     // Use this for initialization
     void Start()
     {
@@ -26,6 +26,18 @@ public class LevelLoader : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) && player_in_zone)
         {
+
+            if (SceneManager.GetActiveScene().name == "Level_Transitioner")
+            {
+                SceneManager.LoadScene(next_level);
+            }
+            else
+            {
+                controller.LoadWorldTree();
+            }
+
+
+            /*
             if (SceneManager.GetActiveScene().name == "Level_Transitioner" || (SceneManager.GetActiveScene().name == "level 2"))
             {
                 int temp = PortalToLevel();
@@ -34,7 +46,7 @@ public class LevelLoader : MonoBehaviour
             else
             {
                 controller.LoadWorldTree();
-            }
+            }*/
         }
     }
 

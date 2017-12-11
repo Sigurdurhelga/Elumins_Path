@@ -4389,30 +4389,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4984699120920626, guid: 4e995f8c87a57a34bb0b72c3574a8f28, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 88.592
-      objectReference: {fileID: 0}
-    - target: {fileID: 4775833862687728, guid: 4e995f8c87a57a34bb0b72c3574a8f28, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4775833862687728, guid: 4e995f8c87a57a34bb0b72c3574a8f28, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4775833862687728, guid: 4e995f8c87a57a34bb0b72c3574a8f28, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0.69602436
-      objectReference: {fileID: 0}
-    - target: {fileID: 4775833862687728, guid: 4e995f8c87a57a34bb0b72c3574a8f28, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 0.7180182
-      objectReference: {fileID: 0}
-    - target: {fileID: 4775833862687728, guid: 4e995f8c87a57a34bb0b72c3574a8f28, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: -88.218
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4e995f8c87a57a34bb0b72c3574a8f28, type: 2}
   m_IsPrefabParent: 0
@@ -21607,6 +21583,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a93bc69287a77f942861c380724bc196, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  next_level: 
 --- !u!4 &1011854985 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4388285052800610, guid: 1113f5342c559844a90eb9465191e561,
@@ -31579,7 +31556,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 7
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
