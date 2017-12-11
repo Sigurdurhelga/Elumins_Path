@@ -71,6 +71,7 @@ GameObject:
   - component: {fileID: 114856060067979356}
   - component: {fileID: 114943815531790602}
   - component: {fileID: 82823760623164114}
+  - component: {fileID: 114529629477834032}
   m_Layer: 9
   m_Name: Collider
   m_TagString: levelGem
@@ -104,7 +105,6 @@ GameObject:
   - component: {fileID: 4165844010520394}
   - component: {fileID: 82076100628288758}
   - component: {fileID: 114618670941695794}
-  - component: {fileID: 114096458410850824}
   m_Layer: 9
   m_Name: Gem
   m_TagString: Untagged
@@ -133,7 +133,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1869774367997826}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.238323, y: 10.237766, z: 0}
+  m_LocalPosition: {x: 33.18, y: 8.709999, z: 0}
   m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_Children:
   - {fileID: 4178331438307274}
@@ -419,17 +419,6 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!114 &114096458410850824
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1869774367997826}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dffcb704ac2b2064db6638e649dcec53, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114335721587057194
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -449,6 +438,19 @@ MonoBehaviour:
   layer:
     serializedVersion: 2
     m_Bits: 8192
+--- !u!114 &114529629477834032
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1633335216457756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1a44d7fbc6f46640b6995943100835e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GemColor: 0
+  timeToCharge: 0.5
 --- !u!114 &114618670941695794
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -467,7 +469,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1633335216457756}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4d4ba42820942224c8b3238f800fd859, type: 3}
   m_Name: 
@@ -566,7 +568,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 4
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 3083824dec3e465469e76cf67d2447f1, type: 3}
   m_Color: {r: 0, g: 1, b: 0, a: 1}
   m_FlipX: 0
