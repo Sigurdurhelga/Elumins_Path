@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 
-public class BeamCaster : MonoBehaviour {
+public class BeamCaster : MonoBehaviour
+{
 
     private LineRenderer beamRender;
     private LayerMask layer;
     private bool DEBUG = false;
-    
+
     //public int strength; // If beam loses strength passing through objects we decrease this number;
     public float distance;
     public int numberOfReflections;
@@ -43,7 +44,7 @@ public class BeamCaster : MonoBehaviour {
     {
         // Since C# copies by reference create copy of input parameters
         Vector3 rayDirection = new Vector3(direction.x, direction.y, 0);
-        Vector3 raySource = new Vector3(origin.x, origin.y, 0 );
+        Vector3 raySource = new Vector3(origin.x, origin.y, 0);
 
         // Create a list to hold all points in of the beam, initialize with origin point already
         List<Vector3> pointList = new List<Vector3>() { new Vector3(raySource.x, raySource.y) };
@@ -147,9 +148,9 @@ public class BeamCaster : MonoBehaviour {
                     break;
                 }
             }
-            if(found)
+            if (found)
                 break;
-                
+
         }
 
         Vector3[] points = new Vector3[pointList.Count];
@@ -192,12 +193,12 @@ public class BeamCaster : MonoBehaviour {
 
     private void ActivateRayCastHit(Collider2D collider)
     {
-        if(collider != null)
+        if (collider != null)
         {
             RayCastHitReceiver rayHit = collider.gameObject.GetComponent<RayCastHitReceiver>();
-            if(rayHit != null)
+            if (rayHit != null)
             {
-                rayHit.OnHitRay();
+                rayHit.OnHitRay(collider.tag);
             }
 
         }

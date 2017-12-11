@@ -1,25 +1,25 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Runtime.CompilerServices;
 
-public class RayCastHitReceiver : MonoBehaviour {
+public class RayCastHitReceiver : MonoBehaviour
+{
 
     //public GameObject objectHit;
-
-    void Start()
+    public void OnHitRay(string tag)
     {
-        
-    }
-
-
-    public void OnHitRay()
-    {
-        // do something hit by ray
-        GemScript gems = gameObject.GetComponent<GemScript>();
-        if (gems != null)
+        GemParent gem = new GemParent();
+        switch (tag)
         {
-            gems.OnHitRay();
+            case ("levelGem"):
+                gem = gameObject.GetComponent<LevelGem>();
+                break;
+            case ("RedGem"):
+                gem = gameObject.GetComponent<RedRayGem>();
+                break;
         }
+        gem.OnHitRay();
     }
 
 

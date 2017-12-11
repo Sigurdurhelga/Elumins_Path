@@ -16,17 +16,17 @@ public class PlayerController : MonoBehaviour
     {
         MovePlayer();
     }
-    Vector2 GetMovement()
+    Vector3 GetMovement()
     {
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
 
-        Vector2 movement = new Vector2(moveHorizontal, moveVertical);
+        Vector3 movement = new Vector3(moveHorizontal, moveVertical);
         return movement;
     }
     void MovePlayer()
     {
-        Vector2 movement = GetMovement();
+        Vector3 movement = GetMovement();
         rb2d.AddForce(movement.normalized * speed);
     }
 }
