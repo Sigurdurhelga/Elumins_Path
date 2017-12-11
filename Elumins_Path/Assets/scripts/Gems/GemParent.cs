@@ -1,32 +1,29 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DynamicLight2D;
 
-public enum DropDownColors
+
+
+public enum DropDownGemColors
 {
     blue, red, green, purple, white
 }
 
-public class GemScript : MonoBehaviour
+public class GemParent : MonoBehaviour
 {
 
     //public levelmanager levelman;
-    public DropDownColors GemColor;
-    public Light GemLight;
-    public SpriteRenderer GemSprite;
-    public float timeToCharge;
-    public GameObject dynamicLight;
-    public AudioSource success_sound;
-    //public Light SunLight;
-    //public GameObject portal;
-
+    public DropDownGemColors GemColor;
+    private Light GemLight;
+    private SpriteRenderer GemSprite;
+    public float timeToCharge = 0.5f;
+    private GameObject dynamicLight;
+    private AudioSource success_sound;
     private Color[] Color_Codes = new Color[5] { new Color(0, 0.4f, 0.8f, 1f), Color.red, Color.green, Color.magenta, Color.white };
     private Color[] Light_Color_Codes = new Color[5] { new Color(0, 0.5f, 1f, 0.13f), new Color(1, 0, 0, 0.13f), new Color(0, 1, 0, 0.13f), Color.magenta, Color.white };
     private Color selected_color;
     private Color selected_light;
-    //private Color powered_light = new Color(1, 1, 1, 1);
-    private DynamicLight dynamicLightScript;
     private AudioSource gem_area_sound;
     private levelmanager levelman;
 
@@ -38,16 +35,23 @@ public class GemScript : MonoBehaviour
 
     private void Start()
     {
+        InitializeGemValues();
+
         levelman = GameObject.FindGameObjectWithTag("levelManager").GetComponent<levelmanager>();
         selected_color = Color_Codes[(int)GemColor];
         selected_light = Light_Color_Codes[(int)GemColor];
         GemSprite.color = selected_color;
         GemLight.color = selected_light;
-        dynamicLightScript = dynamicLight.GetComponent<DynamicLight>();
         dynamicLight.SetActive(false);
         gem_area_sound = transform.parent.gameObject.GetComponent<AudioSource>();
     }
-
+    private void InitializeGemValues()
+    {
+        GemSprite = transform.parent.GetChild(0).gameObject.GetComponent<SpriteRenderer>();
+        GemLight = transform.parent.GetChild(2).gameObject.GetComponent<Light>();
+        dynamicLight = transform.parent.GetChild(3).gameObject;
+        success_sound = GetComponent<AudioSource>();
+    }
     void Update()
     {
         if (!gem_isPowered && Time.time > poweringRecharge)
@@ -94,10 +98,7 @@ public class GemScript : MonoBehaviour
         {
             GemLight.enabled = false;
         }
-        //Debug.Log("Gemlight is enabled: " + GemLight.enabled.ToString());
     }
-
-
     IEnumerator Fade(Light light, float endIntensity)
     {
         while (light.intensity > endIntensity)
@@ -107,10 +108,8 @@ public class GemScript : MonoBehaviour
         }
         dynamicLight.SetActive(true);
     }
-
-    private void PowerUp()
+    public virtual void PowerUp()
     {
-        Debug.Log(this.tag);
         if (tag == "levelGem")
         {
             levelman.gemActivated();
@@ -118,21 +117,7 @@ public class GemScript : MonoBehaviour
         if (success_sound) success_sound.Play();
         GemLight.color = selected_light;
         StartCoroutine(Fade(GemLight, (GemLight.intensity * 0.75f)));
-        ActAccordingToColor();
         if (gem_area_sound) gem_area_sound.Stop();
-    }
-    private void ActAccordingToColor()
-    {
-        switch (GemColor)
-        {
-            case (DropDownColors.red):
-                GameObject beam = GameObject.FindGameObjectWithTag("RedBeamSource");
-                beam.GetComponent<LineRenderer>().enabled = true;
-                beam.GetComponent<BeamCaster>().enabled = true;
-
-                break;
-        }
-
     }
     private void OnTriggerEnter2D(Collider2D other)
     {

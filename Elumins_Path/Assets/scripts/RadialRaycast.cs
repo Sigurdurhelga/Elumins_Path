@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RadialRaycast : MonoBehaviour {
+public class RadialRaycast : MonoBehaviour
+{
 
     public bool raycastAll;
     public int numberOfRays;
@@ -12,7 +13,7 @@ public class RadialRaycast : MonoBehaviour {
 
 
     // Use this for initialization
-    void Start ()
+    void Start()
     {
         layer = LayerMask.GetMask("Light", "Impassable", "ShadowLayer");
     }
@@ -27,7 +28,7 @@ public class RadialRaycast : MonoBehaviour {
 
     private void RadialRaycaster()
     {
-        float radians = 2*Mathf.PI / numberOfRays;
+        float radians = 2 * Mathf.PI / numberOfRays;
         float radianOffset = degreeOffset / 180 * Mathf.PI;
         for (int i = 0; i < numberOfRays; i++)
         {
@@ -35,7 +36,7 @@ public class RadialRaycast : MonoBehaviour {
             float y = Mathf.Sin(i * radians + radianOffset);
             Vector2 direction = new Vector2(x, y);
 
-            if(raycastAll)
+            if (raycastAll)
             {
                 UseRaycastAll(direction);
             }
@@ -85,7 +86,7 @@ public class RadialRaycast : MonoBehaviour {
                 }
                 else if (hit[i].fraction <= 0) // Raycast started inside collider other than self, skip it
                 {
-                    if (i+1 >= hit.Length)
+                    if (i + 1 >= hit.Length)
                     {
                         DrawRayLine(transform.position, direction);
                     }
@@ -107,7 +108,7 @@ public class RadialRaycast : MonoBehaviour {
 
     private void DrawRayLine(Vector2 origin, Vector2 direction)
     {
-        Debug.DrawLine(origin, origin + direction*distance, Color.red);
+        Debug.DrawLine(origin, origin + direction * distance, Color.red);
     }
 
     private void ActivateRayCastHit(Collider2D collider)
@@ -117,7 +118,7 @@ public class RadialRaycast : MonoBehaviour {
             RayCastHitReceiver rayHit = collider.gameObject.GetComponent<RayCastHitReceiver>();
             if (rayHit != null)
             {
-                rayHit.OnHitRay();
+                rayHit.OnHitRay(collider.tag);
             }
 
         }
