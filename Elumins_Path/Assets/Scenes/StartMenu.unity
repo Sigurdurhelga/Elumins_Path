@@ -154,6 +154,48 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: af55d023054539a47896b69d4a8bfd97, type: 2}
   m_IsPrefabParent: 0
+--- !u!1001 &86488016
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4442529492833436, guid: bdb1d2fedd5517c44847e5c594760060, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 5.7098994
+      objectReference: {fileID: 0}
+    - target: {fileID: 4442529492833436, guid: bdb1d2fedd5517c44847e5c594760060, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 5.4337497
+      objectReference: {fileID: 0}
+    - target: {fileID: 4442529492833436, guid: bdb1d2fedd5517c44847e5c594760060, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -0.22894685
+      objectReference: {fileID: 0}
+    - target: {fileID: 4442529492833436, guid: bdb1d2fedd5517c44847e5c594760060, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4442529492833436, guid: bdb1d2fedd5517c44847e5c594760060, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4442529492833436, guid: bdb1d2fedd5517c44847e5c594760060, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4442529492833436, guid: bdb1d2fedd5517c44847e5c594760060, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4442529492833436, guid: bdb1d2fedd5517c44847e5c594760060, type: 2}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: bdb1d2fedd5517c44847e5c594760060, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1311099673
 GameObject:
   m_ObjectHideFlags: 0
@@ -306,12 +348,12 @@ Prefab:
     - target: {fileID: 224816817839580654, guid: c62b6d0aac91dc64794e32f49f21f91e,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 430.5
+      value: 369
       objectReference: {fileID: 0}
     - target: {fileID: 224816817839580654, guid: c62b6d0aac91dc64794e32f49f21f91e,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 211
+      value: 206
       objectReference: {fileID: 0}
     - target: {fileID: 224816817839580654, guid: c62b6d0aac91dc64794e32f49f21f91e,
         type: 2}
