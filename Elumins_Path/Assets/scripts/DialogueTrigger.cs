@@ -25,5 +25,10 @@ public class DialogueTrigger : MonoBehaviour {
 			doneTriggering = true;
 		}
 	}
+	private void OnTriggerExit2D(Collider2D collider){
+		if(collider.tag == "Player"){
+			dialogueManager.endDialogue();
+		}
+	}
 	
 }
