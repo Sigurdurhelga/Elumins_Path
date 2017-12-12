@@ -21,6 +21,7 @@ TagManager:
   - Shell
   - LevelLight
   - SpaceBar
+  - dialogueManager
   layers:
   - Default
   - TransparentFX
