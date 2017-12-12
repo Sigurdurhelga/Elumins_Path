@@ -20,11 +20,7 @@ public class LevelLoader : MonoBehaviour
         space_bar = transform.GetChild(0).gameObject;
         space_bar.SetActive(false);
         level = this.name;
-
-        if (level == "2")
-        {
-            level = "3";
-        }
+        if (level == "2") level = "3";
 
     }
 
