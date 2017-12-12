@@ -35,6 +35,7 @@ public class DialogueManager : MonoBehaviour {
 	IEnumerator typeText(string text){
 		foreach(char c in text){
 			dialogueText.text += c;
+			// wait for one frame between each character
 			yield return null;
 		}
 	}
