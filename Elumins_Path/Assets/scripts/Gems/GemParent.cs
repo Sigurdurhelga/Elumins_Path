@@ -15,28 +15,29 @@ public class GemParent : MonoBehaviour
 
     //public levelmanager levelman;
     public DropDownGemColors GemColor;
-    private Light GemLight;
-    private SpriteRenderer GemSprite;
+    protected Light GemLight;
+    protected SpriteRenderer GemSprite;
     public float timeToCharge = 0.5f;
-    private GameObject dynamicLight;
-    private AudioSource success_sound;
-    private Color[] Color_Codes = new Color[5] { new Color(0, 0.4f, 0.8f, 1f), Color.red, Color.green, Color.magenta, Color.white };
-    private Color[] Light_Color_Codes = new Color[5] { new Color(0, 0.5f, 1f, 0.13f), new Color(1, 0, 0, 0.13f), new Color(0, 1, 0, 0.13f), Color.magenta, Color.white };
-    private Color selected_color;
-    private Color selected_light;
-    private AudioSource gem_area_sound;
-    private levelmanager levelman;
+    protected GameObject dynamicLight;
+    protected AudioSource success_sound;
+    protected Color[] Color_Codes = new Color[5] { new Color(0, 0.4f, 0.8f, 1f), Color.red, Color.green, Color.magenta, Color.white };
+    protected Color[] Light_Color_Codes = new Color[5] { new Color(0, 0.5f, 1f, 0.13f), new Color(1, 0, 0, 0.13f), new Color(0, 1, 0, 0.13f), Color.magenta, Color.white };
+    protected Color selected_color;
+    protected Color selected_light;
+    protected AudioSource gem_area_sound;
+    protected levelmanager levelman;
 
-    private int gem_power = 0;
-    private bool gem_isPowered = false;
-    private bool playerIn = false;
-    private float poweringRecharge;
-    private bool hitByRay = false;
+    protected int gem_power = 0;
+    protected bool gem_isPowered = false;
+    protected bool playerIn = false;
+    protected float poweringRecharge;
+    protected bool hitByRay = false;
 
-    private void Start()
+    protected float InitialIntensity = 0;
+
+    public virtual void Start()
     {
         InitializeGemValues();
-
         levelman = GameObject.FindGameObjectWithTag("levelManager").GetComponent<levelmanager>();
         selected_color = Color_Codes[(int)GemColor];
         selected_light = Light_Color_Codes[(int)GemColor];
@@ -51,6 +52,9 @@ public class GemParent : MonoBehaviour
         GemLight = transform.parent.GetChild(2).gameObject.GetComponent<Light>();
         dynamicLight = transform.parent.GetChild(3).gameObject;
         success_sound = GetComponent<AudioSource>();
+        gem_isPowered = false;
+        playerIn = false;
+        hitByRay = false;
     }
     void Update()
     {
@@ -96,10 +100,13 @@ public class GemParent : MonoBehaviour
         }
         if (gem_power == 0 && !playerIn)
         {
-            GemLight.enabled = false;
+
+            InitialIntensity = GemLight.intensity;
+            GemLight.intensity = 0;
+
         }
     }
-    IEnumerator Fade(Light light, float endIntensity)
+    protected IEnumerator Fade(Light light, float endIntensity)
     {
         while (light.intensity > endIntensity)
         {
@@ -126,7 +133,7 @@ public class GemParent : MonoBehaviour
             if (!gem_isPowered)
             {
                 poweringRecharge = Time.time;
-                GemLight.enabled = true;
+                //GemLight.enabled = true;
                 playerIn = true;
             }
         }
@@ -149,7 +156,6 @@ public class GemParent : MonoBehaviour
         if (!gem_isPowered)
         {
             poweringRecharge = Time.time;
-            GemLight.enabled = true;
             hitByRay = true;
         }
     }
