@@ -20,11 +20,11 @@ public class GameController : MonoBehaviour
     {
         CurrentLevel = 0;
         isWorldTree = false;
-        finished_levels = new List<string>();
+        finished_levels = new List<string>() {""};
         if (SceneManager.GetActiveScene().name != "StartMenu")
         {
             Cursor.visible = false;
-            Cursor.lockState = CursorLockMode.Locked;
+            //Cursor.lockState = CursorLockMode.Locked;
         }
     }
 
@@ -132,5 +132,10 @@ public class GameController : MonoBehaviour
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
         LoadWorldTree((CurrentLevel - 2).ToString());
+    }
+
+    public int GetCurrentLevel()
+    {
+        return CurrentLevel;
     }
 }
