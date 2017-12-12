@@ -43,8 +43,6 @@ public class ShatteredCrystalScript : MonoBehaviour {
 
 		if(connectedShards == 4){
 			Rigidbody2D temprb;
-			Vector2 leftForce = new Vector2(100, 0);
-			Vector2 rightForce = new Vector2(-100, 0);
 			foreach(GameObject wallShard in wallShardGBs){
 				temprb = wallShard.GetComponent<Rigidbody2D>();
 				temprb.bodyType = RigidbodyType2D.Dynamic;
