@@ -36,9 +36,10 @@ public class GameController : MonoBehaviour
             camera = GameObject.FindGameObjectWithTag("MainCamera");
             if (Player)
             {
-
                 int current_level = CurrentLevel;
                 int next_level = current_level + 1;
+                if (current_level == 1) next_level++;
+
                 PlayerPrefs.SetInt("CurrentLevel", current_level);
                 PlayerPrefs.Save();
 
@@ -98,7 +99,8 @@ public class GameController : MonoBehaviour
         if (!finished_levels.Contains(level_finished))
         {
             finished_levels.Add(level_finished);
-            CurrentLevel++;
+            if (level_finished == "level_2_final") CurrentLevel += 2;
+            else CurrentLevel++;
         }
         SceneTransition(2);
 
