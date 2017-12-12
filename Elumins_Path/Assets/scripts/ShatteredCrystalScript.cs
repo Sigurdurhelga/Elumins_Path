@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ShatteredCrystalScript : MonoBehaviour {
 	public GameObject ShatterWall;
-	private List<GameObject> wallShardGBs = new List<GameObject>();
+	private List<Rigidbody2D> wallShardRBs = new List<Rigidbody2D>();
 	private GameObject player_ref;
 	private GameObject shard_ref;
 	private int connectedShards = 0;
@@ -15,7 +15,7 @@ public class ShatteredCrystalScript : MonoBehaviour {
 
 	private void Start(){
 		for(int i = 0; i < ShatterWall.transform.childCount; i++){
-			wallShardGBs.Add(ShatterWall.transform.GetChild(i).gameObject);
+			wallShardRBs.Add(ShatterWall.transform.GetChild(i).GetComponent<Rigidbody2D>());
 		}
 	}
 
@@ -31,31 +31,33 @@ public class ShatteredCrystalScript : MonoBehaviour {
 	IEnumerator mergeWithShell(GameObject shard){
 
 		doneNames.Add(shard.name);
+		Debug.Log("in mergephase");
 
 		float pos = 0;
 
 		while(pos <= 1){
 			shard.transform.position = Vector3.Lerp(shard.transform.position, transform.position, pos);
-			pos += 0.01f;
+			pos += 0.04f;
 			yield return null;
 		}
 		connectedShards += 1;
 
 		if(connectedShards == 4){
-			Rigidbody2D temprb;
-			foreach(GameObject wallShard in wallShardGBs){
-				temprb = wallShard.GetComponent<Rigidbody2D>();
-				temprb.bodyType = RigidbodyType2D.Dynamic;
-			//	temprb.gravityScale = 1;
+			Debug.Log("IM IN HERE");
+			foreach(Rigidbody2D wallShard in wallShardRBs){
+				wallShard.bodyType = RigidbodyType2D.Dynamic;
+				wallShard.gravityScale = 1;
 			}
-			foreach(GameObject wallShard in wallShardGBs){
-				temprb = wallShard.GetComponent<Rigidbody2D>();
-				temprb.AddForce(new Vector2(Random.Range(-1000,1001), Random.Range(-500, 501)));
+			// vector pointing from gem to wall
+			Vector2 forcepush = ShatterWall.transform.position - transform.position;
+			//Vector2 randompush = new Vector2(Random.RandomRange(-1000,1000), Random.RandomRange(-1000,1000));
+			foreach(Rigidbody2D wallShard in wallShardRBs){
+				wallShard.AddForce(forcepush * Random.RandomRange(50,100));
 			}
 			yield return new WaitForSeconds(4f);
 
-			foreach(GameObject wallShard in wallShardGBs){
-				Destroy(wallShard);
+			foreach(Rigidbody2D wallShard in wallShardRBs){
+				Destroy(wallShard.gameObject);
 			}
 			Destroy(ShatterWall);
 

@@ -23,6 +23,7 @@ TagManager:
   - SpaceBar
   - Brother1
   - Brother2
+  - dialogueManager
   layers:
   - Default
   - TransparentFX
