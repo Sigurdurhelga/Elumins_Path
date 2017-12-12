@@ -17,6 +17,8 @@ TagManager:
   - levelPortal
   - levelManager
   - Disabled_Portal
+  - Shard
+  - Shell
   - LevelLight
   - SpaceBar
   layers:
