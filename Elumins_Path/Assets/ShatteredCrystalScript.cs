@@ -46,12 +46,13 @@ public class ShatteredCrystalScript : MonoBehaviour {
 			foreach(GameObject wallShard in wallShardGBs){
 				temprb = wallShard.GetComponent<Rigidbody2D>();
 				temprb.bodyType = RigidbodyType2D.Dynamic;
-			//	temprb.gravityScale = 1;
+				temprb.gravityScale = 1;
 			}
 			foreach(GameObject wallShard in wallShardGBs){
 				temprb = wallShard.GetComponent<Rigidbody2D>();
-				temprb.AddForce(new Vector2(Random.Range(-1000,1001), Random.Range(-500, 501)));
-			}
+				temprb.AddForce(new Vector2(Random.Range(-500, 500), Random.Range(-500, 501)));
+                temprb.AddForce(new Vector2(Random.Range(-500, 500), 500));
+            }
 			yield return new WaitForSeconds(4f);
 
 			foreach(GameObject wallShard in wallShardGBs){
