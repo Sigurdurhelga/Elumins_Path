@@ -20,10 +20,12 @@ public class LevelLoader : MonoBehaviour
         space_bar = transform.GetChild(0).gameObject;
         space_bar.SetActive(false);
         level = this.name;
-        if(level == "1")
+
+        if (level == "2")
         {
-            level = "0";
+            level = "3";
         }
+
     }
 
     // Update is called once per frame
@@ -48,7 +50,7 @@ public class LevelLoader : MonoBehaviour
             if (!GameObject.FindGameObjectWithTag("Disabled_Portal"))
             {
                 player_in_zone = true;
-                if(this.enabled == true)
+                if (this.enabled == true)
                 {
                     space_bar.SetActive(true);
                 }

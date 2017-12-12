@@ -21,8 +21,11 @@ public class GameController : MonoBehaviour
         CurrentLevel = 0;
         isWorldTree = false;
         finished_levels = new List<string>();
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
+        if (SceneManager.GetActiveScene().name != "StartMenu")
+        {
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
+        }
     }
 
     void LateUpdate()
@@ -36,6 +39,8 @@ public class GameController : MonoBehaviour
 
                 int current_level = CurrentLevel;
                 int next_level = current_level + 1;
+                PlayerPrefs.SetInt("CurrentLevel", current_level);
+                PlayerPrefs.Save();
 
                 GameObject[] levels = GameObject.FindGameObjectsWithTag("levelPortal");
                 foreach (GameObject level in levels)
@@ -95,7 +100,7 @@ public class GameController : MonoBehaviour
             finished_levels.Add(level_finished);
             CurrentLevel++;
         }
-        SceneTransition(1);
+        SceneTransition(2);
 
     }
     public void LoadNextLevel(string level)
@@ -112,5 +117,18 @@ public class GameController : MonoBehaviour
             fadeToColor = Color.black
         };
         TransitionKit.instance.transitionWithDelegate(fader);
+    }
+    public void ContinueGame()
+    {
+        string temp = "CurrentLevel";
+        CurrentLevel = PlayerPrefs.GetInt(temp);
+        finished_levels = new List<string>();
+        for (int i = 0; i < CurrentLevel; i++)
+        {
+            finished_levels.Add(i.ToString());
+        }
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+        LoadWorldTree((CurrentLevel - 2).ToString());
     }
 }
