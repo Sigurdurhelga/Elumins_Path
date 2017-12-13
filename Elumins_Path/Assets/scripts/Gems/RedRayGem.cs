@@ -7,8 +7,7 @@ public class RedRayGem : GemParent
     public override void PowerUp()
     {
         base.PowerUp();
-        GameObject beam = GameObject.FindGameObjectWithTag("RedBeamSource");
-        beam.GetComponent<LineRenderer>().enabled = true;
+        GameObject beam = gameObject.transform.parent.parent.gameObject; //GameObject.FindGameObjectWithTag("RedBeamSource");
         beam.GetComponent<BeamCaster>().enabled = true;
     }
 
