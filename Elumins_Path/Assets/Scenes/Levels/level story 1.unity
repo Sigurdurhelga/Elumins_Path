@@ -346,101 +346,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 901663107}
---- !u!1 &927097460
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 927097463}
-  - component: {fileID: 927097462}
-  - component: {fileID: 927097461}
-  m_Layer: 0
-  m_Name: StoryArea
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &927097461
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 927097460}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a85037f18f7e0d640912da0e5c470888, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue:
-    sentences:
-    - " \"It is a period of civil war. Rebel spaceships, striking from a hidden base,
-      have won their first victory against the evil Galactic Empire. During the battle,
-      Rebel spies managed to steal secret plans to the Empire\u2019s ultimate weapon,
-      the DEATH STAR, an armored space station with enough power to destroy an entire
-      planet. \r\n\r\nPursued by the Empire\u2019s sinister agents, Princess Leia
-      races home aboard her starship, custodian of the stolen plans that can save
-      her people and restore freedom to the galaxy\u2026.\""
-    - "\"It is a dark time for the Rebellion. Although the Death Star has been destroyed,
-      Imperial troops have driven the Rebel forces from their hidden base and pursued
-      them across the galaxy.\r\n\r\nEvading the dreaded Imperial Starfleet, a group
-      of freedom fighters led by Luke Skywalker has established a new secret base
-      on the remote ice world of Hoth.\r\n\r\nThe evil lord Darth Vader, obsessed
-      with finding young Skywalker, has dispatched thousands of remote probes into
-      the far reaches of space\u2026.\""
-    - "\"Luke Skywalker has returned to his home planet of Tatooine in an attempt
-      to rescue his friend Han Solo from the clutches of the vile gangster Jabba the
-      Hutt. \r\n\r\nLittle does Luke know that the GALACTIC EMPIRE has secretly begun
-      construction on a new armored space station even more powerful than the first
-      dreaded Death Star.\r\n\r\nWhen completed, this ultimate weapon will spell certain
-      doom for the small band of rebels struggling to restore freedom to the galaxy...\""
-    - "\"Turmoil has engulfed the Galactic Republic. The taxation of trade routes
-      to outlying star systems is in dispute.\r\n\r\nHoping to resolve the matter
-      with a blockade of deadly battleships, the greedy Trade Federation has stopped
-      all shipping to the small planet of Naboo.\r\n\r\nWhile the congress of the
-      Republic endlessly debates this alarming chain of events, the Supreme Chancellor
-      has secretly dispatched two Jedi Knights, the guardians of peace and justice
-      in the galaxy, to settle the conflict....\""
---- !u!61 &927097462
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 927097460}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 6.950472, y: -0.38868618}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 14.900944, y: 13.5749}
-  m_EdgeRadius: 0
---- !u!4 &927097463
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 927097460}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.51, y: -4.76, z: 1.0898438}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &969731503
 GameObject:
   m_ObjectHideFlags: 0
@@ -466,7 +371,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 969731503}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -885, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 901663108}
@@ -476,7 +381,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -885}
   m_SizeDelta: {x: -48, y: -48}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &969731505
@@ -719,6 +624,7 @@ GameObject:
   - component: {fileID: 1256630897}
   - component: {fileID: 1256630896}
   - component: {fileID: 1256630895}
+  - component: {fileID: 1256630899}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -791,7 +697,7 @@ RectTransform:
   m_GameObject: {fileID: 1256630894}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -9}
-  m_LocalScale: {x: 0.017893026, y: 0.017893026, z: 0.017893026}
+  m_LocalScale: {x: 0.016169228, y: 0.016169228, z: 0.016169228}
   m_Children:
   - {fileID: 969731504}
   m_Father: {fileID: 0}
@@ -802,6 +708,65 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!95 &1256630899
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1256630894}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4ea003f4b3826814ea3c483399f1f409, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!1001 &1257920271
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4731927524749262, guid: 760f042976d510946a5fc0785c20e04a, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 10.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4731927524749262, guid: 760f042976d510946a5fc0785c20e04a, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -0.31
+      objectReference: {fileID: 0}
+    - target: {fileID: 4731927524749262, guid: 760f042976d510946a5fc0785c20e04a, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4731927524749262, guid: 760f042976d510946a5fc0785c20e04a, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4731927524749262, guid: 760f042976d510946a5fc0785c20e04a, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4731927524749262, guid: 760f042976d510946a5fc0785c20e04a, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4731927524749262, guid: 760f042976d510946a5fc0785c20e04a, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4731927524749262, guid: 760f042976d510946a5fc0785c20e04a, type: 2}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 760f042976d510946a5fc0785c20e04a, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1270775920
 GameObject:
   m_ObjectHideFlags: 0
@@ -4495,10 +4460,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 843e52cad04fcce4584621cb16d0d270, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SmoothSpeed: 0.0175
   rx: 2.5
   ry: 1.5
-  SmoothSpeed: 0.0175
-  deadZoneSize: 1
   target: {fileID: 2044768388}
 --- !u!1 &1929695766
 GameObject:
