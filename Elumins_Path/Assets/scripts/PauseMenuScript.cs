@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseMenuScript : MonoBehaviour {
 
@@ -88,7 +89,8 @@ public class PauseMenuScript : MonoBehaviour {
     private void RestartLevel()
     {
         // Reload level
-        controller.LoadNextLevel(controller.GetCurrentLevel().ToString());
+        int scene = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(scene);
     }
     
 }

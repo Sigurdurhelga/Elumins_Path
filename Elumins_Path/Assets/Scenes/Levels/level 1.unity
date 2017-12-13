@@ -5732,6 +5732,12 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &134809316 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114264745039751626, guid: e9e1b6ed0cdb2394ab0800926209f868,
+    type: 2}
+  m_PrefabInternal: {fileID: 1053721042}
+  m_Script: {fileID: 11500000, guid: b4726243173568642afd23566ae020f5, type: 3}
 --- !u!1 &135261646
 GameObject:
   m_ObjectHideFlags: 0
@@ -24989,7 +24995,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a93bc69287a77f942861c380724bc196, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  next_level: 
 --- !u!4 &1011854985 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4388285052800610, guid: 1113f5342c559844a90eb9465191e561,
@@ -25894,6 +25899,16 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114210625824428222, guid: e9e1b6ed0cdb2394ab0800926209f868,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114327568638751872, guid: e9e1b6ed0cdb2394ab0800926209f868,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 224753762061121162, guid: e9e1b6ed0cdb2394ab0800926209f868,
         type: 2}
       propertyPath: m_LocalPosition.x
@@ -26002,6 +26017,56 @@ Prefab:
     - target: {fileID: 1833219664817338, guid: e9e1b6ed0cdb2394ab0800926209f868, type: 2}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114210625824428222, guid: e9e1b6ed0cdb2394ab0800926209f868,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114210625824428222, guid: e9e1b6ed0cdb2394ab0800926209f868,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114210625824428222, guid: e9e1b6ed0cdb2394ab0800926209f868,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 134809316}
+    - target: {fileID: 114210625824428222, guid: e9e1b6ed0cdb2394ab0800926209f868,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ExitLevelButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 114210625824428222, guid: e9e1b6ed0cdb2394ab0800926209f868,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 114327568638751872, guid: e9e1b6ed0cdb2394ab0800926209f868,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114327568638751872, guid: e9e1b6ed0cdb2394ab0800926209f868,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114327568638751872, guid: e9e1b6ed0cdb2394ab0800926209f868,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 134809316}
+    - target: {fileID: 114327568638751872, guid: e9e1b6ed0cdb2394ab0800926209f868,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RestartLevelButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 114327568638751872, guid: e9e1b6ed0cdb2394ab0800926209f868,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e9e1b6ed0cdb2394ab0800926209f868, type: 2}
@@ -36817,7 +36882,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SmoothSpeed: 0.015
-  deadZoneSize: 4
+  rx: 0
+  ry: 0
   target: {fileID: 524517212}
 --- !u!1 &1713670601
 GameObject:
