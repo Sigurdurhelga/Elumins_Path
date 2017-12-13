@@ -133,7 +133,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1869774367997826}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 33.18, y: 8.709999, z: 0}
+  m_LocalPosition: {x: 28.8, y: 23.38, z: 0}
   m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_Children:
   - {fileID: 4178331438307274}
@@ -450,7 +450,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GemColor: 0
-  timeToCharge: 0.5
+  timeToCharge: 2
+  StartingLightIntensity: 6
+  EndingLightIntesity: 10
+  StartingLightRange: 6
+  EndingLightRange: 10
 --- !u!114 &114618670941695794
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -570,7 +574,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 3083824dec3e465469e76cf67d2447f1, type: 3}
-  m_Color: {r: 0, g: 1, b: 0, a: 1}
+  m_Color: {r: 0.16078432, g: 0.5019608, b: 0.7254902, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

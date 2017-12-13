@@ -20,7 +20,7 @@ public class GameController : MonoBehaviour
     {
         CurrentLevel = 0;
         isWorldTree = false;
-        finished_levels = new List<string>() {""};
+        finished_levels = new List<string>();
         if (SceneManager.GetActiveScene().name != "StartMenu")
         {
             Cursor.visible = false;
@@ -96,11 +96,14 @@ public class GameController : MonoBehaviour
     public void LoadWorldTree(string level_finished)
     {
         isWorldTree = true;
-        if (!finished_levels.Contains(level_finished))
+        if (level_finished != "")
         {
-            finished_levels.Add(level_finished);
-            if (level_finished == "level_2_final") CurrentLevel += 2;
-            else CurrentLevel++;
+            if (!finished_levels.Contains(level_finished))
+            {
+                finished_levels.Add(level_finished);
+                if (level_finished == "level_2_final") CurrentLevel += 2;
+                else CurrentLevel++;
+            }
         }
         SceneTransition(2);
 
@@ -124,6 +127,7 @@ public class GameController : MonoBehaviour
     {
         string temp = "CurrentLevel";
         CurrentLevel = PlayerPrefs.GetInt(temp);
+        if (CurrentLevel == 0) CurrentLevel--;
         finished_levels = new List<string>();
         for (int i = 0; i < CurrentLevel; i++)
         {

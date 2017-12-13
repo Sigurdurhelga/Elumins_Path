@@ -15,9 +15,15 @@ public class GemParent : MonoBehaviour
 
     //public levelmanager levelman;
     public DropDownGemColors GemColor;
+    public float timeToCharge;
+    public float StartingLightIntensity;
+    public float EndingLightIntesity;
+    public float StartingLightRange;
+    public float EndingLightRange;
+
     protected Light GemLight;
     protected SpriteRenderer GemSprite;
-    public float timeToCharge = 0.5f;
+    
     protected GameObject dynamicLight;
     protected AudioSource success_sound;
     protected Color[] Color_Codes = new Color[5] { new Color(0, 0.4f, 0.8f, 1f), Color.red, Color.green, Color.magenta, Color.white };
@@ -27,17 +33,23 @@ public class GemParent : MonoBehaviour
     protected AudioSource gem_area_sound;
     protected levelmanager levelman;
 
-    protected int gem_power = 0;
     protected bool gem_isPowered = false;
     protected bool playerIn = false;
     protected float poweringRecharge;
     protected bool hitByRay = false;
 
-    protected float InitialIntensity = 0;
+    //protected float InitialIntensity;
+    //protected float InitialRange;
+
+
+    protected bool chargingGem = false;
+
+    private float IncreaseFactor;
 
     public virtual void Start()
     {
         InitializeGemValues();
+        GetIncreaseFactor();
         levelman = GameObject.FindGameObjectWithTag("levelManager").GetComponent<levelmanager>();
         selected_color = Color_Codes[(int)GemColor];
         selected_light = Light_Color_Codes[(int)GemColor];
@@ -45,6 +57,24 @@ public class GemParent : MonoBehaviour
         GemLight.color = selected_light;
         dynamicLight.SetActive(false);
         gem_area_sound = transform.parent.gameObject.GetComponent<AudioSource>();
+
+
+        GemLight.intensity = StartingLightIntensity;
+        GemLight.range = StartingLightRange;
+        //InitialIntensity = GemLight.intensity;
+        //InitialRange = GemLight.range;
+    }
+    private void GetIncreaseFactor()
+    {
+        switch (this.tag)
+        {
+            case ("levelGem"):
+                IncreaseFactor = 0.075f;
+                break;
+            default:
+                IncreaseFactor = 0.05f;
+                break;
+        }
     }
     private void InitializeGemValues()
     {
@@ -56,65 +86,69 @@ public class GemParent : MonoBehaviour
         playerIn = false;
         hitByRay = false;
     }
+
     void Update()
     {
-        if (!gem_isPowered && Time.time > poweringRecharge)
-        {
-            poweringRecharge = Time.time + 0.01f;
-            if (playerIn)
-            {
-                gem_power += 1;
-                GemLight.range += 0.03f;
-                GemLight.intensity += 0.03f;
-                if (gem_power >= timeToCharge / 0.01f)
-                {
-                    gem_isPowered = true;
-                    PowerUp();
-                }
-            }
-            //Debug.Log("Should Decrease: " + !playerIn + ", " + !hitByRay + ", " + gem_power.ToString());
-            if (!playerIn && !hitByRay && gem_power > 0)
-            {
-                gem_power -= 2;
-                GemLight.range -= 0.06f;
-                GemLight.intensity -= 0.06f;
-                if (gem_power < 0)
-                {
-                    GemLight.range -= 0.03f * gem_power;
-                    GemLight.intensity -= 0.03f * gem_power;
-                    gem_power = 0;
-                }
-            }
-            if (hitByRay)
-            {
-                gem_power += 1;
-                GemLight.range += 0.03f;
-                GemLight.intensity += 0.03f;
-                if (gem_power >= timeToCharge / 0.01f)
-                {
-                    gem_isPowered = true;
-                    PowerUp();
-                }
-                hitByRay = false;
-            }
-        }
-        if (gem_power == 0 && !playerIn)
-        {
-
-            InitialIntensity = GemLight.intensity;
-            GemLight.intensity = 0;
-
-        }
+        
     }
+
+    protected IEnumerator Charge()
+    {
+        float runningTime = 0;
+        chargingGem = true;
+        bool doneWithGem = false;
+        while(!doneWithGem)
+        {
+            if(playerIn || hitByRay) // Charge Gem, increase light intesity and gem_power
+            {
+                if(hitByRay)
+
+                {
+                    hitByRay = false;
+                }
+                runningTime += Time.deltaTime;
+                GemLight.range = Mathf.Lerp(StartingLightRange, EndingLightRange, runningTime);
+                GemLight.intensity = Mathf.Lerp(StartingLightIntensity, EndingLightIntesity, runningTime);
+                if (runningTime >= timeToCharge)
+                {
+                    gem_isPowered = true;
+                    PowerUp();
+                    doneWithGem = true;
+                }
+            }
+            else // Stop Chargin gem, drain its power. Decrease light intensity and gem_power
+            {
+                runningTime -= Time.deltaTime;
+                GemLight.range = Mathf.Lerp(StartingLightRange, EndingLightRange, runningTime);
+                GemLight.intensity = Mathf.Lerp(StartingLightIntensity, EndingLightIntesity, runningTime);
+                if (runningTime <= 0)
+                {
+                    doneWithGem = true;
+                }
+            }
+            yield return new WaitForSeconds(0.01f);
+        }
+        chargingGem = false;
+
+    }
+
     protected IEnumerator Fade(Light light, float endIntensity)
     {
-        while (light.intensity > endIntensity)
+        float currentIntensity = light.intensity;
+        float time = 0;// timeToCharge;
+        while (true)
         {
-            light.intensity -= 0.1f;
+            if(time>=timeToCharge)
+            {
+                break;
+            }
+            time += Time.deltaTime;
+            light.intensity = Mathf.Lerp(currentIntensity, endIntensity, time);
             yield return new WaitForSeconds(0.01f);
         }
         dynamicLight.SetActive(true);
     }
+
     public virtual void PowerUp()
     {
         if (tag == "levelGem")
@@ -123,7 +157,7 @@ public class GemParent : MonoBehaviour
         }
         if (success_sound) success_sound.Play();
         GemLight.color = selected_light;
-        StartCoroutine(Fade(GemLight, (GemLight.intensity * 0.75f)));
+        //StartCoroutine(Fade(GemLight, (GemLight.intensity * 1.25f)));
         if (gem_area_sound) gem_area_sound.Stop();
     }
     private void OnTriggerEnter2D(Collider2D other)
@@ -132,9 +166,10 @@ public class GemParent : MonoBehaviour
         {
             if (!gem_isPowered)
             {
-                poweringRecharge = Time.time;
+                //poweringRecharge = Time.time;
                 //GemLight.enabled = true;
                 playerIn = true;
+                if (!chargingGem) { StartCoroutine(Charge()); }
             }
         }
     }
@@ -145,7 +180,7 @@ public class GemParent : MonoBehaviour
         {
             if (!gem_isPowered)
             {
-                poweringRecharge = 0;
+                //poweringRecharge = 0;
                 playerIn = false;
             }
         }
@@ -155,8 +190,9 @@ public class GemParent : MonoBehaviour
     {
         if (!gem_isPowered)
         {
-            poweringRecharge = Time.time;
+            //poweringRecharge = Time.time;
             hitByRay = true;
+            if (!chargingGem) { StartCoroutine(Charge()); }
         }
     }
 }

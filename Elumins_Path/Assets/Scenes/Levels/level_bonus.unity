@@ -5347,6 +5347,24 @@ Prefab:
       propertyPath: m_LocalPosition.x
       value: 4.4
       objectReference: {fileID: 0}
+    - target: {fileID: 224985926806763634, guid: c900eec705a9b034fa62dc50f4a4c1ed,
+        type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 419.19492
+      objectReference: {fileID: 0}
+    - target: {fileID: 224985926806763634, guid: c900eec705a9b034fa62dc50f4a4c1ed,
+        type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 206.42865
+      objectReference: {fileID: 0}
+    - target: {fileID: 4993075628279554, guid: c900eec705a9b034fa62dc50f4a4c1ed, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4993075628279554, guid: c900eec705a9b034fa62dc50f4a4c1ed, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -7.84
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c900eec705a9b034fa62dc50f4a4c1ed, type: 2}
   m_IsPrefabParent: 0
@@ -38327,7 +38345,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1713510806
 MonoBehaviour:

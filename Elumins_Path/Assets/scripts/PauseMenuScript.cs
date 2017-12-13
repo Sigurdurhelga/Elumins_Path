@@ -43,7 +43,16 @@ public class PauseMenuScript : MonoBehaviour {
     public void ExitLevelButton()
     {
         UnPauseGame();
-        controller.LoadWorldTree("");
+        if(SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Level_Transitioner"))
+        {
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.Confined;
+            SceneManager.LoadScene("StartMenu");
+        }
+        else
+        {
+            controller.LoadWorldTree("");
+        }
     }
 
     public void RestartLevelButton()
