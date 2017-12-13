@@ -7,7 +7,7 @@ public class levelmanager : MonoBehaviour
     public int a;
 
     private List<GameObject> gems = new List<GameObject>();
-    private ParticleSystem portal;
+    private GameObject level_window;
     private Light roomLight;
 
     int requiredGems;
@@ -15,10 +15,10 @@ public class levelmanager : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        portal = GetComponentInChildren<ParticleSystem>();
+        level_window = GameObject.FindGameObjectWithTag("levelPortal");
+        level_window.GetComponent<LevelLoader>().enabled = false;
         roomLight = GetComponentInChildren<Light>();
 
-        portal.Stop();
         foreach (GameObject gem in GameObject.FindGameObjectsWithTag("levelGem"))
         {
             gems.Add(gem);
@@ -33,10 +33,9 @@ public class levelmanager : MonoBehaviour
         requiredGems -= 1;
         if (requiredGems <= 0)
         {
+            level_window.GetComponent<SpriteRenderer>().sprite = Resources.Load("Window_Open_Star", typeof(Sprite)) as Sprite;
+            level_window.GetComponent<LevelLoader>().enabled = true;
             roomLight.enabled = true;
-            portal.Play();
-            GameObject dis_port = GameObject.FindGameObjectWithTag("Disabled_Portal");
-            dis_port.SetActive(false);
         }
     }
 
