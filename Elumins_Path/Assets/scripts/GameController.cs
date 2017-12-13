@@ -127,6 +127,7 @@ public class GameController : MonoBehaviour
     {
         string temp = "CurrentLevel";
         CurrentLevel = PlayerPrefs.GetInt(temp);
+        if (CurrentLevel == 0) CurrentLevel--;
         finished_levels = new List<string>();
         for (int i = 0; i < CurrentLevel; i++)
         {

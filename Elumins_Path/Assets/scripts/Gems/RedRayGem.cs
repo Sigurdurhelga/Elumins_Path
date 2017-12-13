@@ -8,8 +8,8 @@ public class RedRayGem : GemParent
     {
         base.PowerUp();
         GameObject beam = GameObject.FindGameObjectWithTag("RedBeamSource");
-        beam.GetComponent<LineRenderer>().enabled = true;
         beam.GetComponent<BeamCaster>().enabled = true;
+        //beam.GetComponent<LineRenderer>().enabled = true;
     }
 
 }
