@@ -1,33 +1,30 @@
 fileFormatVersion: 2
-guid: 4b26aed5305e95743b33a45f0e801c6b
-timeCreated: 1512216886
+guid: 6997fae32cf9ba446bf82ce17757b23c
+timeCreated: 1513122939
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: player_tilesheet_0
-    21300002: player_tilesheet_1
-    21300004: player_tilesheet_2
-    21300006: player_tilesheet_3
-    21300008: player_tilesheet_4
-    21300010: player_tilesheet_5
-    21300012: player_tilesheet_6
-    21300014: player_tilesheet_7
-    21300016: player_tilesheet_8
-    21300018: player_tilesheet_9
-    21300020: player_tilesheet_10
-    21300022: player_tilesheet_11
-    21300024: player_tilesheet_12
-    21300026: player_tilesheet_13
-    21300028: player_tilesheet_14
-    21300030: player_tilesheet_15
-    21300032: player_tilesheet_16
-    21300034: player_tilesheet_17
-    21300036: player_tilesheet_18
-    21300038: player_tilesheet_19
-    21300040: player_tilesheet_20
-    21300042: player_tilesheet_21
-    21300044: player_tilesheet_22
-    21300046: player_tilesheet_23
+    21300000: book_sprite_0
+    21300002: book_sprite_1
+    21300004: book_sprite_2
+    21300006: book_sprite_3
+    21300008: book_sprite_4
+    21300010: book_sprite_5
+    21300012: book_sprite_6
+    21300014: book_sprite_7
+    21300016: book_sprite_8
+    21300018: book_sprite_9
+    21300020: book_sprite_10
+    21300022: book_sprite_11
+    21300024: book_sprite_12
+    21300026: book_sprite_13
+    21300028: book_sprite_14
+    21300030: book_sprite_15
+    21300032: book_sprite_16
+    21300034: book_sprite_17
+    21300036: book_sprite_18
+    21300038: book_sprite_19
+    21300040: book_sprite_20
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -102,13 +99,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: player_tilesheet_0
+      name: book_sprite_0
       rect:
         serializedVersion: 2
-        x: 9
-        y: 220
-        width: 63
-        height: 96
+        x: 36
+        y: 1371
+        width: 171
+        height: 190
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -116,13 +113,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: player_tilesheet_1
+      name: book_sprite_1
       rect:
         serializedVersion: 2
-        x: 84
-        y: 220
-        width: 71
-        height: 101
+        x: 246
+        y: 1297
+        width: 178
+        height: 282
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -130,13 +127,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: player_tilesheet_2
+      name: book_sprite_2
       rect:
         serializedVersion: 2
-        x: 162
-        y: 222
-        width: 78
-        height: 97
+        x: 461
+        y: 1342
+        width: 335
+        height: 219
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -144,13 +141,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: player_tilesheet_3
+      name: book_sprite_3
       rect:
         serializedVersion: 2
-        x: 248
-        y: 220
-        width: 66
-        height: 84
+        x: 852
+        y: 1343
+        width: 334
+        height: 223
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,13 +155,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: player_tilesheet_4
+      name: book_sprite_4
       rect:
         serializedVersion: 2
-        x: 321
-        y: 223
-        width: 79
-        height: 99
+        x: 14
+        y: 1032
+        width: 335
+        height: 245
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -172,13 +169,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: player_tilesheet_5
+      name: book_sprite_5
       rect:
         serializedVersion: 2
-        x: 410
-        y: 224
-        width: 58
-        height: 99
+        x: 366
+        y: 1037
+        width: 335
+        height: 204
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -186,13 +183,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: player_tilesheet_6
+      name: book_sprite_6
       rect:
         serializedVersion: 2
-        x: 492
-        y: 224
-        width: 58
-        height: 99
+        x: 851
+        y: 1040
+        width: 335
+        height: 185
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -200,13 +197,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: player_tilesheet_7
+      name: book_sprite_7
       rect:
         serializedVersion: 2
-        x: 562
-        y: 220
-        width: 76
-        height: 97
+        x: 0
+        y: 775
+        width: 334
+        height: 189
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -214,13 +211,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: player_tilesheet_8
+      name: book_sprite_8
       rect:
         serializedVersion: 2
-        x: 643
-        y: 220
-        width: 75
-        height: 96
+        x: 371
+        y: 777
+        width: 334
+        height: 188
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -228,13 +225,111 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: player_tilesheet_9
+      name: book_sprite_9
+      rect:
+        serializedVersion: 2
+        x: 742
+        y: 775
+        width: 334
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: book_sprite_10
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 526
+        width: 335
+        height: 246
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: book_sprite_11
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 517
+        width: 335
+        height: 254
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: book_sprite_12
+      rect:
+        serializedVersion: 2
+        x: 744
+        y: 518
+        width: 335
+        height: 227
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: book_sprite_13
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 314
+        width: 335
+        height: 186
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: book_sprite_14
+      rect:
+        serializedVersion: 2
+        x: 365
+        y: 315
+        width: 335
+        height: 186
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: book_sprite_15
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 289
+        width: 346
+        height: 215
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: book_sprite_16
       rect:
         serializedVersion: 2
         x: 3
-        y: 110
-        width: 72
-        height: 97
+        y: 30
+        width: 174
+        height: 282
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -242,13 +337,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: player_tilesheet_10
+      name: book_sprite_17
       rect:
         serializedVersion: 2
-        x: 93
-        y: 110
-        width: 55
-        height: 98
+        x: 216
+        y: 33
+        width: 177
+        height: 214
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -256,13 +351,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: player_tilesheet_11
+      name: book_sprite_18
       rect:
         serializedVersion: 2
-        x: 161
-        y: 110
-        width: 77
-        height: 96
+        x: 459
+        y: 44
+        width: 169
+        height: 190
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -270,167 +365,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: player_tilesheet_12
+      name: book_sprite_19
       rect:
         serializedVersion: 2
-        x: 249
-        y: 110
-        width: 52
-        height: 96
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: player_tilesheet_13
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 110
-        width: 69
-        height: 100
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: player_tilesheet_14
-      rect:
-        serializedVersion: 2
-        x: 400
-        y: 110
-        width: 78
-        height: 94
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: player_tilesheet_15
-      rect:
-        serializedVersion: 2
-        x: 482
-        y: 110
-        width: 77
-        height: 98
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: player_tilesheet_16
-      rect:
-        serializedVersion: 2
-        x: 560
-        y: 114
-        width: 79
-        height: 99
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: player_tilesheet_17
-      rect:
-        serializedVersion: 2
-        x: 642
-        y: 112
-        width: 76
-        height: 102
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: player_tilesheet_18
-      rect:
-        serializedVersion: 2
-        x: 1
-        y: 0
-        width: 74
-        height: 96
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: player_tilesheet_19
-      rect:
-        serializedVersion: 2
-        x: 83
-        y: 0
-        width: 76
-        height: 92
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: player_tilesheet_20
-      rect:
-        serializedVersion: 2
-        x: 165
-        y: 0
-        width: 75
-        height: 108
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: player_tilesheet_21
-      rect:
-        serializedVersion: 2
-        x: 250
-        y: 0
-        width: 67
-        height: 95
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: player_tilesheet_22
-      rect:
-        serializedVersion: 2
-        x: 329
-        y: 0
-        width: 63
-        height: 96
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: player_tilesheet_23
-      rect:
-        serializedVersion: 2
-        x: 410
-        y: 0
-        width: 60
-        height: 96
+        x: 669
+        y: 48
+        width: 169
+        height: 190
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
