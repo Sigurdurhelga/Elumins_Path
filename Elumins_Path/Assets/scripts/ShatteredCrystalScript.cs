@@ -131,9 +131,10 @@ public class ShatteredCrystalScript : MonoBehaviour
         else shard.transform.GetChild(0).gameObject.SetActive(true);
     }
 
-    public void OnTriggerExit2DChild(Collider2D collider)
+    public void OnTriggerExit2DChild(Collider2D collider, GameObject shard)
     {
         //shard_ref = null;
+        shard.transform.GetChild(0).gameObject.SetActive(false);
         player_in_shard = false;
     }
 
