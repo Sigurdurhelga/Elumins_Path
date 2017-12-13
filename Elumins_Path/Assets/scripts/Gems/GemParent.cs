@@ -35,9 +35,12 @@ public class GemParent : MonoBehaviour
 
     protected float InitialIntensity = 0;
 
+    private float IncreaseFactor;
+
     public virtual void Start()
     {
         InitializeGemValues();
+        GetIncreaseFactor();
         levelman = GameObject.FindGameObjectWithTag("levelManager").GetComponent<levelmanager>();
         selected_color = Color_Codes[(int)GemColor];
         selected_light = Light_Color_Codes[(int)GemColor];
@@ -45,6 +48,18 @@ public class GemParent : MonoBehaviour
         GemLight.color = selected_light;
         dynamicLight.SetActive(false);
         gem_area_sound = transform.parent.gameObject.GetComponent<AudioSource>();
+    }
+    private void GetIncreaseFactor()
+    {
+        switch (this.tag)
+        {
+            case ("levelGem"):
+                IncreaseFactor = 0.075f;
+                break;
+            default:
+                IncreaseFactor = 0.05f;
+                break;
+        }
     }
     private void InitializeGemValues()
     {
@@ -64,8 +79,8 @@ public class GemParent : MonoBehaviour
             if (playerIn)
             {
                 gem_power += 1;
-                GemLight.range += 0.03f;
-                GemLight.intensity += 0.03f;
+                GemLight.range += IncreaseFactor;
+                GemLight.intensity += IncreaseFactor;
                 if (gem_power >= timeToCharge / 0.01f)
                 {
                     gem_isPowered = true;
@@ -80,16 +95,16 @@ public class GemParent : MonoBehaviour
                 GemLight.intensity -= 0.06f;
                 if (gem_power < 0)
                 {
-                    GemLight.range -= 0.03f * gem_power;
-                    GemLight.intensity -= 0.03f * gem_power;
+                    GemLight.range -= IncreaseFactor * gem_power;
+                    GemLight.intensity -= IncreaseFactor * gem_power;
                     gem_power = 0;
                 }
             }
             if (hitByRay)
             {
                 gem_power += 1;
-                GemLight.range += 0.03f;
-                GemLight.intensity += 0.03f;
+                GemLight.range += IncreaseFactor;
+                GemLight.intensity += IncreaseFactor;
                 if (gem_power >= timeToCharge / 0.01f)
                 {
                     gem_isPowered = true;
@@ -100,10 +115,8 @@ public class GemParent : MonoBehaviour
         }
         if (gem_power == 0 && !playerIn)
         {
-
             InitialIntensity = GemLight.intensity;
             GemLight.intensity = 0;
-
         }
     }
     protected IEnumerator Fade(Light light, float endIntensity)
