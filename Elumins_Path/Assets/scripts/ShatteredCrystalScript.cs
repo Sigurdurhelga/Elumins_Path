@@ -86,6 +86,7 @@ public class ShatteredCrystalScript : MonoBehaviour
                 if (player_in_shell && !doneNames.Contains(shard_ref.name))
                 {
                     StartCoroutine(mergeWithShell(shard_ref));
+                    Destroy(shard_ref.transform.GetChild(0).gameObject);
                 }
             }
         }
