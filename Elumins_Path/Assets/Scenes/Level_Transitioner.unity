@@ -8315,6 +8315,58 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!1001 &962673549
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4760430068171876, guid: 26c73ca6ea7972e47b3fa089228db0e1, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 10.50968
+      objectReference: {fileID: 0}
+    - target: {fileID: 4760430068171876, guid: 26c73ca6ea7972e47b3fa089228db0e1, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 14.212661
+      objectReference: {fileID: 0}
+    - target: {fileID: 4760430068171876, guid: 26c73ca6ea7972e47b3fa089228db0e1, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4760430068171876, guid: 26c73ca6ea7972e47b3fa089228db0e1, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4760430068171876, guid: 26c73ca6ea7972e47b3fa089228db0e1, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4760430068171876, guid: 26c73ca6ea7972e47b3fa089228db0e1, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4760430068171876, guid: 26c73ca6ea7972e47b3fa089228db0e1, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4760430068171876, guid: 26c73ca6ea7972e47b3fa089228db0e1, type: 2}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 224408079339777204, guid: 26c73ca6ea7972e47b3fa089228db0e1,
+        type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 419.99033
+      objectReference: {fileID: 0}
+    - target: {fileID: 224408079339777204, guid: 26c73ca6ea7972e47b3fa089228db0e1,
+        type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 196.78734
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 26c73ca6ea7972e47b3fa089228db0e1, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &973972057
 GameObject:
   m_ObjectHideFlags: 0
