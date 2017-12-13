@@ -35,7 +35,7 @@ public class ShatterCrystalChildren : MonoBehaviour
     {
         if (collider.transform.tag == "Player")
         {
-            parent.OnTriggerExit2DChild(collider);
+            parent.OnTriggerExit2DChild(collider, gameObject);
         }
     }
 }

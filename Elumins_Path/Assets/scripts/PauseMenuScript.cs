@@ -1,14 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseMenuScript : MonoBehaviour {
 
     public GameObject PauseMenu;
     private bool gamePaused;
+    private GameController controller;
 
     private void Start()
     {
+        controller = GameController.instance;
         if (PauseMenu)
         {
             gamePaused = PauseMenu.activeSelf;
@@ -17,13 +20,18 @@ public class PauseMenuScript : MonoBehaviour {
         {
             gamePaused = false;
         }
+        UnPauseGame();
     }
 
     // Update is called once per frame
     void Update() {
-        if (Input.GetKeyDown("p") || Input.GetKeyDown("escape"))
+        if (Input.GetKeyUp("p") || Input.GetKeyUp("escape"))
         {
             TogglePause();
+        }
+        if(Input.GetKeyUp("r"))
+        {
+            RestartLevel();
         }
     }
 
@@ -34,7 +42,13 @@ public class PauseMenuScript : MonoBehaviour {
 
     public void ExitLevelButton()
     {
+        UnPauseGame();
+        controller.LoadWorldTree("");
+    }
 
+    public void RestartLevelButton()
+    {
+        RestartLevel();
     }
 
     private void TogglePause()
@@ -71,6 +85,13 @@ public class PauseMenuScript : MonoBehaviour {
         }
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+    }
+
+    private void RestartLevel()
+    {
+        // Reload level
+        int scene = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(scene);
     }
     
 }
