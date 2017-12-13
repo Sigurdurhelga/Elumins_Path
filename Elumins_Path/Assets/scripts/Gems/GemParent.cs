@@ -44,9 +44,12 @@ public class GemParent : MonoBehaviour
 
     protected bool chargingGem = false;
 
+    private float IncreaseFactor;
+
     public virtual void Start()
     {
         InitializeGemValues();
+        GetIncreaseFactor();
         levelman = GameObject.FindGameObjectWithTag("levelManager").GetComponent<levelmanager>();
         selected_color = Color_Codes[(int)GemColor];
         selected_light = Light_Color_Codes[(int)GemColor];
@@ -60,6 +63,18 @@ public class GemParent : MonoBehaviour
         GemLight.range = StartingLightRange;
         //InitialIntensity = GemLight.intensity;
         //InitialRange = GemLight.range;
+    }
+    private void GetIncreaseFactor()
+    {
+        switch (this.tag)
+        {
+            case ("levelGem"):
+                IncreaseFactor = 0.075f;
+                break;
+            default:
+                IncreaseFactor = 0.05f;
+                break;
+        }
     }
     private void InitializeGemValues()
     {
@@ -87,6 +102,7 @@ public class GemParent : MonoBehaviour
             if(playerIn || hitByRay) // Charge Gem, increase light intesity and gem_power
             {
                 if(hitByRay)
+
                 {
                     hitByRay = false;
                 }
@@ -113,6 +129,7 @@ public class GemParent : MonoBehaviour
             yield return new WaitForSeconds(0.01f);
         }
         chargingGem = false;
+
     }
 
     protected IEnumerator Fade(Light light, float endIntensity)

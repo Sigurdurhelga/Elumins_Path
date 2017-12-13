@@ -133,13 +133,13 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1435661942324254}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.6, y: 13.96, z: 0}
+  m_LocalPosition: {x: 9.09795, y: 5.2475157, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4241279307444324}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
 --- !u!4 &4069607385749662
 Transform:
   m_ObjectHideFlags: 1
@@ -176,14 +176,14 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1992916247272836}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.8, y: 1.8, z: 1}
   m_Children:
   - {fileID: 4744060211807880}
   m_Father: {fileID: 4241279307444324}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!4 &4412438287698610
 Transform:
   m_ObjectHideFlags: 1
@@ -396,7 +396,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GemColor: 1
-  timeToCharge: 0.5
+  timeToCharge: 1
+  StartingLightIntensity: 4
+  EndingLightIntesity: 6
+  StartingLightRange: 4
+  EndingLightRange: 5
 --- !u!114 &114809905540853408
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -434,8 +438,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  lightRadius: 10
-  lightSegments: 8
+  lightRadius: 20
+  lightSegments: 10
   layer:
     serializedVersion: 2
     m_Bits: 8192
@@ -486,9 +490,7 @@ LineRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Positions:
-  - {x: -3.7974606, y: 13.1730385, z: 0}
-  - {x: 8.363312, y: 13.173038, z: 0}
+  m_Positions: []
   m_Parameters:
     serializedVersion: 2
     widthMultiplier: 0.3
@@ -506,8 +508,8 @@ LineRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 1, b: 1, a: 1}
-      key1: {r: 1, g: 1, b: 1, a: 1}
+      key0: {r: 1, g: 0, b: 0, a: 1}
+      key1: {r: 1, g: 0, b: 0, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
