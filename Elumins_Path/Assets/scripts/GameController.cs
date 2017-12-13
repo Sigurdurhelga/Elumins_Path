@@ -15,6 +15,8 @@ public class GameController : MonoBehaviour
     private static bool isWorldTree;
     private List<string> finished_levels;
 
+    private bool firstPlay;
+
     // Use this for initialization
     void Start()
     {
@@ -26,8 +28,19 @@ public class GameController : MonoBehaviour
             Cursor.visible = false;
             //Cursor.lockState = CursorLockMode.Locked;
         }
-    }
+        if (Application.isEditor == false)
+        {
+            if (PlayerPrefs.GetInt("FirstPlay", 1) == 1)
+            {
+                firstPlay = true;
+                PlayerPrefs.DeleteAll();
+                PlayerPrefs.SetInt("FirstPlay", 0);
+                PlayerPrefs.Save();
+            }
+            else firstPlay = false;
 
+        }
+    }
     void LateUpdate()
     {
         if (isWorldTree && SceneManager.GetActiveScene().name == "Level_Transitioner")
@@ -126,16 +139,18 @@ public class GameController : MonoBehaviour
     public void ContinueGame()
     {
         string temp = "CurrentLevel";
-        CurrentLevel = PlayerPrefs.GetInt(temp);
-        if (CurrentLevel == 0) CurrentLevel--;
-        finished_levels = new List<string>();
-        for (int i = 0; i < CurrentLevel; i++)
+        CurrentLevel = PlayerPrefs.GetInt(temp, -1);
+        if (CurrentLevel != -1)
         {
-            finished_levels.Add(i.ToString());
+            finished_levels = new List<string>();
+            for (int i = 0; i < CurrentLevel; i++)
+            {
+                finished_levels.Add(i.ToString());
+            }
         }
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
-        LoadWorldTree((CurrentLevel - 2).ToString());
+        LoadWorldTree((CurrentLevel - 1).ToString());
     }
 
     public int GetCurrentLevel()
