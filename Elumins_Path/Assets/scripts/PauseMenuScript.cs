@@ -42,6 +42,7 @@ public class PauseMenuScript : MonoBehaviour {
 
     public void ExitLevelButton()
     {
+        UnPauseGame();
         controller.LoadWorldTree("");
     }
 
