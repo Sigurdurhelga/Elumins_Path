@@ -24,6 +24,7 @@ TagManager:
   - Brother1
   - Brother2
   - dialogueManager
+  - bonusPortal
   layers:
   - Default
   - TransparentFX

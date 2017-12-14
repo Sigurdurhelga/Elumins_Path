@@ -111,7 +111,7 @@ public class GameController : MonoBehaviour
         isWorldTree = true;
         if (level_finished != "")
         {
-            if (!finished_levels.Contains(level_finished))
+            if (level_finished != "level_bonus" && !finished_levels.Contains(level_finished))
             {
                 finished_levels.Add(level_finished);
                 if (level_finished == "level_2_final") CurrentLevel += 2;
