@@ -29,7 +29,7 @@ public class DialogueManager : MonoBehaviour {
 		}
 
 		inConverstation = true;
-		displayeNextSentence();
+		//displayeNextSentence();
 	}
 
 	IEnumerator typeText(string text){
