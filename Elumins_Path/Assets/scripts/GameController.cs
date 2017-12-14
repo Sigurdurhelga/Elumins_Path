@@ -129,6 +129,7 @@ public class GameController : MonoBehaviour
     }
     public void LoadNextLevel(string level)
     {
+        if (PlayerPrefs.GetInt("CurrentLevel", -1) == -1) CurrentLevel = 0;
         SceneTransition(Int32.Parse(level));
     }
 
