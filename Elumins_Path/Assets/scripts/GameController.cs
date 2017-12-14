@@ -10,7 +10,7 @@ public class GameController : MonoBehaviour
     public static GameController instance;
 
     private GameObject Player;
-    private GameObject camera;
+    private GameObject mainCamera;
     private static int CurrentLevel;
     private static bool isWorldTree;
     private List<string> finished_levels;
@@ -48,7 +48,7 @@ public class GameController : MonoBehaviour
         if (isWorldTree && SceneManager.GetActiveScene().name == "Level_Transitioner")
         {
             Player = GameObject.FindGameObjectWithTag("Player");
-            camera = GameObject.FindGameObjectWithTag("MainCamera");
+            mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
             if (Player)
             {
                 int current_level = CurrentLevel;
@@ -81,7 +81,7 @@ public class GameController : MonoBehaviour
                         Player.transform.position = level.transform.position;
                         if (CurrentLevel > 1)
                         {
-                            camera.transform.position = new Vector3(level.transform.position.x, level.transform.position.y, -10);
+                            mainCamera.transform.position = new Vector3(level.transform.position.x, level.transform.position.y, -10);
                         }
                     }
                 }

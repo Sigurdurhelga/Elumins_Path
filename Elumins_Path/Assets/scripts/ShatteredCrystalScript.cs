@@ -74,7 +74,7 @@ public class ShatteredCrystalScript : MonoBehaviour
             //Vector2 randompush = new Vector2(Random.RandomRange(-1000,1000), Random.RandomRange(-1000,1000));
             foreach (Rigidbody2D wallShard in wallShardRBs)
             {
-                wallShard.AddForce(forcepush * Random.RandomRange(50, 100));
+                wallShard.AddForce(forcepush * Random.Range(50, 100));
             }
             yield return new WaitForSeconds(4f);
 
