@@ -9,6 +9,11 @@ public class RedRayGem : GemParent
         //base.PowerUp();
         GameObject beam = gameObject.transform.parent.parent.gameObject; 
         beam.GetComponent<BeamCaster>().enabled = true;
+        if (success_sound)
+        {
+            success_sound.volume = success_sound.volume * 0.75f;
+            success_sound.Play();
+        }
     }
 
 }
