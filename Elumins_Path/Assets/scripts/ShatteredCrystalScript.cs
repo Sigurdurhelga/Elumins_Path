@@ -124,18 +124,27 @@ public class ShatteredCrystalScript : MonoBehaviour
         if (!connected)
             shard_ref = shard;
         player_in_shard = true;
-        if (!connected) shard.transform.GetChild(0).gameObject.SetActive(true);
+        if (!connected)
+        {
+            if (shard.transform.childCount > 0) shard.transform.GetChild(0).gameObject.SetActive(true);
+        }
     }
     public void OnTriggerStay2DChild(Collider2D collider, GameObject shard)
     {
-        if (connected) shard.transform.GetChild(0).gameObject.SetActive(false);
-        else shard.transform.GetChild(0).gameObject.SetActive(true);
+        if (connected)
+        {
+            if (shard.transform.childCount > 0) shard.transform.GetChild(0).gameObject.SetActive(false);
+        }
+        else
+        {
+            if (shard.transform.childCount > 0) shard.transform.GetChild(0).gameObject.SetActive(true);
+        }
     }
 
     public void OnTriggerExit2DChild(Collider2D collider, GameObject shard)
     {
         //shard_ref = null;
-        shard.transform.GetChild(0).gameObject.SetActive(false);
+        if (shard.transform.childCount > 0) shard.transform.GetChild(0).gameObject.SetActive(false);
         player_in_shard = false;
     }
 
