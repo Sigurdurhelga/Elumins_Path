@@ -4575,7 +4575,7 @@ Transform:
   - {fileID: 61272170}
   - {fileID: 1312753820}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &310930871
 GameObject:
@@ -13220,7 +13220,7 @@ Transform:
   - {fileID: 1037181601}
   - {fileID: 986760463}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &961948662
 GameObject:
@@ -14338,7 +14338,7 @@ Transform:
   - {fileID: 1415010737}
   - {fileID: 795468499}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1022419651
 GameObject:
@@ -20528,6 +20528,90 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!1001 &1427756951
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 114402294127475902, guid: 760f042976d510946a5fc0785c20e04a,
+        type: 2}
+      propertyPath: dialogue.sentences.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4731927524749262, guid: 760f042976d510946a5fc0785c20e04a, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 7.4975452
+      objectReference: {fileID: 0}
+    - target: {fileID: 4731927524749262, guid: 760f042976d510946a5fc0785c20e04a, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 8.492125
+      objectReference: {fileID: 0}
+    - target: {fileID: 4731927524749262, guid: 760f042976d510946a5fc0785c20e04a, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4731927524749262, guid: 760f042976d510946a5fc0785c20e04a, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4731927524749262, guid: 760f042976d510946a5fc0785c20e04a, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4731927524749262, guid: 760f042976d510946a5fc0785c20e04a, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4731927524749262, guid: 760f042976d510946a5fc0785c20e04a, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4731927524749262, guid: 760f042976d510946a5fc0785c20e04a, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114402294127475902, guid: 760f042976d510946a5fc0785c20e04a,
+        type: 2}
+      propertyPath: dialogue.sentences.Array.data[3]
+      value: "\"Turmoil has engulfed the Galactic Republic. The taxation of trade
+        routes to outlying star systems is in dispute.\r\n\r\nHoping to resolve the
+        matter with a blockade of deadly battleships, the greedy Trade Federation
+        has stopped all shipping to the small planet of Naboo.\r\n\r\nWhile the congress
+        of the Republic endlessly debates this alarming chain of events, the Supreme
+        Chancellor has secretly dispatched two Jedi Knights, the guardians of peace
+        and justice in the galaxy, to settle the conflict....\""
+      objectReference: {fileID: 0}
+    - target: {fileID: 114402294127475902, guid: 760f042976d510946a5fc0785c20e04a,
+        type: 2}
+      propertyPath: dialogue.sentences.Array.data[0]
+      value: It has not happened in my lifetime, in fact, it has not happened in any
+        of our lifetimes. But the scrolls of old tell a tale of Elu'ars that could
+        control the crystal. Most of us say these are tales of lies, I disagree, and
+        therefore I am called a fool.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114402294127475902, guid: 760f042976d510946a5fc0785c20e04a,
+        type: 2}
+      propertyPath: dialogue.sentences.Array.data[2]
+      value: "\"Luke Skywalker has returned to his home planet of Tatooine in an attempt
+        to rescue his friend Han Solo from the clutches of the vile gangster Jabba
+        the Hutt. \r\n\r\nLittle does Luke know that the GALACTIC EMPIRE has secretly
+        begun construction on a new armored space station even more powerful than
+        the first dreaded Death Star.\r\n\r\nWhen completed, this ultimate weapon
+        will spell certain doom for the small band of rebels struggling to restore
+        freedom to the galaxy...\""
+      objectReference: {fileID: 0}
+    - target: {fileID: 114402294127475902, guid: 760f042976d510946a5fc0785c20e04a,
+        type: 2}
+      propertyPath: dialogue.sentences.Array.data[1]
+      value: "These tales even say that the crystals that decorate the World Tree
+        can be controlled. But they have been simple ornaments since the birth of
+        our oldest, it is hard to imagine them as anything but that.\r\n"
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 760f042976d510946a5fc0785c20e04a, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1427854237
 GameObject:
   m_ObjectHideFlags: 0
@@ -23624,7 +23708,7 @@ Transform:
   m_Children:
   - {fileID: 162620537}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 155.97}
 --- !u!4 &1664455214 stripped
 Transform:
@@ -24013,7 +24097,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1713510806
 MonoBehaviour:
@@ -28974,12 +29058,12 @@ Prefab:
     - target: {fileID: 224985926806763634, guid: c900eec705a9b034fa62dc50f4a4c1ed,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 364.69492
+      value: 619.1949
       objectReference: {fileID: 0}
     - target: {fileID: 224985926806763634, guid: c900eec705a9b034fa62dc50f4a4c1ed,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 206.92865
+      value: 270.42865
       objectReference: {fileID: 0}
     - target: {fileID: 4993075628279554, guid: c900eec705a9b034fa62dc50f4a4c1ed, type: 2}
       propertyPath: m_LocalPosition.x
