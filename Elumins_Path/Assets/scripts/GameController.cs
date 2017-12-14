@@ -15,6 +15,8 @@ public class GameController : MonoBehaviour
     private static bool isWorldTree;
     private List<string> finished_levels;
 
+    private static AudioSource MainAudio;
+
     private bool firstPlay;
 
     // Use this for initialization
@@ -104,6 +106,9 @@ public class GameController : MonoBehaviour
 
         // Do not destroy this object, when we load a new scene.
         DontDestroyOnLoad(gameObject);
+        MainAudio = GetComponent<AudioSource>();
+        DontDestroyOnLoad(MainAudio);
+
     }
 
     public void LoadWorldTree(string level_finished)
