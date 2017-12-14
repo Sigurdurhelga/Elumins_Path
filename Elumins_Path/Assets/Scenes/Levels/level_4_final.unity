@@ -2417,6 +2417,90 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1113f5342c559844a90eb9465191e561, type: 2}
   m_IsPrefabParent: 0
+--- !u!1001 &173189630
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 114402294127475902, guid: 760f042976d510946a5fc0785c20e04a,
+        type: 2}
+      propertyPath: dialogue.sentences.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4731927524749262, guid: 760f042976d510946a5fc0785c20e04a, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 7.4206743
+      objectReference: {fileID: 0}
+    - target: {fileID: 4731927524749262, guid: 760f042976d510946a5fc0785c20e04a, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 5.4782243
+      objectReference: {fileID: 0}
+    - target: {fileID: 4731927524749262, guid: 760f042976d510946a5fc0785c20e04a, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4731927524749262, guid: 760f042976d510946a5fc0785c20e04a, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4731927524749262, guid: 760f042976d510946a5fc0785c20e04a, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4731927524749262, guid: 760f042976d510946a5fc0785c20e04a, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4731927524749262, guid: 760f042976d510946a5fc0785c20e04a, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4731927524749262, guid: 760f042976d510946a5fc0785c20e04a, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114402294127475902, guid: 760f042976d510946a5fc0785c20e04a,
+        type: 2}
+      propertyPath: dialogue.sentences.Array.data[0]
+      value: My favorite tale is the one of Elumin. The scrolls say that he was the
+        most powerful Elu'ar that ever existed, and that he was the first of our kind.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114402294127475902, guid: 760f042976d510946a5fc0785c20e04a,
+        type: 2}
+      propertyPath: dialogue.sentences.Array.data[4]
+      value: "As we fade from the world, so does my belief.\r\n\r\n-Elae, xihuitl
+        31.843"
+      objectReference: {fileID: 0}
+    - target: {fileID: 114402294127475902, guid: 760f042976d510946a5fc0785c20e04a,
+        type: 2}
+      propertyPath: dialogue.sentences.Array.data[1]
+      value: His light shone brightly, but where there is light, there must also be
+        shadow. Some scrolls say he betrayed our kind, and that he left us so that
+        we might fall into shadow. Others speak of a great war between light and darkness.
+        Elumin led the battle and prevailed in driving the shadow from our realm,
+        but it cost him his life.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114402294127475902, guid: 760f042976d510946a5fc0785c20e04a,
+        type: 2}
+      propertyPath: dialogue.sentences.Array.data[2]
+      value: But a single scroll speaks of a different ending, where Elumin did not
+        die. It says that he followed the darkness to its very source, so that it
+        would never again threaten our realm. And that one day, he will return to
+        reclaim the former glory of our kind, and restore the crystals light.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114402294127475902, guid: 760f042976d510946a5fc0785c20e04a,
+        type: 2}
+      propertyPath: dialogue.sentences.Array.data[3]
+      value: I want to believe that things will change, I want to believe that Elumin
+        will return. But so much time has passed and so many of us believe that we
+        are simply following the rules of nature. That all things must come to an
+        end.
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 760f042976d510946a5fc0785c20e04a, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &184361542
 Prefab:
   m_ObjectHideFlags: 0
@@ -4249,7 +4333,7 @@ Transform:
   - {fileID: 148181973}
   - {fileID: 1135498487}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &310930871
 GameObject:
@@ -12595,7 +12679,7 @@ Transform:
   - {fileID: 204093967}
   - {fileID: 96510875}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &961948662
 GameObject:
@@ -13484,7 +13568,7 @@ Transform:
   - {fileID: 1328790115}
   - {fileID: 1927706501}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1022419651
 GameObject:
@@ -20500,12 +20584,12 @@ Prefab:
     - target: {fileID: 224985926806763634, guid: c900eec705a9b034fa62dc50f4a4c1ed,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 364.69492
+      value: 619.1949
       objectReference: {fileID: 0}
     - target: {fileID: 224985926806763634, guid: c900eec705a9b034fa62dc50f4a4c1ed,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 206.92865
+      value: 270.42865
       objectReference: {fileID: 0}
     - target: {fileID: 4993075628279554, guid: c900eec705a9b034fa62dc50f4a4c1ed, type: 2}
       propertyPath: m_LocalPosition.x
@@ -22624,7 +22708,7 @@ Transform:
   m_Children:
   - {fileID: 162620537}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!4 &1664455214 stripped
 Transform:
@@ -23001,7 +23085,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1713510806
 MonoBehaviour:
