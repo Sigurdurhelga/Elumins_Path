@@ -10,7 +10,7 @@ public class SettingsMenuScript : MonoBehaviour {
     public void SetVolume(float volume)
     {
         if(audioMixer != null)
-            audioMixer.SetFloat("volume", volume*20+(1 - volume)*-80);
+            audioMixer.SetFloat("volume", Mathf.Lerp(-30, 20, volume));
         if(volume == 0)
         {
             AudioListener.pause = true;
@@ -21,12 +21,12 @@ public class SettingsMenuScript : MonoBehaviour {
         }
     }
 
-    public void SetSFX(float volume)
+    private void SetSFX(float volume)
     {
         // Does nothing currently
     }
 
-    public void SetQuality(int qualityIndex)
+    private void SetQuality(int qualityIndex)
     {
         QualitySettings.SetQualityLevel(qualityIndex);
     }
