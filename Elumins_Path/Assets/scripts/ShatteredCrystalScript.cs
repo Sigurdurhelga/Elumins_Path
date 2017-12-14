@@ -14,6 +14,7 @@ public class ShatteredCrystalScript : MonoBehaviour
     private bool player_in_shell = false;
     private bool connected = false;
     private List<string> doneNames = new List<string>();
+    private AudioSource reconstructCrystal;
 
     private void Start()
     {
@@ -21,6 +22,7 @@ public class ShatteredCrystalScript : MonoBehaviour
         {
             wallShardRBs.Add(ShatterWall.transform.GetChild(i).GetComponent<Rigidbody2D>());
         }
+        reconstructCrystal = GetComponent<AudioSource>();
     }
 
     IEnumerator followPlayer(GameObject shard)
@@ -59,6 +61,8 @@ public class ShatteredCrystalScript : MonoBehaviour
 
         if (connectedShards == 4)
         {
+            reconstructCrystal.Play();
+            yield return new WaitForSeconds(reconstructCrystal.clip.length);
             Debug.Log("IM IN HERE");
             foreach (Rigidbody2D wallShard in wallShardRBs)
             {
