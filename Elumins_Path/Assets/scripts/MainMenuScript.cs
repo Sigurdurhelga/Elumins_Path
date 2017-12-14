@@ -18,7 +18,6 @@ public class MainMenuScript : MonoBehaviour
 
     public void NewGameButton(string NewGameLevel)
     {
-        string temp = "CurrentLevel";
         PlayerPrefs.DeleteAll();
         controller.LoadNextLevel(1.ToString());
     }
