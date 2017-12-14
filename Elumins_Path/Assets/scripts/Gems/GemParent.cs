@@ -23,7 +23,7 @@ public class GemParent : MonoBehaviour
 
     protected Light GemLight;
     protected SpriteRenderer GemSprite;
-    
+
     protected GameObject dynamicLight;
     protected AudioSource success_sound;
     protected Color[] Color_Codes = new Color[5] { new Color(0, 0.4f, 0.8f, 1f), Color.red, Color.green, Color.magenta, Color.white };
@@ -37,10 +37,6 @@ public class GemParent : MonoBehaviour
     protected bool playerIn = false;
     protected float poweringRecharge;
     protected bool hitByRay = false;
-
-    //protected float InitialIntensity;
-    //protected float InitialRange;
-
 
     protected bool chargingGem = false;
 
@@ -89,7 +85,7 @@ public class GemParent : MonoBehaviour
 
     void Update()
     {
-        
+
     }
 
     protected IEnumerator Charge()
@@ -97,16 +93,16 @@ public class GemParent : MonoBehaviour
         float runningTime = 0;
         chargingGem = true;
         bool doneWithGem = false;
-        while(!doneWithGem)
+        while (!doneWithGem)
         {
-            if(playerIn || hitByRay) // Charge Gem, increase light intesity and gem_power
+            if (playerIn || hitByRay) // Charge Gem, increase light intesity and gem_power
             {
-                if(hitByRay)
-
+                if (hitByRay)
                 {
                     hitByRay = false;
                 }
                 runningTime += Time.deltaTime;
+                if (!GemLight) InitializeGemValues();
                 GemLight.range = Mathf.Lerp(StartingLightRange, EndingLightRange, runningTime);
                 GemLight.intensity = Mathf.Lerp(StartingLightIntensity, EndingLightIntesity, runningTime);
                 if (runningTime >= timeToCharge)
@@ -138,7 +134,7 @@ public class GemParent : MonoBehaviour
         float time = 0;// timeToCharge;
         while (true)
         {
-            if(time>=timeToCharge)
+            if (time >= timeToCharge)
             {
                 break;
             }
