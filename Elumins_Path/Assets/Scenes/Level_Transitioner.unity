@@ -10138,7 +10138,7 @@ Prefab:
     - target: {fileID: 224753762061121162, guid: e9e1b6ed0cdb2394ab0800926209f868,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 567
+      value: 738
       objectReference: {fileID: 0}
     - target: {fileID: 224753762061121162, guid: e9e1b6ed0cdb2394ab0800926209f868,
         type: 2}
@@ -17584,7 +17584,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 6dda8a0da376e934ab0604befd240073, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
