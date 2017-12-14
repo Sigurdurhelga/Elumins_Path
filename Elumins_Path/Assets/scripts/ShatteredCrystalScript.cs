@@ -5,6 +5,7 @@ using UnityEngine;
 public class ShatteredCrystalScript : MonoBehaviour
 {
     public GameObject ShatterWall;
+    public float maxDistance;
     private List<Rigidbody2D> wallShardRBs = new List<Rigidbody2D>();
     private GameObject player_ref;
     private GameObject shard_ref;
@@ -29,6 +30,13 @@ public class ShatteredCrystalScript : MonoBehaviour
         while (connected)
         {
             shard.transform.position = Vector3.Lerp(shard.transform.position, player_ref.transform.position, 0.05f);
+
+            float t = (Vector3.Distance(shard.transform.position, player_ref.transform.position)/maxDistance);
+            if(t > 1)
+            {
+                shard.transform.position = Vector3.Lerp(player_ref.transform.position, shard.transform.position, Mathf.Max(maxDistance / t, 0.9f));
+            }
+            
             yield return null;
         }
     }
@@ -62,7 +70,7 @@ public class ShatteredCrystalScript : MonoBehaviour
             //Vector2 randompush = new Vector2(Random.RandomRange(-1000,1000), Random.RandomRange(-1000,1000));
             foreach (Rigidbody2D wallShard in wallShardRBs)
             {
-                wallShard.AddForce(forcepush * Random.RandomRange(50, 100));
+                wallShard.AddForce(forcepush * Random.Range(50, 100));
             }
             yield return new WaitForSeconds(4f);
 
@@ -90,7 +98,8 @@ public class ShatteredCrystalScript : MonoBehaviour
                 }
             }
         }
-        else if (player_in_shard && !connected && shard_ref)
+        else 
+        if (player_in_shard && !connected && shard_ref)
         {
             if (Input.GetKeyDown(KeyCode.Space) && !doneNames.Contains(shard_ref.name))
             {
@@ -105,6 +114,15 @@ public class ShatteredCrystalScript : MonoBehaviour
         if (collider.transform.tag == "Player")
         {
             player_in_shell = true;
+            if(connected)
+            {
+                connected = false;
+                if (!doneNames.Contains(shard_ref.name))
+                {
+                    StartCoroutine(mergeWithShell(shard_ref));
+                    Destroy(shard_ref.transform.GetChild(0).gameObject);
+                }
+            }
         }
     }
     private void OnTriggerExit2D(Collider2D collider)

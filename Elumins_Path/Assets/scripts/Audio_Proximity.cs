@@ -6,7 +6,7 @@ public class Audio_Proximity : MonoBehaviour {
 
     private Transform target;
 
-	public AudioSource audio;
+	public AudioSource audioPlayer;
 
 	
 	void Start () {
@@ -23,11 +23,11 @@ public class Audio_Proximity : MonoBehaviour {
 		    if(distanceToTarget < 1) { distanceToTarget = 1; }
 				
 		    if (distanceToTarget > 10) {
-			    audio.volume = 0;
+			    audioPlayer.volume = 0;
 		    } 
 		    else 
 		    {
-			    audio.volume = 1/Mathf.Pow(distanceToTarget, 2); // this works as a linear function, while the 3D sound works like a logarithmic function, so the effect will be a little different (correct me if I'm wrong)
+			    audioPlayer.volume = 1/Mathf.Pow(distanceToTarget, 2); // this works as a linear function, while the 3D sound works like a logarithmic function, so the effect will be a little different (correct me if I'm wrong)
 		    }
                 
 		    yield return new WaitForSeconds(0.01F); // this will adjust the volume based on distance every 1 second (Obviously, You can reduce this to a lower value if you want more updates per second)
