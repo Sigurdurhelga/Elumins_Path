@@ -4,9 +4,15 @@ using UnityEngine;
 
 public class CameraFocusScript : MonoBehaviour {
 
+    public GameObject startPos;
+    public GameObject endPos;
+    public float zoomPosition;
     private Transform camera_transform;
     private DeadZoneCamera camera_script;
     private Transform playerRef;
+    private Vector3 originalStart;
+    private Vector3 originalEnd;
+
 
     private bool playerIn = false;
 
@@ -14,34 +20,49 @@ public class CameraFocusScript : MonoBehaviour {
 	void Start () {
         camera_transform = Camera.main.transform;
         camera_script = camera_transform.GetComponent<DeadZoneCamera>();
+        originalStart = startPos.transform.position;
+        originalEnd = endPos.transform.position;
 	}
 
-    IEnumerator smoothMoveCameraToPos()
-    {
-        Debug.Log("entered smooth to pos");
-        Vector3 source = camera_transform.position;
-        float pos = 0;
-        while (pos < 1 && playerIn)
-        {
-            pos += 0.01f;
-            camera_transform.position = Vector3.Lerp(source, transform.position, pos);
-            yield return new WaitForSeconds(0.01f);
+    IEnumerator smoothZoomCamera(float newZoom){
+        float difference = newZoom - Camera.main.orthographicSize;
+        float time = 0;
+        float timestep = 0.01f;
+        float nsteps = 1 / timestep;
+        float step = difference / nsteps;
+        while(time < 1){
+            Camera.main.orthographicSize += step;
+            time += timestep;
+            yield return new WaitForSeconds(timestep);
         }
     }
-    IEnumerator smoothMoveCameraToPlayer()
+    IEnumerator smoothMoveCamera(GameObject source, GameObject dest)
     {
-        Vector3 source = camera_transform.position;
-        float pos = 0;
-        Debug.Log("entered smooth to player" + pos);
-        while (pos < 1)
+        Vector3 source3;
+        Vector3 dest3;
+
+        float difference = 1; // 1 as in lerp is from [0,1] so difference from 0 to 1 is 1
+        float time = 0;
+        float timestep = 0.01f;
+        float nstep = 1 / timestep;
+        float step = difference / nstep;
+        float position = 0;
+        while (time < 1)
         {
-            pos += 0.01f;
-            Debug.Log("loop smooth to player" + pos);
-            Vector3 desiredPos = new Vector3(playerRef.position.x, playerRef.position.y, -10);
-            camera_transform.position = Vector3.Lerp(source, desiredPos , pos);
-            yield return new WaitForSeconds(0.01f);
+            source3 = source.transform.position;
+            dest3 = dest.transform.position;
+            source3.z = -10;
+            dest3.z = -10;
+            position += step;
+            Debug.Log(position);
+            Camera.main.transform.position = Vector3.Lerp(source3, dest3, position);
+            time += timestep;
+            yield return new WaitForSeconds(timestep);
         }
-        camera_script.enabled = true;
+        if(!playerIn){
+            Debug.Log("enabling camre");
+            camera_script.enabled = true;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -50,10 +71,13 @@ public class CameraFocusScript : MonoBehaviour {
         {
             if(!playerRef)
                 playerRef = collision.transform;
-            Debug.Log("plaer entered");
             playerIn = true;
             camera_script.enabled = false;
-            StartCoroutine(smoothMoveCameraToPos());
+            endPos.transform.position = originalEnd;
+            startPos.transform.position = Camera.main.transform.position;
+            StopAllCoroutines();
+            StartCoroutine(smoothMoveCamera(startPos, endPos));
+            StartCoroutine(smoothZoomCamera(zoomPosition));
         }
     }
 
@@ -61,10 +85,12 @@ public class CameraFocusScript : MonoBehaviour {
     {
         if(collision.transform.tag == "Player")
         {
-            Debug.Log("plaer exit");
             playerIn = false;
-            StopCoroutine(smoothMoveCameraToPos());
-            StartCoroutine(smoothMoveCameraToPlayer());
+            startPos.transform.position = originalStart;
+            endPos.transform.position = Camera.main.transform.position;
+            StopAllCoroutines();
+            StartCoroutine(smoothMoveCamera(endPos, playerRef.gameObject));
+            StartCoroutine(smoothZoomCamera(7));
         }
     }
 

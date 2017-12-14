@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PauseMenuScript : MonoBehaviour {
+public class PauseMenuScript : MonoBehaviour
+{
 
     public GameObject PauseMenu;
     private bool gamePaused;
@@ -24,12 +25,13 @@ public class PauseMenuScript : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update() {
+    void Update()
+    {
         if (Input.GetKeyUp("p") || Input.GetKeyUp("escape"))
         {
             TogglePause();
         }
-        if(Input.GetKeyUp("r"))
+        if (Input.GetKeyUp("r") && SceneManager.GetActiveScene().name != "Level_Transitioner")
         {
             RestartLevel();
         }
@@ -43,7 +45,7 @@ public class PauseMenuScript : MonoBehaviour {
     public void ExitLevelButton()
     {
         UnPauseGame();
-        if(SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Level_Transitioner"))
+        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Level_Transitioner"))
         {
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.Confined;
@@ -102,5 +104,5 @@ public class PauseMenuScript : MonoBehaviour {
         int scene = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(scene);
     }
-    
+
 }

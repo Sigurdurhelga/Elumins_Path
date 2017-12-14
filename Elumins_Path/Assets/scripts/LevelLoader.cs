@@ -6,9 +6,9 @@ using UnityEngine.SceneManagement;
 public class LevelLoader : MonoBehaviour
 {
 
+    public GameObject space_bar;
     private bool player_in_zone;
 
-    private GameObject space_bar;
     private string level;
     GameController controller;
 
@@ -17,8 +17,6 @@ public class LevelLoader : MonoBehaviour
     {
         controller = GameController.instance;
         player_in_zone = false;
-        space_bar = transform.GetChild(0).gameObject;
-        space_bar.SetActive(false);
         level = this.name;
         if (level == "2") level = "3";
 

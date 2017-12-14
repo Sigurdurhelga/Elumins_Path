@@ -155,6 +155,7 @@ public class GameController : MonoBehaviour
                 finished_levels.Add(i.ToString());
             }
         }
+        if (CurrentLevel == 0) CurrentLevel--;
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
         LoadWorldTree((CurrentLevel - 1).ToString());
