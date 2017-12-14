@@ -4587,6 +4587,18 @@ Prefab:
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 82823760623164114, guid: cb8b84f8095a57f428f224b14d2118bf,
+        type: 2}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24300002, guid: 43bcbf4ce9a8b8448b1a461b98c96a4c,
+        type: 2}
+    - target: {fileID: 82076100628288758, guid: cb8b84f8095a57f428f224b14d2118bf,
+        type: 2}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24300002, guid: 43bcbf4ce9a8b8448b1a461b98c96a4c,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cb8b84f8095a57f428f224b14d2118bf, type: 2}
   m_IsPrefabParent: 0
@@ -10052,6 +10064,10 @@ Prefab:
     - target: {fileID: 1288563263409136, guid: af55d023054539a47896b69d4a8bfd97, type: 2}
       propertyPath: m_Name
       value: GemLightOn
+      objectReference: {fileID: 0}
+    - target: {fileID: 1100287326185354, guid: af55d023054539a47896b69d4a8bfd97, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: af55d023054539a47896b69d4a8bfd97, type: 2}
@@ -16992,6 +17008,12 @@ Prefab:
       propertyPath: m_RootOrder
       value: 11
       objectReference: {fileID: 0}
+    - target: {fileID: 82814420753851730, guid: 1d1e34e68230aa4448cfdd7208b65a7f,
+        type: 2}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24300002, guid: 43bcbf4ce9a8b8448b1a461b98c96a4c,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1d1e34e68230aa4448cfdd7208b65a7f, type: 2}
   m_IsPrefabParent: 0
@@ -20478,12 +20500,12 @@ Prefab:
     - target: {fileID: 224985926806763634, guid: c900eec705a9b034fa62dc50f4a4c1ed,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 193.1949
+      value: 419.19492
       objectReference: {fileID: 0}
     - target: {fileID: 224985926806763634, guid: c900eec705a9b034fa62dc50f4a4c1ed,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 110.42865
+      value: 203.42865
       objectReference: {fileID: 0}
     - target: {fileID: 4993075628279554, guid: c900eec705a9b034fa62dc50f4a4c1ed, type: 2}
       propertyPath: m_LocalPosition.x
