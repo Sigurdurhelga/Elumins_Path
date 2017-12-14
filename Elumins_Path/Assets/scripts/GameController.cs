@@ -61,7 +61,7 @@ public class GameController : MonoBehaviour
                 {
                     if (Int32.Parse(level.name) <= current_level)
                     {
-                        level.GetComponent<SpriteRenderer>().sprite = Resources.Load("Window_Open_Light", typeof(Sprite)) as Sprite;
+                        level.GetComponent<SpriteRenderer>().sprite = Resources.Load("Window_Open_Light_Blue", typeof(Sprite)) as Sprite;
                         level.GetComponentInChildren<Light>().enabled = true;
                     }
                     else if (level.name == next_level.ToString())
@@ -71,6 +71,7 @@ public class GameController : MonoBehaviour
                     else
                     {
                         level.GetComponent<LevelLoader>().enabled = false;
+                        level.GetComponent<SpriteRenderer>().sprite = Resources.Load("Window_Closed_Dark_Darker", typeof(Sprite)) as Sprite;
                     }
 
                     if (Int32.Parse(level.name) == CurrentLevel)
