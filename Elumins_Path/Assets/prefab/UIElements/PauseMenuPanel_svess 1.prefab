@@ -956,7 +956,7 @@ GameObject:
   - component: {fileID: 222783177886357498}
   - component: {fileID: 114672311903728516}
   m_Layer: 5
-  m_Name: PauseMenuPanel_svess_backup
+  m_Name: PauseMenuPanel_svess 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
