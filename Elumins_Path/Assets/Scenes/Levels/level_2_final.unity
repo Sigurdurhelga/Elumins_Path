@@ -252,12 +252,12 @@ Prefab:
     - target: {fileID: 224985926806763634, guid: c900eec705a9b034fa62dc50f4a4c1ed,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 364.69492
+      value: 619.1949
       objectReference: {fileID: 0}
     - target: {fileID: 224985926806763634, guid: c900eec705a9b034fa62dc50f4a4c1ed,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 206.92865
+      value: 270.42865
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c900eec705a9b034fa62dc50f4a4c1ed, type: 2}
@@ -4187,7 +4187,7 @@ Transform:
   - {fileID: 507508109}
   - {fileID: 1620100797}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &310930871
 GameObject:
@@ -12815,7 +12815,7 @@ Transform:
   - {fileID: 2145105084}
   - {fileID: 1427854238}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &961948662
 GameObject:
@@ -13795,7 +13795,7 @@ Transform:
   - {fileID: 1328790115}
   - {fileID: 1927706501}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1022419651
 GameObject:
@@ -22413,6 +22413,86 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1113f5342c559844a90eb9465191e561, type: 2}
   m_IsPrefabParent: 0
+--- !u!1001 &1614722421
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 114402294127475902, guid: 760f042976d510946a5fc0785c20e04a,
+        type: 2}
+      propertyPath: dialogue.sentences.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4731927524749262, guid: 760f042976d510946a5fc0785c20e04a, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -2.0446334
+      objectReference: {fileID: 0}
+    - target: {fileID: 4731927524749262, guid: 760f042976d510946a5fc0785c20e04a, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 6.3079085
+      objectReference: {fileID: 0}
+    - target: {fileID: 4731927524749262, guid: 760f042976d510946a5fc0785c20e04a, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4731927524749262, guid: 760f042976d510946a5fc0785c20e04a, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4731927524749262, guid: 760f042976d510946a5fc0785c20e04a, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4731927524749262, guid: 760f042976d510946a5fc0785c20e04a, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4731927524749262, guid: 760f042976d510946a5fc0785c20e04a, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4731927524749262, guid: 760f042976d510946a5fc0785c20e04a, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114402294127475902, guid: 760f042976d510946a5fc0785c20e04a,
+        type: 2}
+      propertyPath: dialogue.sentences.Array.data[2]
+      value: Well, we know how - but it is not something that we control.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114402294127475902, guid: 760f042976d510946a5fc0785c20e04a,
+        type: 2}
+      propertyPath: dialogue.sentences.Array.data[3]
+      value: "\"Turmoil has engulfed the Galactic Republic. The taxation of trade
+        routes to outlying star systems is in dispute.\r\n\r\nHoping to resolve the
+        matter with a blockade of deadly battleships, the greedy Trade Federation
+        has stopped all shipping to the small planet of Naboo.\r\n\r\nWhile the congress
+        of the Republic endlessly debates this alarming chain of events, the Supreme
+        Chancellor has secretly dispatched two Jedi Knights, the guardians of peace
+        and justice in the galaxy, to settle the conflict....\""
+      objectReference: {fileID: 0}
+    - target: {fileID: 114402294127475902, guid: 760f042976d510946a5fc0785c20e04a,
+        type: 2}
+      propertyPath: dialogue.sentences.Array.data[0]
+      value: Who are "we" you might be asking yourself. Well, we are Elu'ars, the
+        beings of light. And as the crystal emits light, it emits us. But the world
+        is changing, and has been changing for some time now. Old scrolls speak of
+        a time when our ranks increased daily. That however, is not the truth of our
+        current reality.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114402294127475902, guid: 760f042976d510946a5fc0785c20e04a,
+        type: 2}
+      propertyPath: dialogue.sentences.Array.data[1]
+      value: The crystals light is fading, and as the light fades, so do we fade from
+        the world. The birth of a new one is so rare these days. It is so rare as
+        a matter of fact, that it has not happened for centuries. And we do not know
+        how to fix it.
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 760f042976d510946a5fc0785c20e04a, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1620100796
 GameObject:
   m_ObjectHideFlags: 0
@@ -23415,7 +23495,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1713510806
 MonoBehaviour:
