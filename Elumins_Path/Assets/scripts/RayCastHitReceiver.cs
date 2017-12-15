@@ -18,6 +18,12 @@ public class RayCastHitReceiver : MonoBehaviour
             case ("RedGem"):
                 gem = gameObject.GetComponent<RedRayGem>();
                 break;
+            case ("TwinGem"):
+                gem = gameObject.GetComponent<TwinCrystal>();
+                break;
+            default:
+                gem = gameObject.GetComponent<LevelGem>();
+                break;
         }
         gem.OnHitRay();
     }

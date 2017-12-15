@@ -4,17 +4,13 @@ using DynamicLight2D;
 using System.Collections;
 public class TwinCrystal : GemParent
 {
-    private GameObject Brother;
+    public GameObject Brother;
     private GameObject MyWall;
     public bool Active;
     public override void Start()
     {
         base.Start();
         Active = false;
-        if (tag == "Brother1") Brother = transform.parent.parent.GetChild(1).GetChild(2).gameObject;
-        else Brother = transform.parent.parent.GetChild(1).GetChild(2).gameObject;
-        if (tag == "Brother1") Brother = GameObject.FindGameObjectWithTag("Brother2");
-        else Brother = GameObject.FindGameObjectWithTag("Brother1");
         MyWall = transform.parent.GetChild(5).gameObject;
         Debug.Log(base.GemLight);
     }
