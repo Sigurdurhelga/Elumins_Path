@@ -47,7 +47,7 @@ public class LevelLoader : MonoBehaviour
                 player_in_zone = true;
                 if (this.enabled == true)
                 {
-                    space_bar.SetActive(true);
+                    if (space_bar) space_bar.SetActive(true);
                 }
             }
         }
@@ -58,7 +58,7 @@ public class LevelLoader : MonoBehaviour
         if (other.name == "Orb")
         {
             player_in_zone = false;
-            space_bar.SetActive(false);
+            if (space_bar) space_bar.SetActive(false);
         }
     }
 }

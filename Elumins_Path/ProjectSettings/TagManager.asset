@@ -25,6 +25,8 @@ TagManager:
   - Brother2
   - dialogueManager
   - bonusPortal
+  - GreenGem
+  - TwinGem
   layers:
   - Default
   - TransparentFX
