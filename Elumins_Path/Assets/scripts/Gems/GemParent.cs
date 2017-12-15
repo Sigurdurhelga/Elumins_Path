@@ -7,7 +7,7 @@ using DynamicLight2D;
 
 public enum DropDownGemColors
 {
-    blue, red, green, purple, white
+    blue, red, green, purple, white, pink, orange
 }
 
 public class GemParent : MonoBehaviour
@@ -26,8 +26,8 @@ public class GemParent : MonoBehaviour
 
     protected GameObject dynamicLight;
     protected AudioSource success_sound;
-    protected Color[] Color_Codes = new Color[5] { new Color(0, 0.4f, 0.8f, 1f), Color.red, Color.green, Color.magenta, Color.white };
-    protected Color[] Light_Color_Codes = new Color[5] { new Color(0, 0.5f, 1f, 0.13f), new Color(1, 0, 0, 0.13f), new Color(0, 1, 0, 0.13f), Color.magenta, Color.white };
+    protected Color[] Color_Codes = new Color[7] { new Color(0, 0.4f, 0.8f, 1f), Color.red, Color.green, Color.magenta, Color.white, new Color32(230, 155, 222, 255), new Color32(217, 150, 80, 255) };
+    protected Color[] Light_Color_Codes = new Color[7] { new Color(0, 0.5f, 1f, 0.13f), new Color(1, 0, 0, 0.13f), new Color(0, 1, 0, 0.13f), Color.magenta, Color.white, new Color32(210, 82, 127, 255), new Color32(217, 150, 80, 255) };
     protected Color selected_color;
     protected Color selected_light;
     protected AudioSource gem_area_sound;
