@@ -17,27 +17,37 @@ public class SettingsMenuScript : MonoBehaviour {
     private void Start(){
 
         /*SETTING UP RESOLUTIONS*/
-        resolutions = Screen.resolutions;
-        List<string> options = new List<string>();
-        int resolutionSelected = 0;
-        for(int i = 0; i < resolutions.Length; i++){
-            options.Add(resolutions[i].width+"x"+resolutions[i].height);
-            resolutionDropdown.onValueChanged.AddListener(
-                delegate { 
-                    Screen.SetResolution(resolutions[resolutionDropdown.value].width, resolutions[resolutionDropdown.value].height, true);
-                        });
-            if(Screen.currentResolution.height == resolutions[i].height && Screen.currentResolution.width == resolutions[i].width)
-                resolutionSelected = i;
+        if (resolutionDropdown)
+        {
+            resolutions = Screen.resolutions;
+            List<string> options = new List<string>();
+            int resolutionSelected = 0;
+            for (int i = 0; i < resolutions.Length; i++)
+            {
+                options.Add(resolutions[i].width + "x" + resolutions[i].height);
+                resolutionDropdown.onValueChanged.AddListener(
+                    delegate
+                    {
+                        Screen.SetResolution(resolutions[resolutionDropdown.value].width, resolutions[resolutionDropdown.value].height, true);
+                    });
+                if (Screen.currentResolution.height == resolutions[i].height && Screen.currentResolution.width == resolutions[i].width)
+                    resolutionSelected = i;
+            }
+            resolutionDropdown.AddOptions(options);
+            resolutionDropdown.value = resolutionSelected;
         }
-        resolutionDropdown.AddOptions(options);
-        resolutionDropdown.value = resolutionSelected;
         /*SETTING UP GRAPHICS*/
-        options.Clear();
-        foreach(string quality in QualitySettings.names){
-            options.Add(quality);
+        if (graphicsDropdown)
+        {
+            List<string> options = new List<string>();
+            options.Clear();
+            foreach (string quality in QualitySettings.names)
+            {
+                options.Add(quality);
+            }
+            graphicsDropdown.AddOptions(options);
+            graphicsDropdown.value = QualitySettings.GetQualityLevel();
         }
-        graphicsDropdown.AddOptions(options);
-        graphicsDropdown.value = QualitySettings.GetQualityLevel();
     }
 
     public void SetVolume(float volume)
