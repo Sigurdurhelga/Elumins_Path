@@ -6693,6 +6693,16 @@ Prefab:
       propertyPath: Brother
       value: 
       objectReference: {fileID: 1875284610}
+    - target: {fileID: 212950247207618492, guid: 97887bde099f2614b85694a4955fe4c4,
+        type: 2}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 212456925896206348, guid: 97887bde099f2614b85694a4955fe4c4,
+        type: 2}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 97887bde099f2614b85694a4955fe4c4, type: 2}
   m_IsPrefabParent: 0
@@ -8855,6 +8865,16 @@ Prefab:
       propertyPath: Brother
       value: 
       objectReference: {fileID: 942524492}
+    - target: {fileID: 212456925896206348, guid: 97887bde099f2614b85694a4955fe4c4,
+        type: 2}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 212950247207618492, guid: 97887bde099f2614b85694a4955fe4c4,
+        type: 2}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 97887bde099f2614b85694a4955fe4c4, type: 2}
   m_IsPrefabParent: 0
@@ -13913,6 +13933,21 @@ Prefab:
       propertyPath: Brother
       value: 
       objectReference: {fileID: 1194126040}
+    - target: {fileID: 212953366755993408, guid: 97887bde099f2614b85694a4955fe4c4,
+        type: 2}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 212456925896206348, guid: 97887bde099f2614b85694a4955fe4c4,
+        type: 2}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 212950247207618492, guid: 97887bde099f2614b85694a4955fe4c4,
+        type: 2}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 97887bde099f2614b85694a4955fe4c4, type: 2}
   m_IsPrefabParent: 0
@@ -14103,6 +14138,16 @@ Prefab:
       propertyPath: Brother
       value: 
       objectReference: {fileID: 400337168}
+    - target: {fileID: 212456925896206348, guid: 97887bde099f2614b85694a4955fe4c4,
+        type: 2}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 212950247207618492, guid: 97887bde099f2614b85694a4955fe4c4,
+        type: 2}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 97887bde099f2614b85694a4955fe4c4, type: 2}
   m_IsPrefabParent: 0
@@ -18060,6 +18105,16 @@ Prefab:
       propertyPath: Brother
       value: 
       objectReference: {fileID: 1296135548}
+    - target: {fileID: 212456925896206348, guid: 97887bde099f2614b85694a4955fe4c4,
+        type: 2}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 212950247207618492, guid: 97887bde099f2614b85694a4955fe4c4,
+        type: 2}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 97887bde099f2614b85694a4955fe4c4, type: 2}
   m_IsPrefabParent: 0
