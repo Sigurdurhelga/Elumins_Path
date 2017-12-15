@@ -12275,6 +12275,11 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!82 &891148689 stripped
+AudioSource:
+  m_PrefabParentObject: {fileID: 82076100628288758, guid: cb8b84f8095a57f428f224b14d2118bf,
+    type: 2}
+  m_PrefabInternal: {fileID: 1654088009}
 --- !u!1 &893535857
 GameObject:
   m_ObjectHideFlags: 0
@@ -23414,6 +23419,11 @@ Prefab:
       value: 
       objectReference: {fileID: 24300002, guid: 43bcbf4ce9a8b8448b1a461b98c96a4c,
         type: 2}
+    - target: {fileID: 114618670941695794, guid: cb8b84f8095a57f428f224b14d2118bf,
+        type: 2}
+      propertyPath: audioPlayer
+      value: 
+      objectReference: {fileID: 891148689}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cb8b84f8095a57f428f224b14d2118bf, type: 2}
   m_IsPrefabParent: 0
@@ -29058,12 +29068,12 @@ Prefab:
     - target: {fileID: 224985926806763634, guid: c900eec705a9b034fa62dc50f4a4c1ed,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 174.1949
+      value: 424.69492
       objectReference: {fileID: 0}
     - target: {fileID: 224985926806763634, guid: c900eec705a9b034fa62dc50f4a4c1ed,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 99.92865
+      value: 206.42865
       objectReference: {fileID: 0}
     - target: {fileID: 4993075628279554, guid: c900eec705a9b034fa62dc50f4a4c1ed, type: 2}
       propertyPath: m_LocalPosition.x
@@ -29073,9 +29083,20 @@ Prefab:
       propertyPath: m_LocalPosition.y
       value: 0.75
       objectReference: {fileID: 0}
+    - target: {fileID: 114616677281946182, guid: c900eec705a9b034fa62dc50f4a4c1ed,
+        type: 2}
+      propertyPath: musicSlider
+      value: 
+      objectReference: {fileID: 2066392739}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c900eec705a9b034fa62dc50f4a4c1ed, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &2066392739 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114286261876140000, guid: c900eec705a9b034fa62dc50f4a4c1ed,
+    type: 2}
+  m_PrefabInternal: {fileID: 2066392738}
+  m_Script: {fileID: -113659843, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &2071169383
 GameObject:
   m_ObjectHideFlags: 0
