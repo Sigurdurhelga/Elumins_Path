@@ -4204,12 +4204,12 @@ Prefab:
     - target: {fileID: 224985926806763634, guid: c900eec705a9b034fa62dc50f4a4c1ed,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 364.69492
+      value: 174.6949
       objectReference: {fileID: 0}
     - target: {fileID: 224985926806763634, guid: c900eec705a9b034fa62dc50f4a4c1ed,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 206.92865
+      value: 99.92865
       objectReference: {fileID: 0}
     - target: {fileID: 4993075628279554, guid: c900eec705a9b034fa62dc50f4a4c1ed, type: 2}
       propertyPath: m_LocalPosition.x
@@ -4576,6 +4576,22 @@ Transform:
   m_PrefabParentObject: {fileID: 4765154232529782, guid: 7aa576a91bd336946a7fbed3c7f261a5,
     type: 2}
   m_PrefabInternal: {fileID: 307179959}
+--- !u!1 &152907336 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1371412833136832, guid: 97887bde099f2614b85694a4955fe4c4,
+    type: 2}
+  m_PrefabInternal: {fileID: 667279612}
+--- !u!114 &152907341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 152907336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba23bfa4657926142bb6e6fd5c98549b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &157926691
 Prefab:
   m_ObjectHideFlags: 0
@@ -6870,7 +6886,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 513658754}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 24.82, y: 7.89, z: 0}
+  m_LocalPosition: {x: 24.82, y: 8.36, z: 0}
   m_LocalScale: {x: 0.19999993, y: 0.19999993, z: 1}
   m_Children:
   - {fileID: 683106628}
@@ -8120,6 +8136,10 @@ Prefab:
     - target: {fileID: 4429929784302160, guid: 97887bde099f2614b85694a4955fe4c4, type: 2}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1371412833136832, guid: 97887bde099f2614b85694a4955fe4c4, type: 2}
+      propertyPath: m_TagString
+      value: TwinGem
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 97887bde099f2614b85694a4955fe4c4, type: 2}
@@ -11289,6 +11309,22 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1113f5342c559844a90eb9465191e561, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1173942348 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1371412833136832, guid: 97887bde099f2614b85694a4955fe4c4,
+    type: 2}
+  m_PrefabInternal: {fileID: 1980794520}
+--- !u!114 &1173942353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1173942348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba23bfa4657926142bb6e6fd5c98549b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1184444521
 Prefab:
   m_ObjectHideFlags: 0
@@ -15229,6 +15265,10 @@ Prefab:
         type: 2}
       propertyPath: m_SortingOrder
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1371412833136832, guid: 97887bde099f2614b85694a4955fe4c4, type: 2}
+      propertyPath: m_TagString
+      value: TwinGem
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 97887bde099f2614b85694a4955fe4c4, type: 2}
