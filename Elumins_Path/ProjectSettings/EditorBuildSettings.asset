@@ -30,11 +30,11 @@ EditorBuildSettings:
     path: Assets/Scenes/Levels/level_6_final.unity
     guid: 58430d69ef6595549bccf0fca13794b0
   - enabled: 1
-    path: Assets/Scenes/Levels/level_7_final.unity
-    guid: 8a37befa33efefe45a23b521736cecc8
+    path: Assets/Scenes/Levels/level_7_final_with_twins.unity
+    guid: b7e74684a1dfc784da92ebdc12eb553d
   - enabled: 1
-    path: Assets/Scenes/Levels/level_8_final_temp.unity
-    guid: 760946fb51f6b274cbc9304a906a762d
+    path: Assets/Scenes/Levels/level_8_final_v2.unity
+    guid: 429b807be4848774a8abb715ed0b1546
   - enabled: 1
     path: Assets/Scenes/Levels/level_9_final_temp.unity
     guid: 2dab021141af95a47bd30d6a9766d7bd
