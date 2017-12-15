@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PauseMenuScript : MonoBehaviour
 {
 
     public GameObject PauseMenu;
     private bool gamePaused;
+    private bool adjustedSlider;
     private GameController controller;
 
     private void Start()
@@ -22,6 +24,7 @@ public class PauseMenuScript : MonoBehaviour
             gamePaused = false;
         }
         UnPauseGame();
+        adjustedSlider = false;
     }
 
     // Update is called once per frame
@@ -81,6 +84,14 @@ public class PauseMenuScript : MonoBehaviour
         if (PauseMenu != null)
         {
             PauseMenu.SetActive(true);
+            if (!adjustedSlider)
+            {
+                GameObject volumeSlider = GameObject.Find("VolumeSlider");
+                Slider slider = volumeSlider.GetComponent<Slider>();
+                SettingsMenuScript settings = gameObject.GetComponent<SettingsMenuScript>();
+                settings.SetSlider(slider);
+                adjustedSlider = true;
+            }
         }
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.Confined;
