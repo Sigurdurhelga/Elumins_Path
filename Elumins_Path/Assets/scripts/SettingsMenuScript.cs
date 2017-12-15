@@ -11,6 +11,7 @@ public class SettingsMenuScript : MonoBehaviour {
     public AudioMixer audioMixer;
     public TMP_Dropdown resolutionDropdown;
     public TMP_Dropdown graphicsDropdown;
+    public Slider musicSlider;
     
     private Resolution[] resolutions;
 
@@ -48,12 +49,20 @@ public class SettingsMenuScript : MonoBehaviour {
             graphicsDropdown.AddOptions(options);
             graphicsDropdown.value = QualitySettings.GetQualityLevel();
         }
+        float volumeSetting;
+        if (audioMixer.GetFloat("volume", out volumeSetting))
+        {
+            if (musicSlider)
+            {
+                musicSlider.value = Mathf.InverseLerp(-80, 20, volumeSetting);
+            }
+        }
     }
 
     public void SetVolume(float volume)
     {
         if(audioMixer != null)
-            audioMixer.SetFloat("volume", Mathf.Lerp(-30, 20, volume));
+            audioMixer.SetFloat("volume", Mathf.Lerp(-80, 20, volume));
         if(volume == 0)
         {
             AudioListener.pause = true;
