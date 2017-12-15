@@ -38,7 +38,6 @@ public class SettingsMenuScript : MonoBehaviour {
         }
         graphicsDropdown.AddOptions(options);
         graphicsDropdown.value = QualitySettings.GetQualityLevel();
-
     }
 
     public void SetVolume(float volume)
