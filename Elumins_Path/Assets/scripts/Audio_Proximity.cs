@@ -6,13 +6,13 @@ public class Audio_Proximity : MonoBehaviour
 {
 
 
-    public AudioSource _audioPlayer;
+    public AudioSource audioPlayer;
     private Transform target;
-
 
 
     void Start()
     {
+        audioPlayer = GetComponent<AudioSource>();
         target = GameObject.FindGameObjectWithTag("Player").transform;
         StartCoroutine(AdjustVolume());
     }
