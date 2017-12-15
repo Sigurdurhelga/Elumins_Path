@@ -53,7 +53,7 @@ public class SettingsMenuScript : MonoBehaviour {
     public void SetVolume(float volume)
     {
         if(audioMixer != null)
-            audioMixer.SetFloat("volume", Mathf.Lerp(-30, 20, volume));
+            audioMixer.SetFloat("volume", Mathf.Lerp(-80, 20, volume));
         if(volume == 0)
         {
             AudioListener.pause = true;
