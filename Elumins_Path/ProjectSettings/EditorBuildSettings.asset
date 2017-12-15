@@ -47,3 +47,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Levels/level_svess.unity
     guid: 5d5d569889eff094b870bcefc17784a6
+  - enabled: 1
+    path: Assets/Scenes/Level_The_End.unity
+    guid: 7f3793bb744e7bc4cb60841842e45ebc
