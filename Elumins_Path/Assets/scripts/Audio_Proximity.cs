@@ -15,6 +15,10 @@ public class Audio_Proximity : MonoBehaviour
         audioPlayer = GetComponent<AudioSource>();
         target = GameObject.FindGameObjectWithTag("Player").transform;
         StartCoroutine(AdjustVolume());
+        if(!audioPlayer)
+        {
+            audioPlayer = gameObject.GetComponent<AudioSource>();
+        }
     }
 
     IEnumerator AdjustVolume()

@@ -61,6 +61,19 @@ public class SettingsMenuScript : MonoBehaviour {
         }
     }
 
+    public void AdjustSlider()
+    {
+        GameObject musicSlider = GameObject.Find("MusicSlider");
+        if(musicSlider)
+        {
+            Slider slider = musicSlider.GetComponent<Slider>();
+            if(slider)
+            {
+                SetSlider(slider);
+            }
+        }
+    }
+
     public void SetVolume(float volume)
     {
         if(audioMixer != null)

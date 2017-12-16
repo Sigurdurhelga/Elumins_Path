@@ -36,8 +36,8 @@ EditorBuildSettings:
     path: Assets/Scenes/Levels/level_8_final_v2.unity
     guid: 429b807be4848774a8abb715ed0b1546
   - enabled: 1
-    path: Assets/Scenes/Levels/level_9_final_temp.unity
-    guid: 2dab021141af95a47bd30d6a9766d7bd
+    path: Assets/Scenes/Levels/level_9_final_maze.unity
+    guid: 68393c45a7e102b4095b61353282bb46
   - enabled: 1
     path: Assets/Scenes/Levels/level_10_final_temp.unity
     guid: 92d218c8a17d779409521624071ce9fa
