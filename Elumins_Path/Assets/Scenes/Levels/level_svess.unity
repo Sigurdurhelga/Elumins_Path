@@ -4391,12 +4391,12 @@ Prefab:
     - target: {fileID: 224985926806763634, guid: c900eec705a9b034fa62dc50f4a4c1ed,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 386.69492
+      value: 424.69492
       objectReference: {fileID: 0}
     - target: {fileID: 224985926806763634, guid: c900eec705a9b034fa62dc50f4a4c1ed,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 206.92865
+      value: 139.92865
       objectReference: {fileID: 0}
     - target: {fileID: 4993075628279554, guid: c900eec705a9b034fa62dc50f4a4c1ed, type: 2}
       propertyPath: m_LocalPosition.x
@@ -12955,6 +12955,11 @@ Prefab:
         as well, I like learning about the wonders of the world, f.x. Roman numericals.
         But not many Elu''ars share my passion for learning. Luckily there are two
         elders that are happy to teach me. I guess that is another thing I like, teachers.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 212491350632514544, guid: 760f042976d510946a5fc0785c20e04a,
+        type: 2}
+      propertyPath: m_SortingOrder
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 760f042976d510946a5fc0785c20e04a, type: 2}
