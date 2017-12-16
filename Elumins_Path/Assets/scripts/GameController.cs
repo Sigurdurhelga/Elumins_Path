@@ -107,8 +107,8 @@ public class GameController : MonoBehaviour
 
         // Do not destroy this object, when we load a new scene.
         DontDestroyOnLoad(gameObject);
-        MainAudio = GetComponent<AudioSource>();
-        DontDestroyOnLoad(MainAudio);
+        //MainAudio = GetComponent<AudioSource>();
+        //DontDestroyOnLoad(MainAudio);
 
     }
 
