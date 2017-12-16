@@ -15168,7 +15168,7 @@ AudioSource:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 524517206}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 4724e16932ba9914bb043fb0479c61c5, type: 3}
@@ -18957,7 +18957,7 @@ Prefab:
     - target: {fileID: 224985926806763634, guid: c900eec705a9b034fa62dc50f4a4c1ed,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 139.92865
+      value: 201.92865
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c900eec705a9b034fa62dc50f4a4c1ed, type: 2}
@@ -39485,9 +39485,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 843e52cad04fcce4584621cb16d0d270, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SmoothSpeed: 0.015
-  rx: 0
-  ry: 0
+  SmoothSpeed: 0.02
+  rx: 2
+  ry: 0.75
   target: {fileID: 524517212}
 --- !u!1 &1714909053
 GameObject:
