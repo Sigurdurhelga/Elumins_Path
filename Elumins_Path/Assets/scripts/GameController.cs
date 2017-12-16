@@ -133,6 +133,17 @@ public class GameController : MonoBehaviour
         SceneTransition(Int32.Parse(level));
     }
 
+    public void SceneChange(string sceneName)
+    {
+        int sceneIndex = SceneManager.GetSceneByName(sceneName).buildIndex;
+        SceneTransition(sceneIndex);
+    }
+
+    public void SceneChange(int sceneIndex)
+    {
+        SceneTransition(sceneIndex);
+    }
+
     private void SceneTransition(int level)
     {
         var fader = new FadeTransition()
