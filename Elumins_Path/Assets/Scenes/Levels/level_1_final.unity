@@ -9971,12 +9971,12 @@ Prefab:
     - target: {fileID: 224985926806763634, guid: c900eec705a9b034fa62dc50f4a4c1ed,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 424.69492
+      value: 386.69492
       objectReference: {fileID: 0}
     - target: {fileID: 224985926806763634, guid: c900eec705a9b034fa62dc50f4a4c1ed,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 206.42865
+      value: 206.92865
       objectReference: {fileID: 0}
     - target: {fileID: 224675495864192868, guid: c900eec705a9b034fa62dc50f4a4c1ed,
         type: 2}
@@ -21796,9 +21796,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 843e52cad04fcce4584621cb16d0d270, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SmoothSpeed: 0.015
-  rx: 0
-  ry: 0
+  SmoothSpeed: 0.02
+  rx: 2
+  ry: 0.75
   target: {fileID: 524517212}
 --- !u!1 &1717820752
 GameObject:
@@ -25838,8 +25838,8 @@ Transform:
   - {fileID: 1631785600}
   - {fileID: 2024584622}
   - {fileID: 1658662462}
-  - {fileID: 715990325}
   - {fileID: 391471797}
+  - {fileID: 715990325}
   - {fileID: 1754404771}
   - {fileID: 1551984454}
   - {fileID: 1252001380}
@@ -25858,8 +25858,8 @@ Transform:
   - {fileID: 758500074}
   - {fileID: 1604003318}
   - {fileID: 1153885163}
-  - {fileID: 1610738554}
   - {fileID: 664435739}
+  - {fileID: 1343074242}
   - {fileID: 1422157239}
   - {fileID: 312160278}
   - {fileID: 2094399192}
@@ -25870,7 +25870,7 @@ Transform:
   - {fileID: 1328216138}
   - {fileID: 189345816}
   - {fileID: 1180519941}
-  - {fileID: 1343074242}
+  - {fileID: 1610738554}
   - {fileID: 1593817058}
   - {fileID: 189481002}
   - {fileID: 1189615266}
@@ -25880,8 +25880,8 @@ Transform:
   - {fileID: 737982259}
   - {fileID: 820700833}
   - {fileID: 1406320570}
-  - {fileID: 1267736638}
   - {fileID: 36574381}
+  - {fileID: 1267736638}
   - {fileID: 1220470280}
   - {fileID: 907465321}
   - {fileID: 1224033732}

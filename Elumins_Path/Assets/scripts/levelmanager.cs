@@ -43,9 +43,9 @@ public class levelmanager : MonoBehaviour
     {
         while (roomLight.intensity < 1f)
         {
-            float temp = roomLight.intensity + (0.1f);
+            float temp = roomLight.intensity + (0.05f);
             roomLight.intensity = temp;
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(0.01f);
         }
     }
 
