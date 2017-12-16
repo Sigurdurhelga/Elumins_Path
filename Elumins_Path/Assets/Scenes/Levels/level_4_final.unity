@@ -22654,11 +22654,8 @@ LineRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Positions:
-  - {x: -16.694729, y: 3.7353826, z: 0}
-  - {x: -16.694729, y: 7.8230653, z: 0}
-  - {x: -11.69474, y: -0.83719516, z: 0}
+  m_SortingOrder: 2
+  m_Positions: []
   m_Parameters:
     serializedVersion: 2
     widthMultiplier: 0.3
