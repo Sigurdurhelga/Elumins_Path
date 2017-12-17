@@ -7,7 +7,7 @@ public class RayCastHitReceiver : MonoBehaviour
 {
 
     //public GameObject objectHit;
-    public void OnHitRay(string tag)
+    public void OnHitRay(string tag, string BeamCasterName)
     {
         GemParent gem = null;
         switch (tag)
@@ -21,11 +21,18 @@ public class RayCastHitReceiver : MonoBehaviour
             case ("TwinGem"):
                 gem = gameObject.GetComponent<TwinCrystal>();
                 break;
+            case ("DarkLevelGem"):
+                gem = gameObject.GetComponent<DarkLevelGem>();
+                break;
             default:
                 gem = gameObject.GetComponent<LevelGem>();
                 break;
         }
-        gem.OnHitRay();
+        if (gem == null)
+        {
+            gem = gameObject.GetComponent<LevelGem>();
+        }
+        gem.OnHitRay(BeamCasterName);
     }
 
 

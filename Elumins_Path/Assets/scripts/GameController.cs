@@ -14,6 +14,10 @@ public class GameController : MonoBehaviour
     private static int CurrentLevel;
     private static bool isWorldTree;
     private List<string> finished_levels;
+    private List<string> bonus_levels = new List<string>{
+        "level_bonus",
+        "level_svess"
+    };
 
     private static AudioSource MainAudio;
 
@@ -117,7 +121,7 @@ public class GameController : MonoBehaviour
         isWorldTree = true;
         if (level_finished != "")
         {
-            if (level_finished != "level_bonus" && !finished_levels.Contains(level_finished))
+            if (!bonus_levels.Contains(level_finished) && !finished_levels.Contains(level_finished))
             {
                 finished_levels.Add(level_finished);
                 if (level_finished == "level_2_final") CurrentLevel += 2;
