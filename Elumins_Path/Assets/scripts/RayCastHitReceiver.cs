@@ -28,11 +28,7 @@ public class RayCastHitReceiver : MonoBehaviour
                 gem = gameObject.GetComponent<LevelGem>();
                 break;
         }
-        if (gem == null)
-        {
-            gem = gameObject.GetComponent<LevelGem>();
-        }
-        gem.OnHitRay(BeamCasterName);
+        if (gem != null) gem.OnHitRay(BeamCasterName);
     }
 
 
