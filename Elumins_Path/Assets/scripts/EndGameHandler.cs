@@ -9,7 +9,7 @@ public class EndGameHandler : MonoBehaviour {
 
 	IEnumerator changeToEndgame(){
 		yield return new WaitForSeconds(7f);
-		SceneManager.LoadScene("Level_The_End");
+		GameController.instance.SceneChange(14);
 	}
 
 	private void OnTriggerEnter2D(Collider2D collider){
