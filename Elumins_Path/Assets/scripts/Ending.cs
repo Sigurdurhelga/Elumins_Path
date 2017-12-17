@@ -14,7 +14,7 @@ public class Ending : MonoBehaviour {
 		yield return new WaitForSeconds(30f);
 		Cursor.visible = true;
 		Cursor.lockState = CursorLockMode.Confined;
-		SceneManager.LoadScene("StartMenu");
+		GameController.instance.SceneChange(0);
 	}
 
 	// Use this for initialization

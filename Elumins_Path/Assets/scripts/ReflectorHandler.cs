@@ -99,11 +99,11 @@ public class ReflectorHandler : MonoBehaviour
                 Instructions.transform.parent = null;
                 if (Input.GetKey(KeyCode.E))
                 {
-                    transform.Rotate(new Vector3(0, 0, -1) * 1);
+                    transform.Rotate(new Vector3(0, 0, -1) * 0.5f);
                 }
                 if (Input.GetKey(KeyCode.Q))
                 {
-                    transform.Rotate(new Vector3(0, 0, 1) * 1);
+                    transform.Rotate(new Vector3(0, 0, 1) * 0.5f);
                 }
                 Instructions.transform.parent = transform;
             }
