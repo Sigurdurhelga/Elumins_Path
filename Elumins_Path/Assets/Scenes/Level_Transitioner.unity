@@ -9916,6 +9916,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 1600610384}
+  endWall: {fileID: 1813974827}
 --- !u!1 &691309637
 GameObject:
   m_ObjectHideFlags: 0
