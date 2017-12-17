@@ -3972,7 +3972,7 @@ Transform:
   - {fileID: 763757484}
   - {fileID: 1021723680}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &311092425
 GameObject:
@@ -8194,6 +8194,99 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!1001 &595315551
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 114402294127475902, guid: 760f042976d510946a5fc0785c20e04a,
+        type: 2}
+      propertyPath: dialogue.sentences.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4731927524749262, guid: 760f042976d510946a5fc0785c20e04a, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 2.0927353
+      objectReference: {fileID: 0}
+    - target: {fileID: 4731927524749262, guid: 760f042976d510946a5fc0785c20e04a, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -11.542353
+      objectReference: {fileID: 0}
+    - target: {fileID: 4731927524749262, guid: 760f042976d510946a5fc0785c20e04a, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4731927524749262, guid: 760f042976d510946a5fc0785c20e04a, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4731927524749262, guid: 760f042976d510946a5fc0785c20e04a, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4731927524749262, guid: 760f042976d510946a5fc0785c20e04a, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4731927524749262, guid: 760f042976d510946a5fc0785c20e04a, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4731927524749262, guid: 760f042976d510946a5fc0785c20e04a, type: 2}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 82243531381589470, guid: 760f042976d510946a5fc0785c20e04a,
+        type: 2}
+      propertyPath: spreadCustomCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114402294127475902, guid: 760f042976d510946a5fc0785c20e04a,
+        type: 2}
+      propertyPath: dialogue.sentences.Array.data[2]
+      value: "\"Luke Skywalker has returned to his home planet of Tatooine in an attempt
+        to rescue his friend Han Solo from the clutches of the vile gangster Jabba
+        the Hutt. \r\n\r\nLittle does Luke know that the GALACTIC EMPIRE has secretly
+        begun construction on a new armored space station even more powerful than
+        the first dreaded Death Star.\r\n\r\nWhen completed, this ultimate weapon
+        will spell certain doom for the small band of rebels struggling to restore
+        freedom to the galaxy...\""
+      objectReference: {fileID: 0}
+    - target: {fileID: 114402294127475902, guid: 760f042976d510946a5fc0785c20e04a,
+        type: 2}
+      propertyPath: dialogue.sentences.Array.data[3]
+      value: "\"Turmoil has engulfed the Galactic Republic. The taxation of trade
+        routes to outlying star systems is in dispute.\r\n\r\nHoping to resolve the
+        matter with a blockade of deadly battleships, the greedy Trade Federation
+        has stopped all shipping to the small planet of Naboo.\r\n\r\nWhile the congress
+        of the Republic endlessly debates this alarming chain of events, the Supreme
+        Chancellor has secretly dispatched two Jedi Knights, the guardians of peace
+        and justice in the galaxy, to settle the conflict....\""
+      objectReference: {fileID: 0}
+    - target: {fileID: 114402294127475902, guid: 760f042976d510946a5fc0785c20e04a,
+        type: 2}
+      propertyPath: dialogue.sentences.Array.data[0]
+      value: "It is not known where it came from. The oldest among us have their stories,
+        but that is all they are .. stories. The only thing we do know, is that for
+        as long as it has existed, so have we.\r\n\r\nSince the dawn of time, the
+        Crystal of Light has provided energy and light to the entire realm. It does
+        not matter where your travels take you, west as far as the mountains of Kal'deh,
+        north to the edge of existance, east to the shrines of Dal'ru or south to
+        the lakes of life, if you simply gaze at the horizon you see the Crystal."
+      objectReference: {fileID: 0}
+    - target: {fileID: 114402294127475902, guid: 760f042976d510946a5fc0785c20e04a,
+        type: 2}
+      propertyPath: dialogue.sentences.Array.data[1]
+      value: We do not know which came first, or if one can exist without the other.
+        But as there has always been a Crystal of Light, there has always been the
+        World Tree. It is as natural to all living beings as breathing, so most do
+        not question it or even approach it. We however, call it home.
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 760f042976d510946a5fc0785c20e04a, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &600435023
 Prefab:
   m_ObjectHideFlags: 0
@@ -12880,8 +12973,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 968162765}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 85.344, y: -9.24, z: 0}
-  m_LocalScale: {x: 6.51437, y: 6.51437, z: 6.51437}
+  m_LocalPosition: {x: 83.57, y: -7.48, z: 0}
+  m_LocalScale: {x: 2.7574646, y: 2.7574646, z: 2.7574646}
   m_Children: []
   m_Father: {fileID: 1021723680}
   m_RootOrder: 0
@@ -12958,8 +13051,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 971789398}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 86.76, y: 7.27, z: 0}
-  m_LocalScale: {x: 3.1879199, y: 3.85756, z: 3.85756}
+  m_LocalPosition: {x: 86.76, y: 7.542, z: 0}
+  m_LocalScale: {x: 3.1879199, y: 3.2525828, z: 3.85756}
   m_Children: []
   m_Father: {fileID: 961502723}
   m_RootOrder: 43
@@ -15508,7 +15601,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4165844010520394, guid: cb8b84f8095a57f428f224b14d2118bf, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 82823760623164114, guid: cb8b84f8095a57f428f224b14d2118bf,
         type: 2}
@@ -21804,7 +21897,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1713510806
 MonoBehaviour:
