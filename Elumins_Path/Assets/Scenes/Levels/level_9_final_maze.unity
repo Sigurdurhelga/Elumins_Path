@@ -36684,12 +36684,12 @@ Prefab:
     - target: {fileID: 224985926806763634, guid: c900eec705a9b034fa62dc50f4a4c1ed,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 436
+      value: 427
       objectReference: {fileID: 0}
     - target: {fileID: 224985926806763634, guid: c900eec705a9b034fa62dc50f4a4c1ed,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 206.5
+      value: 211.5
       objectReference: {fileID: 0}
     - target: {fileID: 4993075628279554, guid: c900eec705a9b034fa62dc50f4a4c1ed, type: 2}
       propertyPath: m_LocalPosition.x
@@ -42387,7 +42387,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_RenderMode: 0
   m_SortMode: 0
   m_MinParticleSize: 0
@@ -42398,7 +42398,7 @@ ParticleSystemRenderer:
   m_SortingFudge: 0
   m_NormalDirection: 1
   m_RenderAlignment: 0
-  m_Pivot: {x: 0, y: 0, z: 0}
+  m_Pivot: {x: 0, y: 0, z: 1}
   m_UseCustomVertexStreams: 0
   m_VertexStreams: 00010304
   m_Mesh: {fileID: 0}
