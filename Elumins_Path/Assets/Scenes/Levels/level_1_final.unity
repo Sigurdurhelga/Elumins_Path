@@ -8284,6 +8284,11 @@ Prefab:
         World Tree. It is as natural to all living beings as breathing, so most do
         not question it or even approach it. We however, call it home.
       objectReference: {fileID: 0}
+    - target: {fileID: 212491350632514544, guid: 760f042976d510946a5fc0785c20e04a,
+        type: 2}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 760f042976d510946a5fc0785c20e04a, type: 2}
   m_IsPrefabParent: 0
