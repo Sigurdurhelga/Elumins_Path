@@ -1814,7 +1814,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1636847734991088}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 11.1, y: 2.78, z: 0}
+  m_LocalPosition: {x: 6, y: -7.84, z: 0}
   m_LocalScale: {x: 0.62526, y: 0.62526, z: 0.62526}
   m_Children:
   - {fileID: 4857442795896012}
@@ -2267,7 +2267,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 1
     m_MaxSize: 40
-    m_Alignment: 1
+    m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -2909,7 +2909,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a93bc69287a77f942861c380724bc196, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  space_bar: {fileID: 1236403459616432}
 --- !u!114 &114356756728113400
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3487,6 +3486,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioMixer: {fileID: 24100000, guid: 43bcbf4ce9a8b8448b1a461b98c96a4c, type: 2}
+  resolutionDropdown: {fileID: 0}
+  graphicsDropdown: {fileID: 0}
 --- !u!114 &114621544602693704
 MonoBehaviour:
   m_ObjectHideFlags: 1

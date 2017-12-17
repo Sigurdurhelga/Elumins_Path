@@ -13,7 +13,7 @@ public class DialogueManager : MonoBehaviour {
 	private void Update(){
 
 		if(inConverstation && Input.GetKeyDown(KeyCode.Space)){
-			displayeNextSentence();
+			displayNextSentence();
 		}
 
 	}
@@ -29,7 +29,6 @@ public class DialogueManager : MonoBehaviour {
 		}
 
 		inConverstation = true;
-		//displayeNextSentence();
 	}
 
 	IEnumerator typeText(string text){
@@ -39,7 +38,7 @@ public class DialogueManager : MonoBehaviour {
 		}
 	}
 
-	public void displayeNextSentence(){
+	public void displayNextSentence(){
 		if(sentences.Count == 0){
 			endDialogue();
 		}
@@ -53,6 +52,7 @@ public class DialogueManager : MonoBehaviour {
 
 	public void endDialogue(){
 		animator.SetBool("isOpen", false);
+		inConverstation = false;
 	}
 
 }
