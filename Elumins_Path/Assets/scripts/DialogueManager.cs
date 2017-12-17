@@ -12,14 +12,14 @@ public class DialogueManager : MonoBehaviour {
 
 	private void Update(){
 
-		if(inConverstation && Input.GetKeyDown(KeyCode.Space)){
+		/*if(inConverstation && Input.GetKeyDown(KeyCode.Space)){
 			displayNextSentence();
-		}
+		}*/
 
 	}
 
 	public void StartDialogue(Dialogue dialogue){
-
+		
 		sentences.Clear();
 
 		animator.SetBool("isOpen", true);
@@ -28,7 +28,7 @@ public class DialogueManager : MonoBehaviour {
 			sentences.Enqueue(sentence);
 		}
 
-		inConverstation = true;
+		displayNextSentence();
 	}
 
 	IEnumerator typeText(string text){
@@ -47,12 +47,15 @@ public class DialogueManager : MonoBehaviour {
 			dialogueText.text = "";
 			StopAllCoroutines();
 			StartCoroutine(typeText(sentence));
+			if(!inConverstation){
+				inConverstation = true;
+			}
 		}
 	}
 
 	public void endDialogue(){
+		sentences.Clear();
 		animator.SetBool("isOpen", false);
-		inConverstation = false;
 	}
 
 }
