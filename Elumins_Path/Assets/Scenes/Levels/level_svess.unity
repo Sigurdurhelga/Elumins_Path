@@ -10708,6 +10708,10 @@ Prefab:
       propertyPath: m_Name
       value: GemLightOn
       objectReference: {fileID: 0}
+    - target: {fileID: 1100287326185354, guid: af55d023054539a47896b69d4a8bfd97, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: af55d023054539a47896b69d4a8bfd97, type: 2}
   m_IsPrefabParent: 0

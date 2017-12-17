@@ -200,7 +200,7 @@ public class BeamCaster : MonoBehaviour
             RayCastHitReceiver rayHit = collider.gameObject.GetComponent<RayCastHitReceiver>();
             if (rayHit != null)
             {
-                rayHit.OnHitRay(collider.tag);
+                rayHit.OnHitRay(collider.tag, name);
             }
 
         }
