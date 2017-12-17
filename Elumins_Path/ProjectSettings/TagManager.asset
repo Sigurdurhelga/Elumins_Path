@@ -27,6 +27,8 @@ TagManager:
   - bonusPortal
   - GreenGem
   - TwinGem
+  - DarkLevelGem
+  - Decoration_Level_Gems
   layers:
   - Default
   - TransparentFX

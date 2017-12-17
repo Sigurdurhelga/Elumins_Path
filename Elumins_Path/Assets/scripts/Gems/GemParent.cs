@@ -7,7 +7,7 @@ using DynamicLight2D;
 
 public enum DropDownGemColors
 {
-    blue, red, green, purple, white, pink, orange
+    blue, red, green, purple, white, pink, orange, black
 }
 
 public class GemParent : MonoBehaviour
@@ -26,8 +26,8 @@ public class GemParent : MonoBehaviour
 
     protected GameObject dynamicLight;
     protected AudioSource success_sound;
-    protected Color[] Color_Codes = new Color[7] { new Color(0, 0.4f, 0.8f, 1f), Color.red, Color.green, Color.magenta, Color.white, new Color32(230, 155, 222, 255), new Color32(217, 150, 80, 255) };
-    protected Color[] Light_Color_Codes = new Color[7] { new Color(0, 0.5f, 1f, 0.13f), new Color(1, 0, 0, 0.13f), new Color(0, 1, 0, 0.13f), Color.magenta, Color.white, new Color32(210, 82, 127, 255), new Color32(217, 150, 80, 255) };
+    protected Color[] Color_Codes = new Color[8] { new Color(0, 0.4f, 0.8f, 1f), Color.red, Color.green, Color.magenta, Color.white, new Color32(230, 155, 222, 255), new Color32(217, 150, 80, 255), Color.white };
+    protected Color[] Light_Color_Codes = new Color[8] { new Color(0, 0.5f, 1f, 0.13f), new Color(1, 0, 0, 0.13f), new Color(0, 1, 0, 0.13f), Color.magenta, Color.white, new Color32(210, 82, 127, 255), new Color32(217, 150, 80, 255), new Color32(108, 122, 137, 255) };
     protected Color selected_color;
     protected Color selected_light;
     protected AudioSource gem_area_sound;
@@ -97,12 +97,9 @@ public class GemParent : MonoBehaviour
         {
             if (playerIn || hitByRay) // Charge Gem, increase light intesity and gem_power
             {
-                if (hitByRay)
-                {
-                    hitByRay = false;
-                }
                 runningTime += Time.deltaTime;
-                if (!GemLight) InitializeGemValues();
+                //if (!GemLight) InitializeGemValues();
+                if (hitByRay) hitByRay = false;
                 GemLight.range = Mathf.Lerp(StartingLightRange, EndingLightRange, runningTime);
                 GemLight.intensity = Mathf.Lerp(StartingLightIntensity, EndingLightIntesity, runningTime);
                 if (runningTime >= timeToCharge)
@@ -110,6 +107,7 @@ public class GemParent : MonoBehaviour
                     gem_isPowered = true;
                     PowerUp();
                     doneWithGem = true;
+
                 }
             }
             else // Stop Chargin gem, drain its power. Decrease light intensity and gem_power
@@ -125,7 +123,6 @@ public class GemParent : MonoBehaviour
             yield return new WaitForSeconds(0.01f);
         }
         chargingGem = false;
-
     }
 
     protected IEnumerator Fade(Light light, float endIntensity)
@@ -147,7 +144,7 @@ public class GemParent : MonoBehaviour
 
     public virtual void PowerUp()
     {
-        if (tag == "levelGem")
+        if (tag == "levelGem" || tag == "DarkLevelGem")
         {
             levelman.gemActivated();
         }
@@ -182,7 +179,7 @@ public class GemParent : MonoBehaviour
         }
     }
 
-    public void OnHitRay()
+    public virtual void OnHitRay(string BeamCasterName)
     {
         if (!gem_isPowered)
         {

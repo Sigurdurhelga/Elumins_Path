@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraFocusScript : MonoBehaviour {
+public class CameraFocusScript : MonoBehaviour
+{
 
     public GameObject startPos;
     public GameObject endPos;
@@ -16,21 +17,24 @@ public class CameraFocusScript : MonoBehaviour {
 
     private bool playerIn = false;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start()
+    {
         camera_transform = Camera.main.transform;
         camera_script = camera_transform.GetComponent<DeadZoneCamera>();
         originalStart = startPos.transform.position;
         originalEnd = endPos.transform.position;
-	}
+    }
 
-    IEnumerator smoothZoomCamera(float newZoom){
+    IEnumerator smoothZoomCamera(float newZoom)
+    {
         float difference = newZoom - Camera.main.orthographicSize;
         float time = 0;
         float timestep = 0.01f;
         float nsteps = 1 / timestep;
         float step = difference / nsteps;
-        while(time < 1){
+        while (time < 1)
+        {
             Camera.main.orthographicSize += step;
             time += timestep;
             yield return new WaitForSeconds(timestep);
@@ -54,12 +58,12 @@ public class CameraFocusScript : MonoBehaviour {
             source3.z = -10;
             dest3.z = -10;
             position += step;
-            Debug.Log(position);
             Camera.main.transform.position = Vector3.Lerp(source3, dest3, position);
             time += timestep;
             yield return new WaitForSeconds(timestep);
         }
-        if(!playerIn){
+        if (!playerIn)
+        {
             Debug.Log("enabling camre");
             camera_script.enabled = true;
         }
@@ -67,9 +71,9 @@ public class CameraFocusScript : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.transform.tag == "Player")
+        if (collision.transform.tag == "Player")
         {
-            if(!playerRef)
+            if (!playerRef)
                 playerRef = collision.transform;
             playerIn = true;
             camera_script.enabled = false;
@@ -83,7 +87,7 @@ public class CameraFocusScript : MonoBehaviour {
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if(collision.transform.tag == "Player")
+        if (collision.transform.tag == "Player")
         {
             playerIn = false;
             startPos.transform.position = originalStart;
