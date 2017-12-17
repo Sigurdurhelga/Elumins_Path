@@ -21,6 +21,8 @@ public class GameController : MonoBehaviour
 
     private static AudioSource MainAudio;
 
+    private static Dictionary<string, int> MapNameToIndex;
+
     private bool firstPlay;
 
     // Use this for initialization
@@ -29,24 +31,47 @@ public class GameController : MonoBehaviour
         CurrentLevel = 0;
         isWorldTree = false;
         finished_levels = new List<string>();
+        InitiliazeDict();
         if (SceneManager.GetActiveScene().name != "StartMenu")
         {
             Cursor.visible = false;
-            //Cursor.lockState = CursorLockMode.Locked;
         }
+        /*
         if (Application.isEditor == false)
         {
             if (PlayerPrefs.GetInt("FirstPlay", 1) == 1)
             {
                 firstPlay = true;
-                PlayerPrefs.DeleteAll();
-                PlayerPrefs.SetInt("FirstPlay", 0);
-                PlayerPrefs.Save();
+                //PlayerPrefs.DeleteAll();
+                //PlayerPrefs.SetInt("FirstPlay", 0);
+                //PlayerPrefs.Save();
             }
-            else firstPlay = false;
-
+            else
+            {
+                firstPlay = false;
+            }
         }
+        */
     }
+
+    private void InitiliazeDict()
+    {
+        MapNameToIndex = new Dictionary<string, int>();
+        MapNameToIndex["level_1_final"] = 1;
+        MapNameToIndex["level_2_final"] = 3;
+        MapNameToIndex["level_3_final"] = 4;
+        MapNameToIndex["level_4_final"] = 5;
+        MapNameToIndex["level_5_final"] = 6;
+        MapNameToIndex["level_6_final"] = 7;
+        MapNameToIndex["level_7_final"] = 8;
+        MapNameToIndex["level_8_final"] = 9;
+        MapNameToIndex["level_9_final"] = 10;
+        MapNameToIndex["level_10_final"] = 11;
+        MapNameToIndex["level_11_final"] = 12;
+        MapNameToIndex["level_bonus"] = 13;
+        MapNameToIndex["level_svess"] = 14;
+    }
+
     void LateUpdate()
     {
         if (isWorldTree && SceneManager.GetActiveScene().name == "Level_Transitioner")
@@ -111,9 +136,6 @@ public class GameController : MonoBehaviour
 
         // Do not destroy this object, when we load a new scene.
         DontDestroyOnLoad(gameObject);
-        //MainAudio = GetComponent<AudioSource>();
-        //DontDestroyOnLoad(MainAudio);
-
     }
 
     public void LoadWorldTree(string level_finished)
@@ -129,7 +151,6 @@ public class GameController : MonoBehaviour
             }
         }
         SceneTransition(2);
-
     }
     public void LoadNextLevel(string level)
     {
@@ -160,8 +181,7 @@ public class GameController : MonoBehaviour
     }
     public void ContinueGame()
     {
-        string temp = "CurrentLevel";
-        CurrentLevel = PlayerPrefs.GetInt(temp, -1);
+        CurrentLevel = PlayerPrefs.GetInt("CurrentLevel", -1);
         if (CurrentLevel != -1)
         {
             finished_levels = new List<string>();
