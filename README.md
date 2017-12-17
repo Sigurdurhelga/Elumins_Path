@@ -8,7 +8,7 @@
 ## How to run the game
 Click on the .exe file, when the start menu pops up select setting to set resolution and quality settings. Once you are satisfied with your selection press New Game and enjoy.
 
-## Credits & Attribution:
+## Credits & Attribution
 
 ### Credits
 The following credits required credit for the material/assets used.
