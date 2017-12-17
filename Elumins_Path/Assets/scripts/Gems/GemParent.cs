@@ -91,13 +91,16 @@ public class GemParent : MonoBehaviour
     protected IEnumerator Charge()
     {
         float runningTime = 0;
+        float timeSinceLast = Time.time;
         chargingGem = true;
         bool doneWithGem = false;
         while (!doneWithGem)
         {
             if (playerIn || hitByRay) // Charge Gem, increase light intesity and gem_power
             {
-                runningTime += Time.deltaTime;
+                float temp = Time.time - timeSinceLast;
+                timeSinceLast = Time.time;
+                runningTime += temp;
                 //if (!GemLight) InitializeGemValues();
                 if (hitByRay) hitByRay = false;
                 GemLight.range = Mathf.Lerp(StartingLightRange, EndingLightRange, runningTime);
