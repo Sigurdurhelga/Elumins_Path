@@ -5718,7 +5718,7 @@ RectTransform:
   m_GameObject: {fileID: 486362918}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.74008274, y: 0.74008274, z: 0.74008274}
+  m_LocalScale: {x: 0.62314814, y: 0.62314814, z: 0.62314814}
   m_Children:
   - {fileID: 1786300797}
   - {fileID: 21951599}
@@ -6825,7 +6825,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &877660411
 Transform:
   m_ObjectHideFlags: 0
@@ -10816,11 +10816,11 @@ MonoBehaviour:
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 1
+  m_havePropertiesChanged: 0
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 1
+  m_isInputParsingRequired: 0
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
@@ -15497,15 +15497,13 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: 'Sound
-
-    Graphics
-
-    Stuff
-
-    Other stuff
-
-'
+  m_text: "Music assets gotten from:\r\nAndrew Isaias\r\nhttps://www.zapsplat.com\r\n\r\nImages/art
+    assets gotten from:\r\nCC-BY 3.0 Darklighter Designs 2017\r\nhttp://hackcraft.de/\r\nGallery
+    Yopriceville \xA9 2011 - 2017\r\n\xA9 2012-2013 Julien Jorge <julien.jorge@stuff-o-matic.com>\r\n\xA92017
+    pngtree - All Rights Reserved\r\nMartin Ysa<info@martinysa.com>\r\n\r\nFonts gotten
+    from:\r\nCopyright (c) 2011 Natanael Gama (exo@ndiscovered.com), with Reserved
+    Font Name \u201CExo\u201D.\r\n\r\nAnimation assets gotten from:\r\nCopyright (c)
+    2014 Daniele Giardini - Demigiant - http://www.demigiant.com/about.php\r\nhttps://github.com/prime31/TransitionKit\r\nexplain3d.com\r\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 715b80e429c437e40867928a4e1fc975, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 715b80e429c437e40867928a4e1fc975, type: 2}
@@ -15550,7 +15548,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: -1
+  m_firstOverflowCharacterIndex: 221
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_enableKerning: 1
@@ -15572,19 +15570,19 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1112217141}
-    characterCount: 33
+    characterCount: 610
     spriteCount: 0
-    spaceCount: 5
-    wordCount: 5
+    spaceCount: 68
+    wordCount: 88
     linkCount: 0
-    lineCount: 4
+    lineCount: 24
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 1
+  m_havePropertiesChanged: 0
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 1
+  m_isInputParsingRequired: 0
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
@@ -16791,11 +16789,11 @@ MonoBehaviour:
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 1
+  m_havePropertiesChanged: 0
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 1
+  m_isInputParsingRequired: 0
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
@@ -17652,11 +17650,11 @@ MonoBehaviour:
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 1
+  m_havePropertiesChanged: 0
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 1
+  m_isInputParsingRequired: 0
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
@@ -18050,11 +18048,11 @@ MonoBehaviour:
     lineCount: 4
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 1
+  m_havePropertiesChanged: 0
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 1
+  m_isInputParsingRequired: 0
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
@@ -18468,11 +18466,11 @@ MonoBehaviour:
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 1
+  m_havePropertiesChanged: 0
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 1
+  m_isInputParsingRequired: 0
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
@@ -19157,7 +19155,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: -237.2373}
   m_textInfo:
     textComponent: {fileID: 1651949101}
-    characterCount: 161
+    characterCount: 162
     spriteCount: 0
     spaceCount: 29
     wordCount: 26
@@ -19165,11 +19163,11 @@ MonoBehaviour:
     lineCount: 10
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 1
+  m_havePropertiesChanged: 0
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 1
+  m_isInputParsingRequired: 0
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
