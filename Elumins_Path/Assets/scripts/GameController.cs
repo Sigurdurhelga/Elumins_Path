@@ -107,8 +107,8 @@ public class GameController : MonoBehaviour
 
         // Do not destroy this object, when we load a new scene.
         DontDestroyOnLoad(gameObject);
-        MainAudio = GetComponent<AudioSource>();
-        DontDestroyOnLoad(MainAudio);
+        //MainAudio = GetComponent<AudioSource>();
+        //DontDestroyOnLoad(MainAudio);
 
     }
 
@@ -131,6 +131,17 @@ public class GameController : MonoBehaviour
     {
         if (PlayerPrefs.GetInt("CurrentLevel", -1) == -1) CurrentLevel = 0;
         SceneTransition(Int32.Parse(level));
+    }
+
+    public void SceneChange(string sceneName)
+    {
+        int sceneIndex = SceneManager.GetSceneByName(sceneName).buildIndex;
+        SceneTransition(sceneIndex);
+    }
+
+    public void SceneChange(int sceneIndex)
+    {
+        SceneTransition(sceneIndex);
     }
 
     private void SceneTransition(int level)

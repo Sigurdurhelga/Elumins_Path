@@ -2498,6 +2498,11 @@ Prefab:
         are simply following the rules of nature. That all things must come to an
         end.
       objectReference: {fileID: 0}
+    - target: {fileID: 212491350632514544, guid: 760f042976d510946a5fc0785c20e04a,
+        type: 2}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 760f042976d510946a5fc0785c20e04a, type: 2}
   m_IsPrefabParent: 0
@@ -17108,6 +17113,11 @@ Prefab:
       value: 
       objectReference: {fileID: 24300002, guid: 43bcbf4ce9a8b8448b1a461b98c96a4c,
         type: 2}
+    - target: {fileID: 82814420753851730, guid: 1d1e34e68230aa4448cfdd7208b65a7f,
+        type: 2}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1d1e34e68230aa4448cfdd7208b65a7f, type: 2}
   m_IsPrefabParent: 0
@@ -19344,6 +19354,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 82922021601505632, guid: f83b3f0535cd761499856c008e63aeeb,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f83b3f0535cd761499856c008e63aeeb, type: 2}
   m_IsPrefabParent: 0
@@ -20599,7 +20614,7 @@ Prefab:
     - target: {fileID: 224985926806763634, guid: c900eec705a9b034fa62dc50f4a4c1ed,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 206.42865
+      value: 201.92865
       objectReference: {fileID: 0}
     - target: {fileID: 4993075628279554, guid: c900eec705a9b034fa62dc50f4a4c1ed, type: 2}
       propertyPath: m_LocalPosition.x
@@ -22649,11 +22664,8 @@ LineRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Positions:
-  - {x: -16.694729, y: 3.7353826, z: 0}
-  - {x: -16.694729, y: 7.8230653, z: 0}
-  - {x: -11.69474, y: -0.83719516, z: 0}
+  m_SortingOrder: 2
+  m_Positions: []
   m_Parameters:
     serializedVersion: 2
     widthMultiplier: 0.3
@@ -22718,7 +22730,7 @@ Transform:
   m_Children:
   - {fileID: 162620537}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!4 &1664455214 stripped
 Transform:
@@ -23108,9 +23120,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 843e52cad04fcce4584621cb16d0d270, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SmoothSpeed: 0.015
-  rx: 0
-  ry: 0
+  SmoothSpeed: 0.02
+  rx: 2
+  ry: 0.75
   target: {fileID: 524517212}
 --- !u!1 &1714909053
 GameObject:

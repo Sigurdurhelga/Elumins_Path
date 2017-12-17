@@ -52,7 +52,17 @@ public class PauseMenuScript : MonoBehaviour
         {
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.Confined;
-            SceneManager.LoadScene("StartMenu");
+
+            int sceneIndex = SceneManager.GetSceneByName("StartMenu").buildIndex;
+            Debug.Log(sceneIndex);
+            if(!controller)
+            {
+                SceneManager.LoadScene("StartMenu");
+            }
+            else
+            {
+                controller.SceneChange(0); // Allows fade
+            }
         }
         else
         {
@@ -113,7 +123,8 @@ public class PauseMenuScript : MonoBehaviour
     {
         // Reload level
         int scene = SceneManager.GetActiveScene().buildIndex;
-        SceneManager.LoadScene(scene);
+        //SceneManager.LoadScene(scene);
+        controller.SceneChange(scene); // This causes fade
     }
 
 }

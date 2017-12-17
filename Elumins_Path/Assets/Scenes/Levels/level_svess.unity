@@ -4391,12 +4391,12 @@ Prefab:
     - target: {fileID: 224985926806763634, guid: c900eec705a9b034fa62dc50f4a4c1ed,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 386.69492
+      value: 424.69492
       objectReference: {fileID: 0}
     - target: {fileID: 224985926806763634, guid: c900eec705a9b034fa62dc50f4a4c1ed,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 206.92865
+      value: 201.92865
       objectReference: {fileID: 0}
     - target: {fileID: 4993075628279554, guid: c900eec705a9b034fa62dc50f4a4c1ed, type: 2}
       propertyPath: m_LocalPosition.x
@@ -6713,6 +6713,18 @@ Prefab:
       propertyPath: m_SortingOrder
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 82293158476360378, guid: 97887bde099f2614b85694a4955fe4c4,
+        type: 2}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24300002, guid: 43bcbf4ce9a8b8448b1a461b98c96a4c,
+        type: 2}
+    - target: {fileID: 82296926249283302, guid: 97887bde099f2614b85694a4955fe4c4,
+        type: 2}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24300002, guid: 43bcbf4ce9a8b8448b1a461b98c96a4c,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 97887bde099f2614b85694a4955fe4c4, type: 2}
   m_IsPrefabParent: 0
@@ -8895,6 +8907,18 @@ Prefab:
       propertyPath: m_SortingOrder
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 82296926249283302, guid: 97887bde099f2614b85694a4955fe4c4,
+        type: 2}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24300002, guid: 43bcbf4ce9a8b8448b1a461b98c96a4c,
+        type: 2}
+    - target: {fileID: 82293158476360378, guid: 97887bde099f2614b85694a4955fe4c4,
+        type: 2}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24300002, guid: 43bcbf4ce9a8b8448b1a461b98c96a4c,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 97887bde099f2614b85694a4955fe4c4, type: 2}
   m_IsPrefabParent: 0
@@ -8993,7 +9017,7 @@ AudioSource:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 524517206}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 4724e16932ba9914bb043fb0479c61c5, type: 3}
@@ -10683,6 +10707,10 @@ Prefab:
     - target: {fileID: 1288563263409136, guid: af55d023054539a47896b69d4a8bfd97, type: 2}
       propertyPath: m_Name
       value: GemLightOn
+      objectReference: {fileID: 0}
+    - target: {fileID: 1100287326185354, guid: af55d023054539a47896b69d4a8bfd97, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: af55d023054539a47896b69d4a8bfd97, type: 2}
@@ -12956,6 +12984,11 @@ Prefab:
         But not many Elu''ars share my passion for learning. Luckily there are two
         elders that are happy to teach me. I guess that is another thing I like, teachers.'
       objectReference: {fileID: 0}
+    - target: {fileID: 212491350632514544, guid: 760f042976d510946a5fc0785c20e04a,
+        type: 2}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 760f042976d510946a5fc0785c20e04a, type: 2}
   m_IsPrefabParent: 0
@@ -13973,6 +14006,18 @@ Prefab:
       propertyPath: m_SortingOrder
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 82293158476360378, guid: 97887bde099f2614b85694a4955fe4c4,
+        type: 2}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24300002, guid: 43bcbf4ce9a8b8448b1a461b98c96a4c,
+        type: 2}
+    - target: {fileID: 82296926249283302, guid: 97887bde099f2614b85694a4955fe4c4,
+        type: 2}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24300002, guid: 43bcbf4ce9a8b8448b1a461b98c96a4c,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 97887bde099f2614b85694a4955fe4c4, type: 2}
   m_IsPrefabParent: 0
@@ -14183,6 +14228,18 @@ Prefab:
       propertyPath: m_SortingOrder
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 82296926249283302, guid: 97887bde099f2614b85694a4955fe4c4,
+        type: 2}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24300002, guid: 43bcbf4ce9a8b8448b1a461b98c96a4c,
+        type: 2}
+    - target: {fileID: 82293158476360378, guid: 97887bde099f2614b85694a4955fe4c4,
+        type: 2}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24300002, guid: 43bcbf4ce9a8b8448b1a461b98c96a4c,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 97887bde099f2614b85694a4955fe4c4, type: 2}
   m_IsPrefabParent: 0
@@ -18160,6 +18217,18 @@ Prefab:
       propertyPath: m_SortingOrder
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 82293158476360378, guid: 97887bde099f2614b85694a4955fe4c4,
+        type: 2}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24300002, guid: 43bcbf4ce9a8b8448b1a461b98c96a4c,
+        type: 2}
+    - target: {fileID: 82296926249283302, guid: 97887bde099f2614b85694a4955fe4c4,
+        type: 2}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24300002, guid: 43bcbf4ce9a8b8448b1a461b98c96a4c,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 97887bde099f2614b85694a4955fe4c4, type: 2}
   m_IsPrefabParent: 0
@@ -18969,7 +19038,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 843e52cad04fcce4584621cb16d0d270, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SmoothSpeed: 0.025
+  SmoothSpeed: 0.02
   rx: 2
   ry: 0.75
   target: {fileID: 524517212}

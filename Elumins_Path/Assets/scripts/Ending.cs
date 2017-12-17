@@ -12,6 +12,8 @@ public class Ending : MonoBehaviour {
 		yield return new WaitForSeconds(2f);
 		finalParticles.Play();
 		yield return new WaitForSeconds(30f);
+		Cursor.visible = true;
+		Cursor.lockState = CursorLockMode.Confined;
 		SceneManager.LoadScene("StartMenu");
 	}
 
