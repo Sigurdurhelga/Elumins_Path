@@ -18952,12 +18952,12 @@ Prefab:
     - target: {fileID: 224985926806763634, guid: c900eec705a9b034fa62dc50f4a4c1ed,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 415.69492
+      value: 424.69492
       objectReference: {fileID: 0}
     - target: {fileID: 224985926806763634, guid: c900eec705a9b034fa62dc50f4a4c1ed,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 206.92865
+      value: 201.92865
       objectReference: {fileID: 0}
     - target: {fileID: 4993075628279554, guid: c900eec705a9b034fa62dc50f4a4c1ed, type: 2}
       propertyPath: m_LocalPosition.x
@@ -19922,6 +19922,11 @@ Prefab:
     - target: {fileID: 1743235090261108, guid: 82e2affb8eb2cda45a4605201a56f952, type: 2}
       propertyPath: m_Name
       value: wall_light_blocking (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 212417229784880758, guid: 82e2affb8eb2cda45a4605201a56f952,
+        type: 2}
+      propertyPath: m_SortingOrder
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 82e2affb8eb2cda45a4605201a56f952, type: 2}
@@ -48268,6 +48273,11 @@ Prefab:
     - target: {fileID: 1743235090261108, guid: 82e2affb8eb2cda45a4605201a56f952, type: 2}
       propertyPath: m_Name
       value: wall_light_blocking (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 212417229784880758, guid: 82e2affb8eb2cda45a4605201a56f952,
+        type: 2}
+      propertyPath: m_SortingOrder
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 82e2affb8eb2cda45a4605201a56f952, type: 2}
