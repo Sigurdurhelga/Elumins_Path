@@ -71,7 +71,7 @@ public class CameraFocusScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.transform.tag == "Player")
+        if (collision.transform.tag == "Player" || collision.transform.name == "Crystal_Reflective")
         {
             if (!playerRef)
                 playerRef = collision.transform;
@@ -87,7 +87,7 @@ public class CameraFocusScript : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.transform.tag == "Player")
+        if (collision.transform.tag == "Player" || collision.transform.name == "Crystal_Reflective")
         {
             playerIn = false;
             startPos.transform.position = originalStart;
