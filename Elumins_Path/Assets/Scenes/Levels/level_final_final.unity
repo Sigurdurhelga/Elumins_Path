@@ -452,20 +452,13 @@ Prefab:
     - target: {fileID: 224985926806763634, guid: c900eec705a9b034fa62dc50f4a4c1ed,
         type: 2}
       propertyPath: m_LocalPosition.x
-<<<<<<< HEAD
-      value: 500.69492
-=======
       value: 415.69492
->>>>>>> 83f6e705ab7270cf54c1f88ce425ff3284974da1
       objectReference: {fileID: 0}
     - target: {fileID: 224985926806763634, guid: c900eec705a9b034fa62dc50f4a4c1ed,
         type: 2}
       propertyPath: m_LocalPosition.y
-<<<<<<< HEAD
       value: 379.42865
-=======
       value: 206.92865
->>>>>>> 83f6e705ab7270cf54c1f88ce425ff3284974da1
       objectReference: {fileID: 0}
     - target: {fileID: 4993075628279554, guid: c900eec705a9b034fa62dc50f4a4c1ed, type: 2}
       propertyPath: m_LocalPosition.x
