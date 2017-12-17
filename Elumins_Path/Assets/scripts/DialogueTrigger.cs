@@ -11,6 +11,7 @@ public class DialogueTrigger : MonoBehaviour {
 	private DialogueManager dialogueManager;
 	private bool playerIn = false;
 	private bool doneTriggering = false;
+	private bool inConversation = false;
 
 	private void Start(){
 		bookAnimator = GetComponentInChildren<Animator>();
@@ -19,17 +20,13 @@ public class DialogueTrigger : MonoBehaviour {
 	}
 
 	private void Update(){
-		if(playerIn && Input.GetKeyDown(KeyCode.Space) && !doneTriggering){
-			Debug.Log("starting dialogue");
+		if(playerIn && Input.GetKeyDown(KeyCode.Space) && !doneTriggering && !inConversation){
 			doneTriggering = true;
 			dialogueManager.StartDialogue(dialogue);
+			inConversation = true;
+		} else if(playerIn && Input.GetKeyDown(KeyCode.Space) && inConversation){
+			dialogueManager.displayNextSentence();
 		}
-	}
-
-	public void TriggerDialogue(){
-		if(!doneTriggering)
-			dialogueManager.StartDialogue(dialogue);
-
 	}
 
 	private void OnTriggerEnter2D(Collider2D collider){
@@ -44,6 +41,7 @@ public class DialogueTrigger : MonoBehaviour {
 			bookSound.Play();
 			playerIn = false;
 			doneTriggering = false;
+			inConversation = false;
 			bookAnimator.SetBool("isOpened",false);
 			dialogueManager.endDialogue();
 		}
