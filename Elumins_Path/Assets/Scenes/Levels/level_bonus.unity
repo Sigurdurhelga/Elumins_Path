@@ -13852,6 +13852,25 @@ Prefab:
       propertyPath: m_Name
       value: GemLightOn
       objectReference: {fileID: 0}
+    - target: {fileID: 82418274540795598, guid: af55d023054539a47896b69d4a8bfd97,
+        type: 2}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114761089805973318, guid: af55d023054539a47896b69d4a8bfd97,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 82096564121104376, guid: af55d023054539a47896b69d4a8bfd97,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1100287326185354, guid: af55d023054539a47896b69d4a8bfd97, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: af55d023054539a47896b69d4a8bfd97, type: 2}
   m_IsPrefabParent: 0
