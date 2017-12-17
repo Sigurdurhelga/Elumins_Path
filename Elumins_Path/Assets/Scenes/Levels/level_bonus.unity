@@ -1913,6 +1913,11 @@ Prefab:
       propertyPath: m_LocalPosition.y
       value: 206.92865
       objectReference: {fileID: 0}
+    - target: {fileID: 212640594032221372, guid: c900eec705a9b034fa62dc50f4a4c1ed,
+        type: 2}
+      propertyPath: m_SortingOrder
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c900eec705a9b034fa62dc50f4a4c1ed, type: 2}
   m_IsPrefabParent: 0
@@ -33774,7 +33779,17 @@ Prefab:
     - target: {fileID: 114529629477834032, guid: cb8b84f8095a57f428f224b14d2118bf,
         type: 2}
       propertyPath: timeToCharge
-      value: 3
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 82076100628288758, guid: cb8b84f8095a57f428f224b14d2118bf,
+        type: 2}
+      propertyPath: spreadCustomCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 82823760623164114, guid: cb8b84f8095a57f428f224b14d2118bf,
+        type: 2}
+      propertyPath: spreadCustomCurve.m_RotationOrder
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cb8b84f8095a57f428f224b14d2118bf, type: 2}
